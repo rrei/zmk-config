@@ -27,12 +27,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&_lpair_fallthrough_1>, <&kp LESS_THAN>;
         };
+
         _lpair_fallthrough_1: _lpair_fallthrough_1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
             bindings = <&_lpair_fallthrough_2>, <&kp LEFT_BRACE>;
         };
+
         _lpair_fallthrough_2: _lpair_fallthrough_2 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -46,12 +48,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&_rpair_fallthrough_1>, <&kp GREATER_THAN>;
         };
+
         _rpair_fallthrough_1: _rpair_fallthrough_1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
             bindings = <&_rpair_fallthrough_2>, <&kp RIGHT_BRACE>;
         };
+
         _rpair_fallthrough_2: _rpair_fallthrough_2 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -84,10 +88,10 @@
 
         navigation {
             bindings = <
-&trans                 &trans            &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT   &msc SCRL_UP      &kp PG_UP  &kp HOME   &kp UP     &kp END    &trans  &trans
-&mt LEFT_SHIFT ESCAPE  &kp LEFT_CONTROL  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &msc SCRL_DOWN    &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &trans  &trans
-&trans                 &trans            &trans          &trans          &trans            &trans            &trans     &trans     &trans     &trans     &trans  &trans
-                                                         &kp LEFT_ALT    &kp LEFT_COMMAND  &kp DELETE        &kp ENTER  &mkp LCLK  &mkp RCLK
+&none                  &none             &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT    &msc SCRL_DOWN    &kp PG_UP  &kp HOME   &kp UP     &kp END    &none  &none
+&mt LEFT_SHIFT ESCAPE  &kp LEFT_CONTROL  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &msc SCRL_UP      &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &none  &none
+&none                  &none             &none            &none           &none             &none             &none      &none      &none      &none      &none  &none
+                                                          &kp LEFT_ALT    &kp LEFT_COMMAND  &kp DELETE        &kp ENTER  &mkp LCLK  &mkp RCLK
             >;
         };
 
