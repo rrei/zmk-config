@@ -4,6 +4,11 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    /aliases {
+        lpair = &lpair_shift;
+        rpair = &rpair_shift;
+    };
+
     behaviors {
         mt {
             flavor = "balanced";
@@ -21,16 +26,42 @@
             hold-trigger-on-release;
         };
 
-        lpair: lpair {
+        lpair_shift: mod_morph {
             compatible = "zmk,behavior-mod-morph";
-            mods = <MOD_LGUI MOD_LALT MOD_LSFT>;
-            bindings = <&kp LPAR>, <&kp LBKT>, <&kp LBRC>, <&kp LT>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&lpair_alt>, <&kp LESS_THAN>;
+        };
+        lpair_alt: mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+            bindings = <&lpair_gui>, <&kp LEFT_BRACE>;
+        };
+        lpair_gui: mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp LEFT_BRACKET>;
         };
 
-        rpair: rpair {
+        rpair_shift: mod_morph {
             compatible = "zmk,behavior-mod-morph";
-            mods = <MOD_LGUI MOD_LALT MOD_LSFT>;
-            bindings = <&kp RPAR>, <&kp RBKT>, <&kp RBRC>, <&kp GT>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&rpair_alt>, <&kp GREATER_THAN>;
+        };
+        rpair_alt: mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+            bindings = <&rpair_gui>, <&kp RIGHT_BRACE>;
+        };
+        rpair_gui: mod_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            bindings = <&kp RIGHT_PARENTHESIS>, <&kp RIGHT_BRACKET>;
         };
     };
 
