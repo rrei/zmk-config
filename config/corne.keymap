@@ -4,11 +4,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    /aliases {
-        lpair = &lpair_shift;
-        rpair = &rpair_shift;
-    };
-
     behaviors {
         mt {
             flavor = "balanced";
@@ -26,38 +21,38 @@
             hold-trigger-on-release;
         };
 
-        lpair_shift: mod_morph {
+        lpair: lpair {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&lpair_alt>, <&kp LESS_THAN>;
+            bindings = <&_lpair_fallthrough_1>, <&kp LESS_THAN>;
         };
-        lpair_alt: mod_morph {
+        _lpair_fallthrough_1: _lpair_fallthrough_1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
-            bindings = <&lpair_gui>, <&kp LEFT_BRACE>;
+            bindings = <&_lpair_fallthrough_2>, <&kp LEFT_BRACE>;
         };
-        lpair_gui: mod_morph {
+        _lpair_fallthrough_2: _lpair_fallthrough_2 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
             bindings = <&kp LEFT_PARENTHESIS>, <&kp LEFT_BRACKET>;
         };
 
-        rpair_shift: mod_morph {
+        rpair: rpair {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&rpair_alt>, <&kp GREATER_THAN>;
+            bindings = <&_rpair_fallthrough_1>, <&kp GREATER_THAN>;
         };
-        rpair_alt: mod_morph {
+        _rpair_fallthrough_1: _rpair_fallthrough_1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
-            bindings = <&rpair_gui>, <&kp RIGHT_BRACE>;
+            bindings = <&_rpair_fallthrough_2>, <&kp RIGHT_BRACE>;
         };
-        rpair_gui: mod_morph {
+        _rpair_fallthrough_2: _rpair_fallthrough_2 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
