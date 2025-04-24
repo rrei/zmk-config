@@ -24,7 +24,7 @@
         lpair: lpair {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
             bindings = <&_lpair_fallthrough_1>, <&kp LESS_THAN>;
         };
 
@@ -45,7 +45,7 @@
         rpair: rpair {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
             bindings = <&_rpair_fallthrough_1>, <&kp GREATER_THAN>;
         };
 
