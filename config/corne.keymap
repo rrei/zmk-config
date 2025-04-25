@@ -64,25 +64,17 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        middle_click {
-            bindings = <&mkp MCLK>;
-            key-positions = <40 41>;
-            layers = <1>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-&kp TAB         &kp Q               &kp W           &kp E        &kp R               &kp T            &kp Y      &kp U                &kp I        &kp O            &kp P                        &kp BACKSLASH
-&mt LSHIFT ESC  &mt LEFT_CONTROL A  &mt LEFT_ALT S  &lt 1 D      &mt LEFT_COMMAND F  &kp G            &kp H      &mt RIGHT_COMMAND J  &lt 1 K      &mt RIGHT_ALT L  &mt RIGHT_CONTROL SEMICOLON  &mt RIGHT_SHIFT SINGLE_QUOTE
-&kp GRAVE       &kp Z               &kp X           &kp C        &kp V               &kp B            &kp N      &kp M                &kp COMMA    &kp DOT          &kp FSLH                     &kp GLOBE
-                                                    &lt 2 MINUS  &lpair              &kp BACKSPACE    &kp SPACE  &rpair               &lt 3 EQUAL
+&kp TAB     &kp Q             &kp W               &kp E           &kp R               &kp T            &kp Y      &kp U                &kp I            &kp O                &kp P                      &kp BACKSLASH
+&kp ESCAPE  &mt LEFT_SHIFT A  &mt LEFT_CONTROL S  &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RIGHT_CONTROL L  &mt RIGHT_SHIFT SEMICOLON  &kt SINGLE_QUOTE
+&kp GRAVE   &kp Z             &kp X               &kp C           &kp V               &kp B            &kp N      &kp M                &kp COMMA        &kp DOT              &kp FSLH                   &kp GLOBE
+                                                  &kp MINUS       &lt 1 LEFT_BRACKET  &kp BACKSPACE    &kp SPACE  &lt 3 RIGHT_BRACKET  &kp EQUAL
             >;
         };
 
