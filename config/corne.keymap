@@ -8,63 +8,19 @@
         mt {
             flavor = "balanced";
             tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <125>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
             hold-trigger-on-release;
         };
 
         lt {
             flavor = "balanced";
             tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <125>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
             hold-trigger-on-release;
         };
-
-        lpair: lpair {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            bindings = <&_lpair_fallthrough_1>, <&kp LESS_THAN>;
-        };
-
-        _lpair_fallthrough_1: _lpair_fallthrough_1 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-            bindings = <&_lpair_fallthrough_2>, <&kp LEFT_BRACE>;
-        };
-
-        _lpair_fallthrough_2: _lpair_fallthrough_2 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LEFT_BRACKET>;
-        };
-
-        rpair: rpair {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            bindings = <&_rpair_fallthrough_1>, <&kp GREATER_THAN>;
-        };
-
-        _rpair_fallthrough_1: _rpair_fallthrough_1 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-            bindings = <&_rpair_fallthrough_2>, <&kp RIGHT_BRACE>;
-        };
-
-        _rpair_fallthrough_2: _rpair_fallthrough_2 {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp RIGHT_BRACKET>;
-        };
     };
-
-    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -74,16 +30,7 @@
 &kp TAB     &kp Q             &kp W               &kp E           &kp R               &kp T            &kp Y      &kp U                &kp I            &kp O                &kp P                      &kp BACKSLASH
 &kp ESCAPE  &mt LEFT_SHIFT A  &mt LEFT_CONTROL S  &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RIGHT_CONTROL L  &mt RIGHT_SHIFT SEMICOLON  &kt SINGLE_QUOTE
 &kp GRAVE   &kp Z             &kp X               &kp C           &kp V               &kp B            &kp N      &kp M                &kp COMMA        &kp DOT              &kp FSLH                   &kp ENTER
-                                                  &lt 3 MINUS     &lt 1 LEFT_BRACKET  &kp BACKSPACE    &kp SPACE  &lt 1 RIGHT_BRACKET  &lt 4 EQUAL
-            >;
-        };
-
-        navigation {
-            bindings = <
-&kp TAB     &none       &msc SCRL_RIGHT   &mmv MOVE_UP    &msc SCRL_LEFT    &msc SCRL_DOWN    &kp PG_UP  &kp HOME           &kp UP         &kp END            &none            &none
-&kp ESCAPE  &none       &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &msc SCRL_UP      &kp PG_DN  &kp LEFT           &kp DOWN       &kp RIGHT          &none            &none
-&none       &kp LSHIFT  &kp LEFT_CONTROL  &kp LALT        &kp LEFT_COMMAND  &none             &none      &kp RIGHT_COMMAND  &kp RIGHT_ALT  &kp RIGHT_CONTROL  &kp RIGHT_SHIFT  &none
-                                          &none           &none             &kp DELETE        &kp ENTER  &mkp LCLK          &mkp RCLK
+                                                  &lt 3 MINUS     &lt 1 LEFT_BRACKET  &kp BACKSPACE    &kp SPACE  &lt 2 RIGHT_BRACKET  &lt 4 EQUAL
             >;
         };
 
@@ -93,6 +40,15 @@
 &trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &trans     &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans           &trans          &trans           &trans            &trans     &trans     &trans     &trans  &trans  &trans
                                  &trans          &trans           &kp DELETE        &kp ENTER  &mkp LCLK  &mkp RCLK
+            >;
+        };
+
+        navigation {
+            bindings = <
+&none     &none       &none   &none    &none    &none    &kp PG_UP  &kp HOME           &kp UP         &kp END            &none            &none
+&none  &none       &none    &none  &none   &none      &kp PG_DN  &kp LEFT           &kp DOWN       &kp RIGHT          &none            &none
+&none       &none  &none  &none        &none  &none             &none      &none  &none  &none  &none  &none
+                                          &none           &none             &kp DELETE        &kp ENTER  &none          &none
             >;
         };
 
@@ -137,7 +93,7 @@
         compatible = "zmk,conditional-layers";
 
         media-condition {
-            if-layers = <3 4>;
+            if-layers = <1 2>;
             then-layer = <5>;
         };
     };
