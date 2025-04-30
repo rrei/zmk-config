@@ -36,19 +36,19 @@
 
         navigation {
             bindings = <
-&kp TAB     &none  &msc SCRL_RIGHT(20)  &mmv MOVE_UP(1000)    &msc SCRL_LEFT(20)  &msc SCRL_DOWN(20)  &kp PG_UP  &kp HOME   &kp UP     &kp END    &none  &none
-&kp ESCAPE  &none  &mmv MOVE_LEFT(1000)   &mmv MOVE_DOWN(1000)  &mmv MOVE_RIGHT(1000)  &msc SCRL_UP(20)    &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &none  &none
-&none       &none  &none            &none           &none            &none             &none      &none      &none      &none      &none  &none
-                                    &mo 3           &mo 2            &kp DELETE        &kp ENTER  &mkp LCLK  &mkp RCLK
+&kp TAB     &none  &msc SCRL_X(20)    &mmv MOVE_Y(-1000) &msc SCRL_X(-20)  &msc SCRL_Y(20)  &kp PG_UP  &kp HOME   &kp UP     &kp END    &none  &none
+&kp ESCAPE  &none  &mmv MOVE_X(-1000) &mmv MOVE_Y(1000)  &mmv MOVE_X(1000) &msc SCRL_Y(-20) &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &none  &none
+&none       &none  &none              &none              &none             &none            &none      &none      &none      &none      &none  &none
+                                      &mo 3              &mo 2             &kp DELETE       &kp ENTER  &mkp LCLK  &mkp RCLK
             >;
         };
 
         navigation_slow {
             bindings = <
-&trans  &trans  &msc SCRL_RIGHT(10)  &mmv MOVE_UP(500)    &msc SCRL_LEFT(10)  &msc SCRL_DOWN(10)  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT(500)   &mmv MOVE_DOWN(500)  &mmv MOVE_RIGHT(500)  &msc SCRL_UP(10)    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans            &trans           &trans            &trans             &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans           &trans            &trans             &trans  &trans  &trans
+&trans  &trans  &msc SCRL_X(10)   &mmv MOVE_Y(-500) &msc SCRL_X(-10)  &msc SCRL_Y(10)  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mmv MOVE_X(-500) &mmv MOVE_Y(500)  &mmv MOVE_X(500)  &msc SCRL_Y(-10) &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans            &trans            &trans            &trans           &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans            &trans            &trans           &trans  &trans  &trans
             >;
         };
 
