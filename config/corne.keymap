@@ -29,28 +29,28 @@
 
         base {
             bindings = <
-&kp TAB     &kp Q             &kp W               &kp E           &kp R               &kp T            &kp Y      &kp U                &kp I                &kp O                  &kp P                 &kp BACKSLASH
-&kp ESCAPE  &kp A             &kp S               &lt 1 D         &lt 2 F             &kp G            &kp H      &lt 2 J              &lt 1 K              &kp L                  &kp SEMICOLON         &kp SINGLE_QUOTE
-&kp GRAVE   &mt LEFT_SHIFT Z  &mt LEFT_CONTROL X  &mt LEFT_ALT C  &mt LEFT_COMMAND V  &kp B            &kp N      &mt RIGHT_COMMAND M  &mt RIGHT_ALT COMMA  &mt RIGHT_CONTROL DOT  &mt RIGHT_SHIFT FSLH  &kp ENTER
-                                                  &kp MINUS       &kp LEFT_BRACKET    &kp BACKSPACE    &kp SPACE  &kp RIGHT_BRACKET    &kp EQUAL
+&kp TAB         &kp Q        &kp W  &kp E           &kp R               &kp T        &kp Y      &kp U           &kp I           &kp O    &kp P                &kp BACKSLASH
+&mt LSHIFT ESC  &mt LCTRL A  &kp S  &lt 1 D         &lt 2 F             &kp G        &kp H      &lt 2 J         &lt 1 K         &kp L    &mt RCTRL SEMICOLON  &mt RSHIFT SINGLE_QUOTE
+&kp GRAVE       &kp Z        &kp X  &kp C           &kp V               &kp B        &kp N      &kp M           &kp COMMA       &kp DOT  &kp SLASH            &kp ENTER
+                                    &mt LALT LBKT   &mt LCMD BACKSPACE  &kp MINUS    &kp EQUAL  &mt RCMD SPACE  &mt RALT RBKT
             >;
         };
 
         navigation {
             bindings = <
-&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans           &trans          &trans           &trans            &trans     &trans    &trans    &trans     &trans  &trans
-                                 &trans          &mo 4            &kp DELETE        &kp ENTER  &mkp LCLK  &mkp RCLK
+&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP  &kp HOME        &kp UP    &kp END    &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT        &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans           &trans          &trans           &trans            &trans     &mo 4           &trans    &trans     &trans  &trans
+                                 &mt LALT LPAR   &mt LCMD DELETE  &mkp LCLK         &mkp RCLK  &mt RCMD ENTER  &mt RALT RPAR
             >;
         };
 
         numbers {
             bindings = <
-&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp F12
-&trans  &trans        &trans        &trans        &trans        &trans          &trans        &trans        &trans        &trans        &trans        &trans
-                                    &trans        &trans        &trans          &trans        &trans        &trans
+&trans  &kp F1        &kp F2  &kp F3  &kp F4  &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10       &kp F11
+&trans  &mt LCTRL N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &mt RCTRL N0  &mt RSHIFT F12
+&trans  &trans        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans        &trans
+                              &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
