@@ -36,10 +36,10 @@
 
         base {
             bindings = <
-&kp TAB         &kp Q        &kp W    &kp E          &kp R           &kp T            &kp Y      &kp U           &kp I          &kp O    &kp P                &kp BACKSLASH
-&mt LSHIFT ESC  &mt LCTRL A  &lt 3 S  &lt 1 D        &lt 2 F         &kp G            &kp H      &lt 2 J         &lt 1 K        &lt 3 L  &mt RCTRL SEMICOLON  &mt RSHIFT SINGLE_QUOTE
-&kp GRAVE       &kp Z        &kp X    &kp C          &kp V           &kp B            &kp N      &kp M           &kp COMMA      &kp DOT  &kp SLASH            &kp ENTER
-                                      &mt LALT LBKT  &mt LCMD MINUS  &kp BACKSPACE    &kp SPACE  &mt RCMD EQUAL  &mt RALT RBKT
+&kp TAB         &kp Q        &kp W  &kp E          &kp R           &kp T            &kp Y      &kp U           &kp I          &kp O    &kp P                &kp BACKSLASH
+&mt LSHIFT ESC  &mt LCTRL A  &kp S  &lt 1 D        &lt 2 F         &kp G            &kp H      &lt 2 J         &lt 1 K        &kp L    &mt RCTRL SEMICOLON  &mt RSHIFT SINGLE_QUOTE
+&lt 3 GRAVE     &kp Z        &kp X  &kp C          &kp V           &kp B            &kp N      &kp M           &kp COMMA      &kp DOT  &kp SLASH            &lt 3 ENTER
+                                    &mt LALT LBKT  &mt LCMD MINUS  &kp BACKSPACE    &kp SPACE  &mt RCMD EQUAL  &mt RALT RBKT
             >;
         };
 
