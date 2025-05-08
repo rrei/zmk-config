@@ -9,20 +9,6 @@
 
 / {
     behaviors {
-        &mt {
-            flavor = "balanced";
-            tapping-term-ms = <250>;
-            quick-tap-ms = <500>;
-            require-prior-idle-ms = <150>;
-        };
-
-        &lt {
-            flavor = "balanced";
-            tapping-term-ms = <250>;
-            quick-tap-ms = <500>;
-            require-prior-idle-ms = <150>;
-        };
-
         bt_clear_profile: bt_clear_profile {
             compatible = "zmk,behavior-tap-dance";
             label = "BT_CLEAR_PROFILE";
@@ -79,6 +65,21 @@
             >;
         };
     };
+};
+
+
+&mt {
+    flavor = "balanced";
+    tapping-term-ms = <250>;
+    quick-tap-ms = <500>;
+    require-prior-idle-ms = <150>;
+};
+
+&lt {
+    flavor = "balanced";
+    tapping-term-ms = <250>;
+    quick-tap-ms = <500>;
+    require-prior-idle-ms = <150>;
 };
 
 &mmv_input_listener {
