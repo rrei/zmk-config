@@ -9,11 +9,18 @@
 
 / {
     behaviors {
-        bt_clear_profile: bt_clear_profile {
+        bt_sel: bt_sel {
             compatible = "zmk,behavior-tap-dance";
-            label = "BT_CLEAR_PROFILE";
+            label = "bt_sel";
+            #binding-cells = <1>;
+            bindings = <&none>, <&bt_sel>;
+        };
+
+        bt_clr: bt_clr {
+            compatible = "zmk,behavior-tap-dance";
+            label = "bt_clr";
             #binding-cells = <0>;
-            bindings = <&none>, <&bt BT_CLR>, <&bt BT_CLR>, <&bt BT_CLR_ALL>;
+            bindings = <&none>, <&bt BT_CLR>, <&none>, <&bt BT_CLR_ALL>;
         };
     };
 
@@ -22,9 +29,9 @@
 
         base {
             bindings = <
-&kp TAB         &kp Q        &kp W        &kp E          &kp R           &kp T             &kp Y            &kp U           &kp I          &kp O        &kp P                &kp F16
+&kp TAB         &kp Q        &kp W        &kp E          &kp R           &kp T             &kp Y            &kp U           &kp I          &kp O        &kp P                &kp BACKSLASH
 &mt LSHIFT ESC  &mt LSHFT A  &mt LCTRL S  &lt 1 D        &lt 2 F         &kp G             &kp H            &lt 2 J         &lt 1 K        &mt RCTRL L  &mt RSHFT SEMICOLON  &kp APOS
-&lt 3 GRAVE     &kp Z        &kp X        &kp C          &kp V           &kp B             &kp N            &kp M           &kp COMMA      &kp DOT      &kp SLASH            &lt 3 BACKSLASH
+&lt 3 GRAVE     &kp Z        &kp X        &kp C          &kp V           &kp B             &kp N            &kp M           &kp COMMA      &kp DOT      &kp SLASH            &lt 3 RET
                                           &mt LALT LBKT  &mt LCMD MINUS  &mt LCTRL BSPC    &mt RCTRL SPACE  &mt RCMD EQUAL  &mt RALT RBKT
             >;
         };
@@ -40,19 +47,19 @@
 
         numbers {
             bindings = <
-&trans     &kp F1           &kp F2        &kp F3         &kp F4          &kp F5           &kp F6         &kp F7         &kp F8         &kp F9        &kp F10       &kp F11
-&trans     &mt LSHFT N1     &mt LCTRL N2  &kp N3         &kp N4          &kp N5           &kp N6         &kp N7         &kp N8         &mt RCTRL N9  &mt RSHFT N0  &kp F12
-&kp TILDE  &kp EXCLAMATION  &kp AT_SIGN   &kp POUND      &kp DOLLAR      &kp PERCENT      &kp CARET      &kp AMPERSAND  &kp ASTERISK   &kp LPAR      &kp RPAR      &kp PIPE
+&trans     &kp N1           &kp N2        &kp N3         &kp N4          &kp N5           &kp N6         &kp N7         &kp N8         &kp N9          &kp N10         &kp PIPE
+&trans     &mt LSHIFT EXCL  &mt LCTRL AT  &kp POUND      &kp DOLLAR      &kp PERCENT      &kp CARET      &kp AMPERSAND  &kp ASTERISK   &mt RCTRL LPAR  &mt RSHFT RPAR  &kp F12
+&kp TILDE  &kp F1           &kp F2        &kp F3         &kp F4          &kp F5           &kp F6         &kp F7         &kp F8         &kp F9          &kp F10         &kp F11
                                           &mt LALT LBRC  &mt LCMD UNDER  &mt LCTRL DEL    &mt RCTRL RET  &mt RCMD PLUS  &mt RALT RBRC
             >;
         };
 
         bluetooth {
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &bt_clear_profile
-&none  &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
-&none  &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
-                                   &none         &none         &none           &none  &none  &none
+&none  &bt_sel 0  &bt_sel 1  &bt_sel 2  &bt_sel 3  &bt_sel 4    &none  &none  &none  &none  &none  &bt_clr
+&none  &none      &none      &none      &none      &none        &none  &none  &none  &none  &none  &none
+&none  &none      &none      &none      &none      &none        &none  &none  &none  &none  &none  &none
+                             &none      &none      &none        &none  &none  &none
             >;
         };
 
