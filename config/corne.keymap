@@ -9,13 +9,6 @@
 
 / {
     behaviors {
-        bt_sel: bt_sel {
-            compatible = "zmk,behavior-tap-dance";
-            label = "bt_sel";
-            #binding-cells = <1>;
-            bindings = <&none>, <&bt BT_SEL>;
-        };
-
         bt_clr: bt_clr {
             compatible = "zmk,behavior-tap-dance";
             label = "bt_clr";
@@ -56,7 +49,7 @@
 
         bluetooth {
             bindings = <
-&none  &bt_sel 0  &bt_sel 1  &bt_sel 2  &bt_sel 3  &bt_sel 4    &none  &none  &none  &none  &none  &bt_clr
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &bt BT_CLR
 &none  &none      &none      &none      &none      &none        &none  &none  &none  &none  &none  &none
 &none  &none      &none      &none      &none      &none        &none  &none  &none  &none  &none  &none
                              &none      &none      &none        &none  &none  &none
