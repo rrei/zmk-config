@@ -13,7 +13,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "bt_sel";
             #binding-cells = <1>;
-            bindings = <&none>, <&bt_sel>;
+            bindings = <&none>, <&bt BT_SEL>;
         };
 
         bt_clr: bt_clr {
