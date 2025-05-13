@@ -91,7 +91,7 @@
 &trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &trans     &trans         &trans         &trans  &trans  &trans
 &trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &mkp RCLK  &mkp LCLK      &mo 3          &mo 4   &trans  &trans
 &trans  &trans  &trans           &trans          &trans           &trans            &trans     &trans         &trans         &trans  &trans  &trans
-                                 &mt LALT UNDER  &mt LCMD LBRC    &lt 1 DEL         &lt 2 RET  &mt RCMD RBRC  &mt RALT PLUS
+                                 &mt LALT UNDER  &mt LCMD LBRC    &lt 1 DEL         &lt 1 RET  &mt RCMD RBRC  &mt RALT PLUS
             >;
         };
 
