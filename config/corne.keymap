@@ -17,8 +17,6 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -94,14 +92,14 @@
 
 &mmv_input_listener {
     precision {
-        layers = <3>;
+        layers = <4>;
         input-processors = <&zip_xy_scaler 1 3>;
     };
 };
 
 &msc_input_listener {
     precision {
-        layers = <3>;
+        layers = <4>;
         input-processors = <&zip_scroll_scaler 1 3>;
     };
 };
