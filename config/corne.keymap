@@ -22,28 +22,28 @@
 
         base {
             bindings = <
-&kp GRAVE    &kp Q  &kp W        &lt 3 E       &kp R          &kp T            &kp Y          &kp U           &lt 2 I       &kp O        &kp P      &kp BACKSLASH
-&lt 1 MINUS  &kp A  &mt LSHFT S  &lt 2 D       &mt LCTRL F    &kp G            &kp H          &mt RCTRL J     &lt 3 K       &mt RSHFT L  &kp SEMI   &lt 1 APOS
-&lt 5 EQUAL  &kp Z  &kp X        &kp C         &kp V          &kp B            &kp N          &kp M           &kp COMMA     &kp DOT      &kp SLASH  &lt 5 F16
-                                 &mt LALT DEL  &mt LCMD BSPC  &mt LSHFT ESC    &mt RCTRL RET  &mt RCMD SPACE  &mt RALT TAB
+&kp GRAVE    &kp Q  &kp W        &lt 3 E       &kp R         &kp T             &kp Y            &kp U         &lt 2 I       &kp O        &kp P      &kp BACKSLASH
+&lt 1 MINUS  &kp A  &mt LSHFT S  &lt 2 D       &mt LCTRL F   &kp G             &kp H            &mt RCTRL J   &lt 3 K       &mt RSHFT L  &kp SEMI   &lt 1 APOS
+&lt 5 EQUAL  &kp Z  &kp X        &kp C         &kp V         &kp B             &kp N            &kp M         &kp COMMA     &kp DOT      &kp SLASH  &lt 5 F16
+                                 &mt LALT DEL  &mt LCMD ESC  &mt LSHFT BSPC    &mt RCTRL SPACE  &mt RCMD RET  &mt RALT TAB
             >;
         };
 
         extended {
             bindings = <
-&trans  &kp F1  &kp F2        &kp F3  &kp F4        &kp F5      &kp F6    &kp F7        &kp F8  &kp F9        &kp F10  &kp F11
-&trans  &kp N1  &mt LSHFT N2  &kp N3  &mt LCTRL N4  &kp N5      &kp N6    &mt RCTRL N7  &kp N8  &mt RSHFT N9  &kp N0   &kp F12
-&trans  &trans  &trans        &kp LT  &kp LPAR      &kp LBKT    &kp RBKT  &kp RPAR      &kp GT  &trans        &trans   &trans
-                              &trans  &trans        &trans      &trans    &trans        &trans
+&kp TILDE  &kp F1    &kp F2        &kp F3    &kp F4        &kp F5       &kp F6     &kp F7        &kp F8    &kp F9        &kp F10   &kp F11
+&kp UNDER  &kp N1    &mt LSHFT N2  &kp N3    &mt LCTRL N4  &kp N5       &kp N6     &mt RCTRL N7  &kp N8    &mt RSHFT N9  &kp N0    &kp F12
+&kp PLUS   &kp EXCL  &kp AT        &kp HASH  &kp DLLR      &kp PRCNT    &kp CARET  &kp AMPS      &kp STAR  &kp LPAR      &kp RPAR  &trans
+                                   &trans    &trans        &trans       &trans     &trans        &trans
             >;
         };
 
         navigation {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans    &trans    &trans     &trans  &trans
-                        &trans  &trans  &trans    &trans     &trans    &trans
+&trans  &trans  &kp LBKT  &trans  &kp RBKT  &trans    &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans  &trans
+&trans  &trans  &kp LPAR  &trans  &kp RPAR  &trans    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &kp LBRC  &trans  &kp RBRC  &trans    &trans     &trans    &trans    &trans     &trans  &trans
+                          &trans  &trans    &trans    &trans     &trans    &trans
             >;
         };
 
