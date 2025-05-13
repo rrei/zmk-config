@@ -1,5 +1,5 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 30
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20
 
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>
@@ -124,14 +124,14 @@
 
 &mmv_input_listener {
     precision {
-        layers = <3>;
-        input-processors = <&zip_xy_scaler 1 3>;
+        layers = <4>;
+        input-processors = <&zip_xy_scaler 1 2>;
     };
 };
 
 &msc_input_listener {
     precision {
-        layers = <3>;
-        input-processors = <&zip_scroll_scaler 1 3>;
+        layers = <4>;
+        input-processors = <&zip_scroll_scaler 1 2>;
     };
 };
