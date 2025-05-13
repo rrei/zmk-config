@@ -17,6 +17,20 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        f16_left {
+            bindings = <&kp F16>;
+            key-positions = <16 15>;
+        };
+
+        f16_right {
+            bindings = <&kp F16>;
+            key-positions = <19 20>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -24,7 +38,7 @@
             bindings = <
 &kp GRAVE    &kp Q  &kp W        &lt 3 E       &kp R         &kp T             &kp Y            &kp U         &lt 2 I       &kp O        &kp P      &kp BACKSLASH
 &lt 1 MINUS  &kp A  &mt LSHFT S  &lt 2 D       &mt LCTRL F   &kp G             &kp H            &mt RCTRL J   &lt 3 K       &mt RSHFT L  &kp SEMI   &lt 1 APOS
-&lt 5 EQUAL  &kp Z  &kp X        &kp C         &kp V         &kp B             &kp N            &kp M         &kp COMMA     &kp DOT      &kp SLASH  &lt 5 F16
+&lt 5 EQUAL  &kp Z  &kp X        &kp C         &kp V         &kp B             &kp N            &kp M         &kp COMMA     &kp DOT      &kp SLASH  &kp GLOBE
                                  &mt LALT DEL  &mt LCMD ESC  &mt LSHFT BSPC    &mt RCTRL SPACE  &mt RCMD RET  &mt RALT TAB
             >;
         };
