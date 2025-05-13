@@ -22,27 +22,13 @@
 
         f16_left {
             bindings = <&kp F16>;
-            key-positions = <3 4>;
+            key-positions = <15 16>;
             layers = <0>;
         };
 
         f16_right {
             bindings = <&kp F16>;
-            key-positions = <7 8>;
-            layers = <0>;
-        };
-
-        navigation {
-            bindings = <&mo 2>;
-            key-positions = <16 15>;
-            slow-release;
-            layers = <0>;
-        };
-
-        mouse {
-            bindings = <&mo 3>;
             key-positions = <19 20>;
-            slow-release;
             layers = <0>;
         };
     };
@@ -52,7 +38,7 @@
 
         base {
             bindings = <
-&kp TAB        &kp Q        &kp W        &kp E           &kp R          &kp T         &kp Y        &kp U          &kp I           &kp O        &kp P           &kp BACKSLASH
+&kp TAB        &kp Q        &kp W        &lt 2 E         &kp R          &kp T         &kp Y        &kp U          &lt 3 I         &kp O        &kp P           &kp BACKSLASH
 &mt LSHFT ESC  &mt LSHFT A  &mt LCTRL S  &mt LALT D      &mt LCMD F     &kp G         &kp H        &mt RCMD J     &mt RALT K      &mt RCTRL L  &mt RSHFT SEMI  &kp APOS
 &kp GRAVE      &kp Z        &kp X        &kp C           &kp V          &kp B         &kp N        &kp M          &kp COMMA       &kp DOT      &kp SLASH       &mt GLOBE RET
                                          &mt LALT MINUS  &mt LCMD LBKT  &lt 1 BSPC    &lt 1 SPACE  &mt RCMD RBKT  &mt RALT EQUAL
@@ -70,17 +56,17 @@
 
         navigation {
             bindings = <
-&trans  &trans  &trans  &trans          &trans         &trans       &kp PG_UP  &kp HOME       &kp UP         &kp END    &trans  &trans
-&trans  &trans  &trans  &trans          &trans         &trans       &kp PG_DN  &kp LEFT       &kp DOWN       &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans          &trans         &trans       &trans     &trans         &trans         &trans     &trans  &trans
-                        &mt LALT UNDER  &mt LCMD LBRC  &lt 1 DEL    &lt 1 RET  &mt RCMD RBRC  &mt RALT PLUS
+&trans  &trans  &msc SCRL_RIGHT  &trans          &msc SCRL_LEFT  &msc SCRL_DOWN    &kp PG_UP  &kp HOME       &kp UP         &kp END    &trans  &trans
+&trans  &trans  &trans           &trans          &trans          &msc SCRL_UP      &kp PG_DN  &kp LEFT       &kp DOWN       &kp RIGHT  &trans  &trans
+&trans  &trans  &trans           &trans          &trans          &trans            &trans     &trans         &trans         &trans     &trans  &trans
+                                 &mt LALT UNDER  &mt LCMD LBRC   &lt 1 DEL         &lt 1 RET  &mt RCMD RBRC  &mt RALT PLUS
             >;
         };
 
         mouse {
             bindings = <
-&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &trans     &trans         &trans         &trans  &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &mkp RCLK  &mkp LCLK      &mo 3          &mo 4   &trans  &trans
+&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &mkp RCLK  &mkp LCLK      &mo 3          &mo 4   &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &trans     &trans         &trans         &trans  &trans  &trans
 &trans  &trans  &trans           &trans          &trans           &trans            &trans     &trans         &trans         &trans  &trans  &trans
                                  &mt LALT UNDER  &mt LCMD LBRC    &lt 1 DEL         &lt 1 RET  &mt RCMD RBRC  &mt RALT PLUS
             >;
@@ -88,8 +74,8 @@
 
         mouse-precision {
             bindings = <
-&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &trans     &trans         &trans         &trans  &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &mkp RCLK  &mkp LCLK      &mo 3          &mo 4   &trans  &trans
+&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &mkp RCLK  &mkp LCLK      &mo 3          &mo 4   &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &trans     &trans         &trans         &trans  &trans  &trans
 &trans  &trans  &trans           &trans          &trans           &trans            &trans     &trans         &trans         &trans  &trans  &trans
                                  &mt LALT UNDER  &mt LCMD LBRC    &lt 1 DEL         &lt 1 RET  &mt RCMD RBRC  &mt RALT PLUS
             >;
