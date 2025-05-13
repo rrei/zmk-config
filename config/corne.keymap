@@ -22,12 +22,12 @@
 
         f16_left {
             bindings = <&kp F16>;
-            key-positions = <16 15>;
+            key-positions = <14 15 16>;
         };
 
         f16_right {
             bindings = <&kp F16>;
-            key-positions = <19 20>;
+            key-positions = <19 20 21>;
         };
     };
 
@@ -36,56 +36,56 @@
 
         base {
             bindings = <
-&kp GRAVE    &kp Q  &kp W        &lt 3 E       &kp R         &kp T             &kp Y            &kp U         &lt 2 I       &kp O        &kp P      &kp BACKSLASH
-&lt 1 MINUS  &kp A  &mt LSHFT S  &lt 2 D       &mt LCTRL F   &kp G             &kp H            &mt RCTRL J   &lt 3 K       &mt RSHFT L  &kp SEMI   &lt 1 APOS
-&lt 5 EQUAL  &kp Z  &kp X        &kp C         &kp V         &kp B             &kp N            &kp M         &kp COMMA     &kp DOT      &kp SLASH  &kp GLOBE
-                                 &mt LALT DEL  &mt LCMD ESC  &mt LSHFT BSPC    &mt RCTRL SPACE  &mt RCMD RET  &mt RALT TAB
+&kp TAB        &kp Q        &kp W        &lt 2 E         &kp R          &kp T         &kp Y        &kp U          &lt 2 I         &kp O        &kp P           &kp BACKSLASH
+&mt LSHFT ESC  &mt LSHFT A  &mt LCTRL S  &mt LALT D      &mt LCMD F     &kp G         &kp H        &mt RCMD J     &mt RALT K      &mt RCTRL L  &mt RSHFT SEMI  &kp APOS
+&kp GRAVE      &kp Z        &kp X        &kp C           &kp V          &kp B         &kp N        &kp M          &kp COMMA       &kp DOT      &kp SLASH       &mt GLOBE RET
+                                         &mt LALT MINUS  &mt LCMD LBKT  &lt 1 BSPC    &lt 2 SPACE  &mt RCMD RBKT  &mt RALT EQUAL
             >;
         };
 
         extended {
             bindings = <
-&kp TILDE  &kp F1    &kp F2        &kp F3    &kp F4        &kp F5       &kp F6     &kp F7        &kp F8    &kp F9        &kp F10   &kp F11
-&kp UNDER  &kp N1    &mt LSHFT N2  &kp N3    &mt LCTRL N4  &kp N5       &kp N6     &mt RCTRL N7  &kp N8    &mt RSHFT N9  &kp N0    &kp F12
-&kp PLUS   &kp EXCL  &kp AT        &kp HASH  &kp DLLR      &kp PRCNT    &kp CARET  &kp AMPS      &kp STAR  &kp LPAR      &kp RPAR  &trans
-                                   &trans    &trans        &trans       &trans     &trans        &trans
+&trans     &kp F1        &kp F2        &kp F3          &kp F4         &kp F5       &kp F6     &kp F7         &kp F8         &kp F9        &kp F10       &kp F11
+&trans     &mt LSHFT N1  &mt LCTRL N2  &mt LALT N3     &mt LCMD N4    &kp N5       &kp N6     &mt RCMD N7    &mt RALT N8    &mt RCTRL N9  &mt RSHFT N0  &kp F12
+&kp TILDE  &kp EXCL      &kp AT        &kp HASH        &kp DLLR       &kp PRCNT    &kp CARET  &kp AMPS       &kp STAR       &kp LPAR      &kp RPAR      &trans
+                                       &mt LALT UNDER  &mt LCMD LBRC  &lt 1 DEL    &lt 2 RET  &mt RCMD RBRC  &mt RALT PLUS
             >;
         };
 
         navigation {
             bindings = <
-&trans  &trans  &kp LBKT  &trans  &kp RBKT  &trans    &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans  &trans
-&trans  &trans  &kp LPAR  &trans  &kp RPAR  &trans    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &kp LBRC  &trans  &kp RBRC  &trans    &trans     &trans    &trans    &trans     &trans  &trans
-                          &trans  &trans    &trans    &trans     &trans    &trans
+&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP  &kp HOME  &kp UP     &kp END    &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT  &kp DOWN   &kp RIGHT  &trans  &trans
+&trans  &trans  &trans           &trans          &trans           &trans            &trans     &mo 3     &mkp LCLK  &mkp RCLK  &trans  &trans
+                                 &trans          &trans           &trans            &trans     &trans    &trans
             >;
         };
 
-        mouse {
+        precision {
             bindings = <
-&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &trans     &trans     &trans  &trans  &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &mkp RCLK  &mkp LCLK  &trans  &mo 4   &trans  &trans
-&trans  &trans  &trans           &trans          &trans           &trans            &trans     &trans     &trans  &trans  &trans  &trans
-                                 &trans          &trans           &trans            &trans     &trans     &trans
-            >;
-        };
-
-        mouse-precision {
-            bindings = <
-&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &trans     &trans     &trans  &trans  &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &mkp RCLK  &mkp LCLK  &mo 3   &trans  &trans  &trans
-&trans  &trans  &trans           &trans          &trans           &trans            &trans     &trans     &trans  &trans  &trans  &trans
-                                 &trans          &trans           &trans            &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
         media {
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &none  &none  &none  &none  &bt_clr
-&none  &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &kp C_BRI_UP    &none  &none  &none  &none  &none  &none
-&none  &none         &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN    &none  &none  &none  &none  &none  &none
-                                   &none         &none         &none           &none  &none  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &kp C_VOL_UP  &kp C_BRI_UP  &none  &none  &bt_clr
+&none  &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &none           &none  &kp C_VOL_DN  &kp C_BRI_DN  &none  &none  &none
+&none  &none         &none         &none         &none         &none           &none  &kp C_MUTE    &none         &none  &none  &none
+                                   &none         &none         &none           &none  &none         &none
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        condition_media_layer {
+            if-layers = <1 2>;
+            then-layer = <4>;
         };
     };
 };
