@@ -96,16 +96,16 @@
 
 &mt {
     flavor = "balanced";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <300>;
     quick-tap-ms = <300>;
-    require-prior-idle-ms = <150>;
+    require-prior-idle-ms = <100>;
 };
 
 &lt {
     flavor = "balanced";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <300>;
     quick-tap-ms = <300>;
-    require-prior-idle-ms = <150>;
+    require-prior-idle-ms = <100>;
 };
 
 &mmv_input_listener {
