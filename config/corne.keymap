@@ -38,19 +38,19 @@
 
         base {
             bindings = <
-&kp TAB        &kp Q        &kp W        &mt LALT E      &kp R          &kp T         &kp Y        &kp U          &mt RALT I      &kp O        &kp P            &kp BACKSLASH
-&mt LSHFT ESC  &mt LSHFT A  &mt LCTRL S  &lt 2 D         &mt LCMD F     &kp G         &kp H        &mt RCMD J     &lt 3 K         &mt RCTRL L  &mt RSHFT SEMI   &mt RSHFT APOS
-&kp GRAVE      &mt LCTRL Z  &kp X        &kp C           &kp V          &kp B         &kp N        &kp M          &kp COMMA       &kp DOT      &mt RCTRL SLASH  &mt GLOBE RET
-                                         &mt LALT MINUS  &mt LCMD LBKT  &lt 1 BSPC    &lt 1 SPACE  &mt RCMD RBKT  &mt RALT EQUAL
+&kp TAB          &kp Q        &kp W        &mt LALT E      &kp R          &kp T         &kp Y        &kp U          &mt RALT I      &kp O        &kp P           &kp BACKSLASH
+&mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt 2 D         &mt LCMD F     &kp G         &kp H        &mt RCMD J     &lt 3 K         &mt RCTRL L  &mt RSHFT SEMI  &mt RSHFT APOS
+&mt LCTRL GRAVE  &kp Z        &kp X        &kp C           &kp V          &kp B         &kp N        &kp M          &kp COMMA       &kp DOT      &kp SLASH       &mt RCTRL RET
+                                           &mt LALT MINUS  &mt LCMD LBKT  &lt 1 BSPC    &lt 1 SPACE  &mt RCMD RBKT  &mt RALT EQUAL
             >;
         };
 
         extended {
             bindings = <
-&trans     &kp F1          &kp F2        &mt LALT F3     &kp F4         &kp F5       &kp F6     &kp F7         &mt RALT F8    &kp F9        &kp F10         &kp F11
-&trans     &mt LSHFT N1    &mt LCTRL N2  &lt 2 N3        &mt LCMD N4    &kp N5       &kp N6     &mt RCMD N7    &lt 3 N8       &mt RCTRL N9  &mt RSHFT N0    &mt RSHFT F12
-&kp TILDE  &mt LCTRL EXCL  &kp AT        &kp HASH        &kp DLLR       &kp PRCNT    &kp CARET  &kp AMPS       &kp STAR       &kp LPAR      &mt RCTRL RPAR  &trans
-                                         &mt LALT UNDER  &mt LCMD LBRC  &lt 5 DEL    &lt 5 RET  &mt RCMD RBRC  &mt RALT PLUS
+&trans           &kp F1        &kp F2        &mt LALT F3     &kp F4         &kp F5       &kp F6     &kp F7         &mt RALT F8    &kp F9        &kp F10       &kp F11
+&trans           &mt LSHFT N1  &mt LCTRL N2  &lt 2 N3        &mt LCMD N4    &kp N5       &kp N6     &mt RCMD N7    &lt 3 N8       &mt RCTRL N9  &mt RSHFT N0  &mt RSHFT F12
+&mt LCTRL TILDE  &kp EXCL      &kp AT        &kp HASH        &kp DLLR       &kp PRCNT    &kp CARET  &kp AMPS       &kp STAR       &kp LPAR      &kp RPAR      &trans
+                                             &mt LALT UNDER  &mt LCMD LBRC  &lt 5 DEL    &lt 5 RET  &mt RCMD RBRC  &mt RALT PLUS
             >;
         };
 
