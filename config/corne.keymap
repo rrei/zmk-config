@@ -65,7 +65,7 @@
 
         mo_navigation {
             bindings = <&mo 2>;
-            key-positions = <19 39>;
+            key-positions = <39 20>;
             slow-release;
             layers = <0>;
         };
