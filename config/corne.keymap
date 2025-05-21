@@ -15,6 +15,20 @@
             #binding-cells = <0>;
             bindings = <&none>, <&bt BT_CLR>, <&none>, <&bt BT_CLR_ALL>;
         };
+
+        bspc_nav_ext: bspc_nav_ext {
+            compatible = "zmk,behavior-tap-dance";
+            label = "bspc_nav_ext";
+            #binding-cells = <0>;
+            bindings = <&lt 2 BSPC>, <&mo 1>;
+        };
+
+        spc_ext_nav: spc_ext_nav {
+            compatible = "zmk,behavior-tap-dance";
+            label = "spc_ext_nav";
+            #binding-cells = <0>;
+            bindings = <&lt 1 SPACE>, <&mo 2>;
+        };
     };
 
     combos {
@@ -49,6 +63,20 @@
             key-positions = <7 8>;
             layers = <0>;
         };
+
+        left_click {
+            bindings = <&mkp LCLK>;
+            key-positions = <19 20>;
+            slow-release;
+            layers = <2 3>;
+        };
+
+        right_click {
+            bindings = <&mkp RCLK>;
+            key-positions = <7 8>;
+            slow-release;
+            layers = <2 3>;
+        };
     };
 
     keymap {
@@ -56,10 +84,10 @@
 
         base {
             bindings = <
-&kp TAB          &kp Q        &kp W        &mt LALT E     &kp R          &kp T         &kp Y        &kp U           &mt RALT I      &kp O        &kp P           &kp BACKSLASH
-&mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt 2 D        &mt LCMD F     &kp G         &kp H        &mt RCMD J      &lt 2 K         &mt RCTRL L  &mt RSHFT SEMI  &mt RSHFT APOS
-&mt LCTRL GRAVE  &kp Z        &kp X        &kp C          &kp V          &kp B         &kp N        &kp M           &kp COMMA       &kp DOT      &kp SLASH       &mt RCTRL RET
-                                           &mt LALT LBKT  &mt LCMD RBKT  &lt 2 BSPC    &lt 1 SPACE  &mt RCMD MINUS  &mt RALT EQUAL
+&kp TAB          &kp Q        &kp W        &mt LALT E     &kp R          &kp T            &kp Y         &kp U           &mt RALT I      &kp O        &kp P           &kp BACKSLASH
+&mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt 2 D        &mt LCMD F     &kp G            &kp H         &mt RCMD J      &lt 2 K         &mt RCTRL L  &mt RSHFT SEMI  &mt RSHFT APOS
+&mt LCTRL GRAVE  &kp Z        &kp X        &kp C          &kp V          &kp B            &kp N         &kp M           &kp COMMA       &kp DOT      &kp SLASH       &mt RCTRL RET
+                                           &mt LALT LBKT  &mt LCMD RBKT  &bspc_nav_ext    &spc_ext_nav  &mt RCMD MINUS  &mt RALT EQUAL
             >;
         };
 
