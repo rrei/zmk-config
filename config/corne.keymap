@@ -20,15 +20,9 @@
     combos {
         compatible = "zmk,combos";
 
-        kp_f16_left {
+        kp_f16 {
             bindings = <&kp F16>;
             key-positions = <3 4>;
-            layers = <0>;
-        };
-
-        kp_f16_right {
-            bindings = <&kp F16>;
-            key-positions = <7 8>;
             layers = <0>;
         };
 
@@ -52,7 +46,7 @@
 
         kp_ret {
             bindings = <&kp RET>;
-            key-positions = <20 21>;
+            key-positions = <8 9>;
             layers = <0>;
         };
 
