@@ -1,6 +1,5 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 24
-
 #define COMBO_REQUIRE_PRIOR_IDLE_MS 100
 #define HOLD_TAP_REQUIRE_PRIOR_IDLE_MS 100
 #define HOLD_TAP_TAPPING_TERM_MS 300
@@ -76,9 +75,9 @@
         base {
             bindings = <
 &kp TAB          &kp Q        &kp W        &mt LALT E     &kp R          &kp T         &kp Y        &kp U           &mt RALT I      &kp O        &kp P           &kp BACKSLASH
-&mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt 1 D        &mt LCMD F     &kp G         &kp H        &mt RCMD J      &lt 2 K         &mt RCTRL L  &mt RSHFT SEMI  &mt RSHFT APOS
+&mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt 2 D        &mt LCMD F     &kp G         &kp H        &mt RCMD J      &lt 1 K         &mt RCTRL L  &mt RSHFT SEMI  &mt RSHFT APOS
 &mt LCTRL GRAVE  &kp Z        &kp X        &kp C          &kp V          &kp B         &kp N        &kp M           &lt 2 COMMA     &lt 3 DOT    &kp SLASH       &mt RCTRL RET
-                                           &mt LALT LBKT  &mt LCMD RBKT  &lt 2 BSPC    &lt 1 SPACE  &mt RCMD MINUS  &mt RALT EQUAL
+                                           &mt LALT LBKT  &mt LCMD RBKT  &lt 1 BSPC    &lt 2 SPACE  &mt RCMD MINUS  &mt RALT EQUAL
             >;
         };
 
