@@ -60,6 +60,14 @@
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
         };
 
+        mo_navigation {
+            bindings = <&mo 2>;
+            key-positions = <38 15>;
+            layers = <0>;
+            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
+            slow-release;
+        };
+
         mo_controls {
             bindings = <&mo 4>;
             key-positions = <38 39>;
