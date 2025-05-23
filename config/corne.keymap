@@ -2,6 +2,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 24
 
 #define COMBO_REQUIRE_PRIOR_IDLE_MS 100
+#define HOLD_TAP_REQUIRE_PRIOR_IDLE_MS 100
 #define HOLD_TAP_TAPPING_TERM_MS 300
 #define HOLD_TAP_QUICK_TAP_MS 300
 #define SOFT_OFF_HOLD_TIME_MS 3000
@@ -123,12 +124,14 @@
     flavor = "balanced";
     tapping-term-ms = <HOLD_TAP_TAPPING_TERM_MS>;
     quick-tap-ms = <HOLD_TAP_QUICK_TAP_MS>;
+    require-prior-idle-ms = <HOLD_TAP_REQUIRE_PRIOR_IDLE_MS>;
 };
 
 &lt {
     flavor = "balanced";
     tapping-term-ms = <HOLD_TAP_TAPPING_TERM_MS>;
     quick-tap-ms = <HOLD_TAP_QUICK_TAP_MS>;
+    require-prior-idle-ms = <HOLD_TAP_REQUIRE_PRIOR_IDLE_MS>;
 };
 
 &mmv_input_listener {
