@@ -1,6 +1,5 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 24
-
 #define COMBO_REQUIRE_PRIOR_IDLE_MS 100
 #define COMBO_TIMEOUT_MS 20
 #define HOLD_TAP_REQUIRE_PRIOR_IDLE_MS 100
@@ -92,9 +91,9 @@
         base {
             bindings = <
 &kp TAB          &kp Q        &kp W        &mt LALT E     &kp R          &kp T         &kp Y        &kp U           &mt RALT I      &kp O        &kp P           &kp BACKSLASH
-&mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt 2 D        &mt LCMD F     &kp G         &kp H        &mt RCMD J      &lt 1 K         &mt RCTRL L  &mt RSHFT SEMI  &mt RSHFT APOS
-&mt LCTRL GRAVE  &kp Z        &kp X        &kp C          &kp V          &kp B         &kp N        &kp M           &lt 2 COMMA     &lt 3 DOT    &kp SLASH       &mt RCTRL RET
-                                           &mt LALT LBKT  &mt LCMD RBKT  &lt 1 BSPC    &lt 2 SPACE  &mt RCMD MINUS  &mt RALT EQUAL
+&mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt 2 D        &mt LCMD F     &kp G         &kp H        &mt RCMD J      &lt 2 K         &mt RCTRL L  &mt RSHFT SEMI  &mt RSHFT APOS
+&mt LCTRL GRAVE  &lt 3 Z      &kp X        &kp C          &kp V          &kp B         &kp N        &kp M           &lt 2 COMMA     &lt 3 DOT    &kp SLASH       &mt RCTRL RET
+                                           &mt LALT LBKT  &mt LCMD RBKT  &lt 1 BSPC    &lt 1 SPACE  &mt RCMD MINUS  &mt RALT EQUAL
             >;
         };
 
@@ -103,15 +102,15 @@
 &trans           &kp F1        &kp F2        &mt LALT F3    &kp F4         &kp F5       &kp F6     &kp F7          &mt RALT F8    &kp F9        &kp F10       &kp F11
 &trans           &mt LSHFT N1  &mt LCTRL N2  &kp N3         &mt LCMD N4    &kp N5       &kp N6     &mt RCMD N7     &kp N8         &mt RCTRL N9  &mt RSHFT N0  &mt RSHFT F12
 &mt LCTRL TILDE  &kp EXCL      &kp AT        &kp HASH       &kp DLLR       &kp PRCNT    &kp CARET  &kp AMPS        &kp STAR       &kp LPAR      &kp RPAR      &trans
-                                             &mt LALT LBRC  &mt LCMD RBRC  &lt 1 DEL    &lt 1 RET  &mt RCMD UNDER  &mt RALT PLUS
+                                             &mt LALT LBRC  &mt LCMD RBRC  &lt 2 DEL    &lt 2 RET  &mt RCMD UNDER  &mt RALT PLUS
             >;
         };
 
         navigation {
             bindings = <
 &trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP  &kp HOME        &kp UP         &kp END    &trans  &trans
-&trans  &mo 3   &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT        &kp DOWN       &kp RIGHT  &trans  &trans
-&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK  &mkp LCLK       &mo 2          &mo 3      &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT        &kp DOWN       &kp RIGHT  &trans  &trans
+&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK  &mkp LCLK       &trans         &trans     &trans  &trans
                                  &mt LALT LBRC   &mt LCMD RBRC    &lt 2 DEL         &lt 2 RET  &mt RCMD UNDER  &mt RALT PLUS
             >;
         };
@@ -119,8 +118,8 @@
         precision {
             bindings = <
 &trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP  &kp HOME        &kp UP         &kp END    &trans  &trans
-&trans  &mo 3   &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT        &kp DOWN       &kp RIGHT  &trans  &trans
-&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK  &mkp LCLK       &mo 2          &mo 3      &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT        &kp DOWN       &kp RIGHT  &trans  &trans
+&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK  &mkp LCLK       &trans         &trans     &trans  &trans
                                  &mt LALT LBRC   &mt LCMD RBRC    &lt 2 DEL         &lt 2 RET  &mt RCMD UNDER  &mt RALT PLUS
             >;
         };
