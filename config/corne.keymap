@@ -27,8 +27,8 @@
     combos {
         compatible = "zmk,combos";
 
-        kp_f16 {
-            bindings = <&kp F16>;
+        kp_tab {
+            bindings = <&kp TAB>;
             key-positions = <3 4>;
             layers = <0>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
