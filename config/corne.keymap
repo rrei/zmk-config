@@ -112,7 +112,7 @@
 &trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP  &kp HOME        &kp UP         &kp END    &trans  &trans
 &trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT        &kp DOWN       &kp RIGHT  &trans  &trans
 &trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK  &mkp LCLK       &trans         &trans     &trans  &trans
-                                 &mt LALT LBRC   &mt LCMD RBRC    &lt 2 DEL         &lt 2 RET  &mt RCMD UNDER  &mt RALT PLUS
+                                 &mt LALT LPAR   &mt LCMD RPAR    &lt 2 DEL         &lt 2 RET  &mt RCMD UNDER  &mt RALT PLUS
             >;
         };
 
@@ -121,7 +121,7 @@
 &trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP  &kp HOME        &kp UP         &kp END    &trans  &trans
 &trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT        &kp DOWN       &kp RIGHT  &trans  &trans
 &trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK  &mkp LCLK       &trans         &trans     &trans  &trans
-                                 &mt LALT LBRC   &mt LCMD RBRC    &lt 2 DEL         &lt 2 RET  &mt RCMD UNDER  &mt RALT PLUS
+                                 &mt LALT LPAR   &mt LCMD RPAR    &lt 2 DEL         &lt 2 RET  &mt RCMD UNDER  &mt RALT PLUS
             >;
         };
 
