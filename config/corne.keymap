@@ -4,6 +4,7 @@
 #define NAV 2
 #define PREC 3
 #define SYS 4
+#define IDLE 5
 
 // Parameters that I want to make easily editable and attach a logical name to.
 #define COMBO_REQUIRE_PRIOR_IDLE_MS 100
@@ -78,22 +79,28 @@
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
-        mo_nav {
-            bindings = <&mo NAV>;
-            key-positions = <38 15>;
-            layers = <BASE>;
+        kp_lpar {
+            bindings = <&kp LPAR>;
+            key-positions = <27 28>;
+            layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
-            timeout-ms = <COMBO_SLOW_TIMEOUT_MS>;
-            slow-release;
+            timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
-        mo_sys {
-            bindings = <&mo SYS>;
-            key-positions = <38 39>;
-            layers = <BASE>;
+        kp_rpar {
+            bindings = <&kp RPAR>;
+            key-positions = <31 32>;
+            layers = <BASE EXT>;
+            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
+            timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
+        };
+
+        tog_idle {
+            bindings = <&tog IDLE>;
+            key-positions = <17 18>;
+            layers = <SYS IDLE>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_SLOW_TIMEOUT_MS>;
-            slow-release;
         };
     };
 
@@ -111,28 +118,28 @@
 
         extended {
             bindings = <
-&trans           &kp F1        &kp F2        &mt LALT F3    &kp F4         &kp F5         &kp F6       &kp F7           &mt RALT F8     &kp F9        &kp F10       &kp F11
-&trans           &mt LSHFT N1  &mt LCTRL N2  &kp N3         &mt LCMD N4    &kp N5         &kp N6       &mt RCMD N7      &kp N8          &mt RCTRL N9  &mt RSHFT N0  &mt RSHFT F12
-&mt LCTRL TILDE  &kp EXCL      &kp AT        &kp HASH       &kp DLLR       &kp PRCNT      &kp CARET    &kp AMPS         &kp STAR        &kp LPAR      &kp RPAR      &trans
-                                             &mt LALT LBRC  &mt LCMD RBRC  &lt NAV DEL    &lt NAV RET  &mt RSHFT UNDER  &mt RCTRL PLUS
+&trans  &kp F1        &kp F2        &mt LALT F3  &kp F4       &kp F5         &kp F6       &kp F7       &mt RALT F8  &kp F9        &kp F10       &kp F11
+&trans  &mt LSHFT N1  &mt LCTRL N2  &kp N3       &mt LCMD N4  &kp N5         &kp N6       &mt RCMD N7  &kp N8       &mt RCTRL N9  &mt RSHFT N0  &mt RSHFT F12
+&trans  &trans        &trans        &trans       &trans       &trans         &trans       &trans       &trans       &trans        &trans        &trans
+                                    &trans       &trans       &lt NAV DEL    &lt NAV RET  &trans       &trans
             >;
         };
 
         navigation {
             bindings = <
-&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP    &kp HOME         &kp UP          &kp END    &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN    &kp LEFT         &kp DOWN        &kp RIGHT  &trans  &trans
-&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK    &mkp LCLK        &trans          &trans     &trans  &trans
-                                 &mt LALT LPAR   &mt LCMD RPAR    &lt NAV DEL       &lt NAV RET  &mt RSHFT UNDER  &mt RCTRL PLUS
+&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP    &kp HOME   &kp UP    &kp END    &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN    &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK    &mkp LCLK  &trans    &trans     &trans  &trans
+                                 &trans          &trans           &lt NAV DEL       &lt NAV RET  &trans     &trans
             >;
         };
 
         precision {
             bindings = <
-&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP    &kp HOME         &kp UP          &kp END    &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN    &kp LEFT         &kp DOWN        &kp RIGHT  &trans  &trans
-&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK    &mkp LCLK        &trans          &trans     &trans  &trans
-                                 &mt LALT LPAR   &mt LCMD RPAR    &lt NAV DEL       &lt NAV RET  &mt RSHFT UNDER  &mt RCTRL PLUS
+&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP    &kp HOME   &kp UP    &kp END    &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN    &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK    &mkp LCLK  &trans    &trans     &trans  &trans
+                                 &trans          &trans           &lt NAV DEL       &lt NAV RET  &trans     &trans
             >;
         };
 
@@ -143,6 +150,24 @@
 &sys_reset  &none         &none         &none         &none         &none           &none  &kp C_MUTE    &none         &none  &none  &sys_reset
                                         &none         &none         &none           &none  &none         &none
             >;
+        };
+
+        idle {
+            bindings = <
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+                     &none  &none  &none    &none  &none  &none
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        cond_sys {
+            if-layers = <EXT NAV>;
+            then-layer = <SYS>;
         };
     };
 };
