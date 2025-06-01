@@ -109,7 +109,7 @@
 
         base {
             bindings = <
-&kp TAB          &kp Q        &kp W        &mt LALT E     &kp C          &kp T           &kp Y          &kp U            &mt RALT I       &kp O         &kp P           &kp BACKSLASH
+&kp TAB          &kp Q        &kp W        &mt LALT E     &kp R          &kp T           &kp Y          &kp U            &mt RALT I       &kp O         &kp P           &kp BACKSLASH
 &mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt NAV D      &mt LCMD F     &kp G           &kp H          &mt RCMD J       &lt NAV K        &mt RCTRL L   &mt RSHFT SEMI  &mt RSHFT APOS
 &mt LCTRL GRAVE  &lt PREC Z   &kp X        &kp C          &kp V          &kp B           &kp N          &kp M            &lt NAV COMMA    &lt PREC DOT  &kp SLASH       &mt RCTRL RET
                                            &mt LALT LBKT  &mt LCMD RBKT  &lt EXT BSPC    &lt EXT SPACE  &mt RSHFT MINUS  &mt RCTRL EQUAL
