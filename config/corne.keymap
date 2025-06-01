@@ -42,23 +42,23 @@
         kp_tab {
             bindings = <&kp TAB>;
             key-positions = <3 4>;
-            layers = <BASE>;
+            layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
         kp_bspc {
             bindings = <&kp BSPC>;
-            key-positions = <16 15>;
-            layers = <BASE>;
+            key-positions = <15 16>;
+            layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
         kp_del {
             bindings = <&kp DEL>;
-            key-positions = <14 15>;
-            layers = <BASE>;
+            key-positions = <16 17>;
+            layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
@@ -66,7 +66,7 @@
         kp_space {
             bindings = <&kp SPACE>;
             key-positions = <19 20>;
-            layers = <BASE>;
+            layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
@@ -74,14 +74,14 @@
         kp_ret {
             bindings = <&kp RET>;
             key-positions = <8 7>;
-            layers = <BASE>;
+            layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
         kp_lpar {
             bindings = <&kp LPAR>;
-            key-positions = <27 28>;
+            key-positions = <14 15>;
             layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
@@ -89,7 +89,7 @@
 
         kp_rpar {
             bindings = <&kp RPAR>;
-            key-positions = <31 32>;
+            key-positions = <20 21>;
             layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
