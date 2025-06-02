@@ -109,37 +109,37 @@
 
         base {
             bindings = <
-&kp TAB          &kp Q        &kp W        &mt LALT E     &kp R          &kp T           &kp Y          &kp U            &mt RALT I       &kp O         &kp P           &kp BACKSLASH
-&mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt NAV D      &mt LCMD F     &kp G           &kp H          &mt RCMD J       &lt NAV K        &mt RCTRL L   &mt RSHFT SEMI  &mt RSHFT APOS
-&mt LCTRL GRAVE  &lt PREC Z   &kp X        &kp C          &kp V          &kp B           &kp N          &kp M            &lt NAV COMMA    &lt PREC DOT  &kp SLASH       &mt RCTRL RET
-                                           &mt LALT LBKT  &mt LCMD RBKT  &lt EXT BSPC    &lt EXT SPACE  &mt RSHFT MINUS  &mt RCTRL EQUAL
+&kp TAB          &kp Q        &kp W        &mt LALT E     &kp R          &kp T           &kp Y            &kp U           &mt RALT I      &kp O         &kp P           &kp BACKSLASH
+&mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt NAV D      &mt LCMD F     &kp G           &kp H            &mt RCMD J      &lt NAV K       &mt RCTRL L   &mt RSHFT SEMI  &mt RSHFT APOS
+&mt LCTRL GRAVE  &lt PREC Z   &kp X        &kp C          &kp V          &kp B           &kp N            &lt EXT M       &lt NAV COMMA   &lt PREC DOT  &lt SYS SLASH   &mt RCTRL RET
+                                           &mt LALT LBKT  &mt LCMD RBKT  &lt EXT BSPC    &mt RSHFT SPACE  &mt RCMD MINUS  &mt RALT EQUAL
             >;
         };
 
         extended {
             bindings = <
-&trans  &kp F1        &kp F2        &mt LALT F3  &kp F4       &kp F5          &kp F6         &kp F7       &mt RALT F8  &kp F9        &kp F10       &kp F11
-&trans  &mt LSHFT N1  &mt LCTRL N2  &kp N3       &mt LCMD N4  &kp N5          &kp N6         &mt RCMD N7  &kp N8       &mt RCTRL N9  &mt RSHFT N0  &mt RSHFT F12
-&trans  &trans        &trans        &trans       &trans       &trans          &trans         &trans       &trans       &trans        &trans        &trans
-                                    &trans       &trans       &lt NAV BSPC    &lt NAV SPACE  &trans       &trans
+&trans  &kp F1        &kp F2        &mt LALT F3  &kp F4       &kp F5    &kp F6  &kp F7       &mt RALT F8  &kp F9        &kp F10       &kp F11
+&trans  &mt LSHFT N1  &mt LCTRL N2  &kp N3       &mt LCMD N4  &kp N5    &kp N6  &mt RCMD N7  &kp N8       &mt RCTRL N9  &mt RSHFT N0  &mt RSHFT F12
+&trans  &trans        &trans        &trans       &trans       &trans    &trans  &trans       &trans       &trans        &trans        &trans
+                                    &trans       &trans       &trans    &trans  &trans       &trans
             >;
         };
 
         navigation {
             bindings = <
-&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP      &kp HOME   &kp UP    &kp END    &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN      &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK      &mkp LCLK  &trans    &trans     &trans  &trans
-                                 &trans          &trans           &lt NAV BSPC      &lt NAV SPACE  &trans     &trans
+&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP  &kp HOME   &kp UP    &kp END    &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK  &mkp LCLK  &trans    &trans     &trans  &trans
+                                 &trans          &trans           &lt NAV BSPC      &trans     &trans     &trans
             >;
         };
 
         precision {
             bindings = <
-&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP      &kp HOME   &kp UP    &kp END    &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN      &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK      &mkp LCLK  &trans    &trans     &trans  &trans
-                                 &trans          &trans           &lt NAV BSPC      &lt NAV SPACE  &trans     &trans
+&trans  &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP  &kp HOME   &kp UP    &kp END    &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT   &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK  &mkp LCLK  &trans    &trans     &trans  &trans
+                                 &trans          &trans           &lt NAV BSPC      &trans     &trans     &trans
             >;
         };
 
@@ -159,15 +159,6 @@
 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                      &none  &none  &none    &none  &none  &none
             >;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        cond_sys {
-            if-layers = <EXT NAV>;
-            then-layer = <SYS>;
         };
     };
 };
