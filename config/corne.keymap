@@ -1,4 +1,5 @@
 // Define names for layers instead of using the numbers directly.
+
 #define BASE 0
 #define EXT 1
 #define NAV 2
@@ -7,6 +8,7 @@
 #define IDLE 5
 
 // Parameters that I want to make easily editable and attach a logical name to.
+
 #define COMBO_REQUIRE_PRIOR_IDLE_MS 100
 #define COMBO_FAST_TIMEOUT_MS 25
 #define COMBO_SLOW_TIMEOUT_MS 75
@@ -17,6 +19,7 @@
 
 // ZMK mouse emulation params, which need to be defined before including
 // `dt-bindings/zmk/pointing.h`.
+
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 24
 
@@ -109,8 +112,8 @@
 
         base {
             bindings = <
-&kp TAB          &kp Q        &kp W        &mt LALT E     &kp R          &kp T           &kp Y            &kp U           &mt RALT I      &kp O         &kp P           &kp BACKSLASH
-&mt LSHFT ESC    &mt LSHFT A  &mt LCTRL S  &lt NAV D      &mt LCMD F     &kp G           &kp H            &mt RCMD J      &lt NAV K       &mt RCTRL L   &mt RSHFT SEMI  &mt RSHFT APOS
+&kp ESC          &kp Q        &kp W        &mt LALT E     &kp R          &kp T           &kp Y            &kp U           &mt RALT I      &kp O         &kp P           &kp BACKSLASH
+&mt LSHFT TAB    &mt LSHFT A  &mt LCTRL S  &lt NAV D      &mt LCMD F     &kp G           &kp H            &mt RCMD J      &lt NAV K       &mt RCTRL L   &mt RSHFT SEMI  &mt RSHFT APOS
 &mt LCTRL GRAVE  &lt PREC Z   &kp X        &kp C          &kp V          &kp B           &kp N            &lt EXT M       &lt NAV COMMA   &lt PREC DOT  &lt SYS SLASH   &mt RCTRL RET
                                            &mt LALT LBKT  &mt LCMD RBKT  &lt EXT BSPC    &mt RSHFT SPACE  &mt RCMD MINUS  &mt RALT EQUAL
             >;
