@@ -37,6 +37,13 @@
             #binding-cells = <0>;
             bindings = <&none>, <&bt BT_CLR>, <&none>, <&bt BT_CLR_ALL>;
         };
+
+        tab_esc: tab_esc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAB_ESC";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp ESC>;
+        };
     };
 
     combos {
@@ -50,9 +57,9 @@
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
-        kp_esc {
-            bindings = <&kp ESC>;
-            key-positions = <4 5>;
+        kp_del {
+            bindings = <&kp DEL>;
+            key-positions = <14 15>;
             layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
@@ -66,9 +73,17 @@
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
-        kp_del {
-            bindings = <&kp DEL>;
+        kp_lesc {
+            bindings = <&kp ESC>;
             key-positions = <16 17>;
+            layers = <BASE EXT>;
+            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
+            timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
+        };
+
+        kp_resc {
+            bindings = <&kp ESC>;
+            key-positions = <18 19>;
             layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
@@ -84,7 +99,7 @@
 
         kp_ret {
             bindings = <&kp RET>;
-            key-positions = <8 7>;
+            key-positions = <7 8>;
             layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
@@ -113,6 +128,15 @@
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_SLOW_TIMEOUT_MS>;
         };
+
+        mo_sys {
+            bindings = <&mo SYS>;
+            key-positions = <37 40>;
+            slow-release;
+            layers = <BASE>;
+            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
+            timeout-ms = <COMBO_SLOW_TIMEOUT_MS>;
+        };
     };
 
     keymap {
@@ -120,8 +144,8 @@
 
         base {
             bindings = <
-&kp ESC          &kp Q        &kp W        &mt LALT E     &kp R          &kp T           &kp Y            &kp U           &mt RALT I      &kp O         &kp P           &kp BACKSLASH
-&mt LSHFT TAB    &mt LSHFT A  &mt LCTRL S  &lt NAV D      &mt LCMD F     &kp G           &kp H            &mt RCMD J      &lt NAV K       &mt RCTRL L   &mt RSHFT SEMI  &mt RSHFT APOS
+&tab_esc         &kp Q        &kp W        &mt LALT E     &kp R          &kp T           &kp Y            &kp U           &mt RALT I      &kp O         &kp P           &kp BACKSLASH
+&kp LSHFT        &mt LSHFT A  &mt LCTRL S  &lt NAV D      &mt LCMD F     &kp G           &kp H            &mt RCMD J      &lt NAV K       &mt RCTRL L   &mt RSHFT SEMI  &kp APOS
 &mt LCTRL GRAVE  &lt PREC Z   &kp X        &kp C          &kp V          &kp B           &kp N            &lt EXT M       &lt NAV COMMA   &lt PREC DOT  &lt SYS SLASH   &mt RCTRL RET
                                            &mt LALT LBKT  &mt LCMD RBKT  &lt EXT BSPC    &mt RSHFT SPACE  &mt RCMD MINUS  &mt RALT EQUAL
             >;
@@ -130,7 +154,7 @@
         extended {
             bindings = <
 &trans  &kp F1        &kp F2        &mt LALT F3  &kp F4       &kp F5    &kp F6  &kp F7       &mt RALT F8  &kp F9        &kp F10       &kp F11
-&trans  &mt LSHFT N1  &mt LCTRL N2  &kp N3       &mt LCMD N4  &kp N5    &kp N6  &mt RCMD N7  &kp N8       &mt RCTRL N9  &mt RSHFT N0  &mt RSHFT F12
+&trans  &mt LSHFT N1  &mt LCTRL N2  &lt NAV N3   &mt LCMD N4  &kp N5    &kp N6  &mt RCMD N7  &lt NAV N8   &mt RCTRL N9  &mt RSHFT N0  &kp F12
 &trans  &trans        &trans        &trans       &trans       &trans    &trans  &trans       &trans       &trans        &trans        &trans
                                     &trans       &trans       &trans    &trans  &trans       &trans
             >;
