@@ -57,23 +57,23 @@
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
-        kp_del {
-            bindings = <&kp DEL>;
-            key-positions = <14 15>;
-            layers = <BASE EXT>;
-            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
-            timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
-        };
-
         kp_bspc {
-            bindings = <&kp BSPC>;
+            bindings = <&kp DEL>;
             key-positions = <15 16>;
             layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
-        kp_lesc {
+        kp_del {
+            bindings = <&kp BSPC>;
+            key-positions = <18 19>;
+            layers = <BASE EXT>;
+            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
+            timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
+        };
+
+        kp_esc {
             bindings = <&kp ESC>;
             key-positions = <16 17>;
             layers = <BASE EXT>;
@@ -81,15 +81,7 @@
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
-        kp_resc {
-            bindings = <&kp ESC>;
-            key-positions = <18 19>;
-            layers = <BASE EXT>;
-            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
-            timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
-        };
-
-        kp_space {
+        kp_spc {
             bindings = <&kp SPACE>;
             key-positions = <19 20>;
             layers = <BASE EXT>;
@@ -125,15 +117,6 @@
             bindings = <&tog IDLE>;
             key-positions = <17 18>;
             layers = <SYS IDLE>;
-            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
-            timeout-ms = <COMBO_SLOW_TIMEOUT_MS>;
-        };
-
-        mo_sys {
-            bindings = <&mo SYS>;
-            key-positions = <37 40>;
-            slow-release;
-            layers = <BASE>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_SLOW_TIMEOUT_MS>;
         };
