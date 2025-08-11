@@ -1,0 +1,92 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  build-firmware:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      build_matrix_path: build.yaml
+      archive_name: firmware
+
+  create-release:
+    needs: build-firmware
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download firmware artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: firmware
+          path: firmware
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          # Remove 'v' prefix if present
+          VERSION=${VERSION#v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Extract changelog for this version
+        id: changelog
+        run: |
+          # Extract the section for this version from CHANGELOG.md
+          VERSION="${{ steps.version.outputs.version }}"
+          
+          # Create a temporary file for the release notes
+          echo "# 🎉 Release v$VERSION" > release_notes.md
+          echo "" >> release_notes.md
+          
+          # Extract the changelog section for this version
+          if [ -f "CHANGELOG.md" ]; then
+            # Use awk to extract the section between the version header and the next version header
+            awk -v ver="## \\[$VERSION\\]" '
+              BEGIN { found=0; }
+              $0 ~ ver { found=1; next; }
+              found && /^## \[/ { exit; }
+              found { print; }
+            ' CHANGELOG.md >> release_notes.md
+          else
+            echo "No changelog found for version $VERSION" >> release_notes.md
+          fi
+          
+          echo "" >> release_notes.md
+          echo "## 📦 Firmware Files" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "Download the firmware files below and flash them to your keyboard:" >> release_notes.md
+          echo "- \`corne_left-nice_nano_v2-zmk.uf2\` - Left half firmware" >> release_notes.md
+          echo "- \`corne_right-nice_nano_v2-zmk.uf2\` - Right half firmware" >> release_notes.md
+          echo "" >> release_notes.md
+          echo "### 🔧 Flashing Instructions" >> release_notes.md
+          echo "1. Put the keyboard half into bootloader mode (double-tap reset button)" >> release_notes.md
+          echo "2. Copy the corresponding .uf2 file to the NICENANO drive that appears" >> release_notes.md
+          echo "3. The keyboard will automatically reboot with the new firmware" >> release_notes.md
+          echo "4. Repeat for the other half" >> release_notes.md
+          
+          # Output the path for the release
+          echo "notes_file=release_notes.md" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Release v${{ steps.version.outputs.version }}
+          body_path: ${{ steps.changelog.outputs.notes_file }}
+          files: |
+            firmware/corne_left-nice_nano_v2-zmk.uf2
+            firmware/corne_right-nice_nano_v2-zmk.uf2
+          draft: false
+          prerelease: false
+          generate_release_notes: false
