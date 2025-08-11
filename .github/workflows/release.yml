@@ -64,12 +64,7 @@ jobs:
           # Extract the changelog section for this version
           if [ -f "CHANGELOG.md" ]; then
             # Use awk to extract the section between the version header and the next version header
-            awk -v ver="## \\[$VERSION\\]" '
-              BEGIN { found=0; }
-              $0 ~ ver { found=1; next; }
-              found && /^## \[/ { exit; }
-              found { print; }
-            ' CHANGELOG.md >> release_notes.md
+            awk '/^## \['"$VERSION"'\]/ { found=1; next; } found && /^## \[/ { exit; } found { print; }' CHANGELOG.md >> release_notes.md
           else
             echo "No changelog found for version $VERSION" >> release_notes.md
           fi
