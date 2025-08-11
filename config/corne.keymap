@@ -58,7 +58,7 @@
         };
 
         kp_bspc {
-            bindings = <&kp DEL>;
+            bindings = <&kp BSPC>;
             key-positions = <15 16>;
             layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
@@ -66,8 +66,8 @@
         };
 
         kp_del {
-            bindings = <&kp BSPC>;
-            key-positions = <18 19>;
+            bindings = <&kp DEL>;
+            key-positions = <16 17>;
             layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
@@ -75,7 +75,7 @@
 
         kp_esc {
             bindings = <&kp ESC>;
-            key-positions = <16 17>;
+            key-positions = <18 19>;
             layers = <BASE EXT>;
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
@@ -113,6 +113,15 @@
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
 
+        mo_nav {
+            bindings = <&mo NAV>;
+            key-positions = <15 38>;
+            layers = <BASE EXT>;
+            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
+            timeout-ms = <COMBO_SLOW_TIMEOUT_MS>;
+            slow-release;
+        };
+
         tog_idle {
             bindings = <&tog IDLE>;
             key-positions = <17 18>;
@@ -127,9 +136,9 @@
 
         base {
             bindings = <
-&tab_esc         &kp Q        &kp W        &mt LALT E     &kp R          &kp T           &kp Y            &kp U           &mt RALT I      &kp O         &kp P           &kp BACKSLASH
-&kp LSHFT        &mt LSHFT A  &mt LCTRL S  &lt NAV D      &mt LCMD F     &kp G           &kp H            &mt RCMD J      &lt NAV K       &mt RCTRL L   &mt RSHFT SEMI  &kp APOS
-&mt LCTRL GRAVE  &lt PREC Z   &kp X        &kp C          &kp V          &kp B           &kp N            &lt EXT M       &lt NAV COMMA   &lt PREC DOT  &lt SYS SLASH   &mt RCTRL RET
+&tab_esc         &kp Q        &kp W        &mt LALT E     &kp R          &kp T           &kp Y            &kp U           &mt RALT I      &kp O        &kp P           &kp BACKSLASH
+&kp LSHFT        &mt LSHFT A  &mt LCTRL S  &lt NAV D      &mt LCMD F     &kp G           &kp H            &mt RCMD J      &lt NAV K       &mt RCTRL L  &mt RSHFT SEMI  &kp APOS
+&mt LCTRL GRAVE  &lt PREC Z   &lt SYS X    &kp C          &kp V          &kp B           &kp N            &lt EXT M       &lt PREC COMMA  &lt SYS DOT  &kp SLASH       &mt RCTRL RET
                                            &mt LALT LBKT  &mt LCMD RBKT  &lt EXT BSPC    &mt RSHFT SPACE  &mt RCMD MINUS  &mt RALT EQUAL
             >;
         };
