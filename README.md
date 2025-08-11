@@ -3,6 +3,9 @@
 ## Overview
 This ZMK configuration is designed to maximize the use of home row keys for efficient typing and navigation. It employs a hybrid approach between pure home row mods and dedicated navigation layers.
 
+## Layout
+![Layout](./layout.svg)
+
 ## Key Features
 
 ### Home Row Mods
