@@ -3,12 +3,10 @@ on:
   workflow_dispatch: # Manual trigger
   push:
     branches: [main]
-    paths:
-      - "config/*.keymap"
-      - "config/*.dtsi"
+    paths: ["config/*"]
 
 jobs:
-  draw:
+  draw-keymap:
     if: "!contains(github.event.head_commit.message, '[skip-draw]')"
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:

@@ -1,16 +1,16 @@
 name: Create Release
 
 on:
-  workflow_run:
-    workflows: ["Build ZMK firmware"]
-    types:
-      - completed
+  workflow_dispatch:
+  push:
+    tags: ["*"]
 
 jobs:
+  build-firmware:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+
   create-release:
-    if:
-      ${{ github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'push' }}
+    needs: build-firmware
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -20,77 +20,38 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
-          ref: ${{ github.event.workflow_run.head_sha }}
-
-      - name: Extract version from tag
-        id: version
-        run: |
-          TAG=$(git describe --exact-match --tags ${{ github.event.workflow_run.head_sha }} 2>/dev/null || true)
-          if [ -z "$TAG" ]; then
-            echo "is_tag=false" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          # Ensure tag matches v?MAJOR.MINOR.PATCH[...]
-          if ! echo "$TAG" | grep -Eq '^v?[0-9]+\.[0-9]+\.[0-9]+.*$'; then
-            echo "Tag $TAG does not match expected pattern v?MAJOR.MINOR.PATCH[...], skipping."
-            echo "is_tag=false" >> $GITHUB_OUTPUT
-            exit 0
-          fi
-          VERSION="${TAG#v}"
-          echo "is_tag=true" >> $GITHUB_OUTPUT
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "tag=$TAG" >> $GITHUB_OUTPUT
-
-      - name: Download firmware artifacts from build run
-        if: ${{ steps.version.outputs.is_tag == 'true' }}
-        uses: dawidd6/action-download-artifact@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          run_id: ${{ github.event.workflow_run.id }}
-          name: firmware
-          path: firmware
 
       - name: Extract changelog for this version
         id: changelog
-        if: ${{ steps.version.outputs.is_tag == 'true' }}
         run: |
-          # Extract the section for this version from CHANGELOG.md
-          VERSION="${{ steps.version.outputs.version }}"
-
-          # Create a temporary file for the release notes
-          echo "# 🎉 Release v$VERSION" > release_notes.md
-          echo "" >> release_notes.md
-
-          # Extract the changelog section for this version
-          if [ -f "CHANGELOG.md" ]; then
-            # Use awk to extract the section between the version header and the next version header
-            awk '/^## \['"$VERSION"'\]/ { found=1; next; } found && /^## \[/ { exit; } found { print; }' CHANGELOG.md >> release_notes.md
-          else
-            echo "No changelog found for version $VERSION" >> release_notes.md
+          VERSION="${GITHUB_REF_NAME}"
+          if ! grep -q "^## \['"$VERSION"'\]/" CHANGELOG.md; then
+            echo "No changelog found for version $VERSION"
+            exit 1
           fi
 
+          echo "# 🎉 Version $VERSION" > release_notes.md
+          echo "" >> release_notes.md
+          awk '/^## \['"$VERSION"'\]/ { found=1; next; } found && /^## \[/ { exit; } found { print; }' CHANGELOG.md >> release_notes.md
           echo "" >> release_notes.md
           echo "## 📦 Firmware Files" >> release_notes.md
           echo "" >> release_notes.md
-          echo "Download the firmware files below and flash them to your keyboard:" >> release_notes.md
           echo "- \`corne_left-nice_nano_v2-zmk.uf2\` - Left half firmware" >> release_notes.md
           echo "- \`corne_right-nice_nano_v2-zmk.uf2\` - Right half firmware" >> release_notes.md
           echo "" >> release_notes.md
-          echo "### 🔧 Flashing Instructions" >> release_notes.md
-          echo "1. Put the keyboard half into bootloader mode (double-tap reset button)" >> release_notes.md
-          echo "2. Copy the corresponding .uf2 file to the NICENANO drive that appears" >> release_notes.md
-          echo "3. The keyboard will automatically reboot with the new firmware" >> release_notes.md
-          echo "4. Repeat for the other half" >> release_notes.md
-
-          # Output the path for the release
           echo "notes_file=release_notes.md" >> $GITHUB_OUTPUT
 
+      - name: Download firmware artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: firmware # Assumes ZMK workflow uploads 'firmware'
+          path: firmware
+
       - name: Create GitHub Release
-        if: ${{ steps.version.outputs.is_tag == 'true' }}
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.version.outputs.tag }}
-          name: Release v${{ steps.version.outputs.version }}
+          tag_name: ${GITHUB_REF_NAME}
+          name: ${GITHUB_REF_NAME}
           body_path: ${{ steps.changelog.outputs.notes_file }}
           files: |
             firmware/corne_left-nice_nano_v2-zmk.uf2
