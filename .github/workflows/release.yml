@@ -25,7 +25,7 @@ jobs:
         id: changelog
         run: |
           VERSION="${GITHUB_REF_NAME}"
-          if ! grep -q "^## \['"$VERSION"'\]/" CHANGELOG.md; then
+          if ! grep -q "^## \\[${VERSION}\\]" CHANGELOG.md; then
             echo "No changelog found for version $VERSION"
             exit 1
           fi
@@ -50,8 +50,8 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${GITHUB_REF_NAME}
-          name: ${GITHUB_REF_NAME}
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
           body_path: ${{ steps.changelog.outputs.notes_file }}
           files: |
             firmware/corne_left-nice_nano_v2-zmk.uf2
