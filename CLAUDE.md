@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a ZMK (Zephyr Mechanical Keyboard) firmware configuration for a Corne (crkbd) split keyboard with nice_nano_v2 controllers. The configuration implements advanced features like mouse emulation, multi-layer typing with home row mods, and sophisticated power management.
+This is a ZMK (Zephyr Mechanical Keyboard) firmware configuration for a Corne (crkbd) 5-column split keyboard with nice_nano_v2 controllers. The configuration implements advanced features like mouse emulation, multi-layer typing with home row mods, and sophisticated power management.
 
 ## Build System
 
@@ -44,7 +44,7 @@ The keymap uses a sophisticated multi-layer system with consistent home row mods
 ### Key Behaviours
 - **Home Row Mods**: Aggressive use of hold-tap behaviours on home row for modifiers
 - **Combos**: Extensive combo system for common keys (TAB, SPACE, ENTER, BACKSPACE, etc.)
-- **Tap Dance**: Multi-tap behaviours (e.g., TAB/ESC, Bluetooth clear sequences)
+- **Tap Dance**: Multi-tap behaviours (e.g., Bluetooth clear sequences)
 - **Layer Taps**: Keys that act as normal keys on tap, layer switches on hold
 
 ### Advanced Features
@@ -75,12 +75,12 @@ Key timing parameters are defined at the top of `corne.keymap`:
 - Verify Bluetooth connectivity and profile switching functionality
 
 ### Key Position Reference
-The keymap uses 0-based indexing for key positions in a 3x6+3 layout:
+The keymap uses 0-based indexing for key positions in a 3x5+3 layout:
 ```
- 0  1  2  3  4  5    6  7  8  9 10 11
-12 13 14 15 16 17   18 19 20 21 22 23
-24 25 26 27 28 29   30 31 32 33 34 35
-         36 37 38   39 40 41
+ 0  1  2  3  4       5  6  7  8  9
+10 11 12 13 14      15 16 17 18 19
+20 21 22 23 24      25 26 27 28 29
+      30 31 32      33 34 35
 ```
 
 ## Important Implementation Details
@@ -101,4 +101,4 @@ The keymap uses 0-based indexing for key positions in a 3x6+3 layout:
 - Different timeout values for different combo types (fast vs slow)
 - Combos are active on both BASE and EXT layers for consistency
 
-This configuration represents a highly optimised setup for productive typing with minimal finger movement and maximum functionality in a compact 42-key layout.
+This configuration represents a highly optimised setup for productive typing with minimal finger movement and maximum functionality in a compact 36-key layout.
