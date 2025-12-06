@@ -24,6 +24,11 @@ The project uses ZMK's standard build system with GitHub Actions. Building is ty
 - Commits updated diagrams with `[skip-build]` prefix to prevent triggering firmware builds
 - Maintains `layout.svg` file automatically in sync with keymap changes
 
+### Versioning
+- Version tracked in `CHANGELOG.md` and via git tags only
+- No separate version file (no `pyproject.toml`, `package.json`, or similar)
+- Release workflow extracts version from git tags and parses changelog for release notes
+
 ## Architecture
 
 ### Configuration Files

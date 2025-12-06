@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2025-12-06
+
+### Changed
+- Convert from 6-column to 5-column layout (36 keys)
+  - Physical layout set to `foostan_corne_5col_layout`
+  - All layers reduced from 42 to 36 keys
+  - Combo key positions remapped for new numbering scheme
+  - Documentation updated with 5-column key position reference
+
 ## [1.1.3] - 2025-08-13
 
 ### Changed

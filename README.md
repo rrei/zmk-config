@@ -6,7 +6,7 @@ This ZMK configuration is designed to maximise the use of home row keys for effi
 typing and navigation. It employs a hybrid approach between pure home row mods and
 dedicated navigation layers.
 
-- **Hardware:** Corne (6 columns, 42 keys) with nice!nano v2 controllers
+- **Hardware:** Corne (5 columns, 36 keys) with nice!nano v2 controllers
 - **Features:** Mouse emulation, home row mods, extensive combos, power management
 
 ## Layout
