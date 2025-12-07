@@ -11,7 +11,7 @@ dedicated navigation layers.
 
 ## Layout
 
-![Layout](./layout.svg)
+![Layout](./diagrams/corne.svg)
 
 _Diagram automatically updates when keymap changes_
 

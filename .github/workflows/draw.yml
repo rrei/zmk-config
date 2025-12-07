@@ -13,5 +13,5 @@ jobs:
       contents: write
     with:
       keymap_patterns: "config/*.keymap"
-      output_folder: "./"
+      output_folder: "./diagrams/"
       commit_message: "[skip-build] Update keymap diagram"
