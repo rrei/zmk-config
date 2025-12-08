@@ -31,12 +31,12 @@ layers:
   - {t: ',', h: precision}
   - {t: ., h: system}
   - /
-  - {t: '[', h: LALT}
+  - ''
   - {t: ']', h: LCMD}
   - {t: BSPC, h: extended}
   - {t: SPACE, h: RSHFT}
   - {t: '-', h: RCMD}
-  - {t: '=', h: RALT}
+  - ''
   extended:
   - F1
   - F2
@@ -68,12 +68,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
   navigation:
   - {t: ▽, type: trans}
   - '&msc SCRL_RIGHT'
@@ -104,13 +104,12 @@ layers:
   - '&mkp LCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
   - {t: ▽, type: trans}
   - {t: BSPC, h: navigation}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
   precision:
   - {t: ▽, type: trans}
   - '&msc SCRL_RIGHT'
@@ -141,13 +140,12 @@ layers:
   - '&mkp LCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
   - {t: ▽, type: trans}
   - {t: BSPC, h: navigation}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
   system:
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
