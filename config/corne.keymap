@@ -116,23 +116,6 @@
             require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
             timeout-ms = <COMBO_FAST_TIMEOUT_MS>;
         };
-
-        mo_nav {
-            bindings = <&mo NAV>;
-            key-positions = <12 32>;
-            layers = <BASE EXT>;
-            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
-            timeout-ms = <COMBO_SLOW_TIMEOUT_MS>;
-            slow-release;
-        };
-
-        tog_idle {
-            bindings = <&tog IDLE>;
-            key-positions = <14 15>;
-            layers = <SYS IDLE>;
-            require-prior-idle-ms = <COMBO_REQUIRE_PRIOR_IDLE_MS>;
-            timeout-ms = <COMBO_SLOW_TIMEOUT_MS>;
-        };
     };
 
     keymap {
@@ -180,15 +163,6 @@
 &none         &kp C_PREV    &kp C_PP      &kp C_NEXT    &none           &none  &kp C_VOL_DN  &kp C_BRI_DN  &none  &none
 &none         &none         &none         &none         &none           &none  &kp C_MUTE    &none         &none  &none
                            &none         &none         &none           &none  &none         &none
-            >;
-        };
-
-        idle {
-            bindings = <
-&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
-               &none  &none  &none    &none  &none  &none
             >;
         };
     };
