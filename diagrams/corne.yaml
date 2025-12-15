@@ -1,4 +1,4 @@
-layout: {zmk_keyboard: corne, layout_name: foostan_corne_5col_layout}
+layout: {zmk_keyboard: corne, layout_name: five_column_transform}
 layers:
   base:
   - Q
@@ -22,20 +22,20 @@ layers:
   - {t: L, h: RCTRL}
   - {t: ;, h: RSHFT}
   - {t: Z, h: precision}
-  - {t: X, h: system}
+  - X
   - C
-  - V
-  - B
-  - N
+  - {t: V, h: extended}
+  - {t: B, h: system}
+  - {t: N, h: system}
   - {t: M, h: extended}
-  - {t: ',', h: precision}
-  - {t: ., h: system}
-  - /
+  - ','
+  - .
+  - {t: /, h: precision}
   - ''
-  - {t: ']', h: LCMD}
-  - {t: BSPC, h: extended}
-  - {t: SPACE, h: RSHFT}
-  - {t: '-', h: RCMD}
+  - {t: '[', h: LCMD}
+  - {t: ']', h: LSHFT}
+  - {t: '-', h: extended}
+  - {t: '=', h: RALT}
   - ''
   extended:
   - F1
@@ -58,13 +58,13 @@ layers:
   - {t: '8', h: navigation}
   - {t: '9', h: RCTRL}
   - {t: '0', h: RSHFT}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
+  - {t: '`', h: precision}
+  - '~'
+  - \
+  - {t: '|', type: held}
+  - ''
+  - {t: '''', h: system}
+  - {t: '"', h: extended}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -107,7 +107,7 @@ layers:
   - {t: ▽, type: trans}
   - ''
   - {t: ▽, type: trans}
-  - {t: BSPC, h: navigation}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
@@ -144,7 +144,7 @@ layers:
   - {t: ▽, type: trans}
   - ''
   - {t: ▽, type: trans}
-  - {t: BSPC, h: navigation}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
@@ -159,7 +159,7 @@ layers:
   - BRI UP
   - ''
   - ''
-  - ''
+  - '&bt_clr'
   - PREV
   - PP
   - NEXT
@@ -170,10 +170,10 @@ layers:
   - ''
   - ''
   - ''
+  - ''
+  - ''
+  - ''
   - {type: held}
-  - ''
-  - ''
-  - ''
   - ''
   - MUTE
   - ''
@@ -185,7 +185,6 @@ layers:
   - ''
   - ''
   - ''
-  idle: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
 - p: [2, 3]
   k: TAB
@@ -211,9 +210,3 @@ combos:
 - p: [26, 27]
   k: )
   l: [base, extended]
-- p: [12, 32]
-  k: navigation
-  l: [base, extended]
-- p: [14, 15]
-  k: {t: idle, h: toggle}
-  l: [system, idle]
