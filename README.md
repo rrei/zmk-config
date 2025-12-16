@@ -35,22 +35,15 @@ _Diagram automatically updates when keymap changes_
 
 ### Precision Layer
 
-- **Access**: Hold `Z` or `,` keys from base layer
+- **Access**: Hold `Z` or `/` keys from base layer
 - **Function**: Identical to navigation layer with 1/3 speed mouse movement
 - **Purpose**: Fine-grained control for precise cursor positioning tasks
 
 ### System Layer
 
-- **Access**: Hold `X` or `.` keys from base layer
+- **Access**: Hold `B` or `N` keys from base layer
 - **Bluetooth**: Profile switching and clearing (tap-dance sequences)
-- **Keyboard**: Reset halves, soft-off mode (3-second hold)
 - **Media**: Volume, brightness, and playback controls
-
-### Idle Layer
-
-- **Access**: Combo through system layer (`G` + `H`)
-- **Purpose**: Disables all keys for safe keyboard transport
-- **Exit**: Same combo or power cycle keyboard
 
 ### Combos
 
@@ -64,7 +57,6 @@ _Diagram automatically updates when keymap changes_
 - **Idle timeout**: 5 minutes before entering idle state
 - **Deep sleep**: 10 minutes before entering deep sleep mode
 - **Wake**: Any key press wakes keyboard from deep sleep
-- **Soft-off**: Manual transport mode via 3-second system layer hold
 
 ## Building & Flashing
 

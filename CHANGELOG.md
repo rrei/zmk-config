@@ -2,12 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and
+this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Next]
+
+### Changed
+
+- Keymap: update Corne layers and combo configuration
+
+### Fixed
+
+- Build: restore `zmk,physical-layout` chosen property for Corne shield builds
+
+### Documentation
+
+- Align `README.md` and `CLAUDE.md` with current layers, timings, and CI workflows
 
 ## [2.0.0] - 2025-12-06
 
 ### Changed
+
 - Convert from 6-column to 5-column layout (36 keys)
   - Physical layout set to `foostan_corne_5col_layout`
   - All layers reduced from 42 to 36 keys
@@ -17,19 +32,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.3] - 2025-08-13
 
 ### Changed
+
 - Changelog: add missing entry for 1.1.2 and prepare upcoming release.
 
 ## [1.1.2] - 2025-08-12
 
 ### Changed
+
 - CI: GitHub Actions workflows refined
-  - Build: trigger only on main changes under `config/`, ignore tag refs; job renamed to `build-firmware`
+  - Build: trigger only on main changes under `config/`, ignore tag refs; job renamed to
+    `build-firmware`
   - Draw: trigger only on main changes under `config/`; job renamed to `draw-keymap`
   - Release: switch to tag/manual triggers and bundle firmware artifacts in release
 
 ## [1.1.1] - 2025-08-12
 
 ### Changed
+
 - Release workflow improvements
   - Now triggers on successful build completion instead of tag push
   - Enhanced changelog extraction script to properly parse version sections
@@ -38,6 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2025-08-11
 
 ### Added
+
 - Automated keymap diagram generation workflow via GitHub Actions
   - Automatically generates SVG diagrams on keymap changes
   - Commits updated diagrams with `[skip-build]` prefix
@@ -49,6 +69,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - YAML configuration for keymap-drawer
 
 ### Changed
+
 - Keymap improvements
   - Refactored tap dance behaviours for better consistency
   - Improved combo system with better positioning and timing
@@ -61,6 +82,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Tweaked combo keys and positions for better ergonomics
 
 ### Fixed
+
 - Build workflow configuration to properly skip builds on diagram updates
 - Combo triggering issues that interfered with normal typing
 

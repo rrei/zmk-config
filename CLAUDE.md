@@ -27,9 +27,10 @@ west tool (though not commonly needed for keymap changes).
 
 ### Automated Diagram Generation
 
-- Keymap diagrams automatically generated via `.github/workflows/draw-keymap.yml`
+- Keymap diagrams automatically generated via `.github/workflows/draw.yml`
 - Triggers on changes to `config/*.keymap` or `config/*.dtsi` files
 - Uses `caksoylar/keymap-drawer` action to generate SVG layout diagrams
+- Skips running on commits containing `[skip-draw]`
 - Commits updated diagrams with `[skip-build]` prefix to prevent triggering firmware
   builds
 - Maintains `diagrams/corne.svg` file automatically in sync with keymap changes
@@ -49,7 +50,7 @@ west tool (though not commonly needed for keymap changes).
 - `config/corne.conf`: ZMK configuration flags (mouse support, sleep settings, soft-off)
 - `config/west.yml`: West workspace configuration pointing to ZMK main branch
 
-### Layer Structure (6 layers total)
+### Layer Structure (5 layers total)
 
 The keymap uses a sophisticated multi-layer system with consistent home row mods:
 
@@ -59,7 +60,6 @@ The keymap uses a sophisticated multi-layer system with consistent home row mods
 4. **PREC (3)**: Precision layer (identical to NAV but with 1/3 speed mouse movement)
 5. **SYS (4)**: System layer for Bluetooth management, media controls, and keyboard
    resets
-6. **IDLE (5)**: Safety layer that disables all keys to prevent accidental input
 
 ### Key Behaviours
 
@@ -74,7 +74,7 @@ The keymap uses a sophisticated multi-layer system with consistent home row mods
 - **Mouse Emulation**: Full mouse control via pointing device support with configurable
   sensitivity
 - **Precision Mode**: Reduced sensitivity mouse movement for fine control
-- **Power Management**: Deep sleep after 10-15 minutes, soft-off mode for transport
+- **Power Management**: Deep sleep after 10 minutes
 - **Bluetooth Management**: Multi-profile support with profile switching and clearing
 
 ### Configuration Parameters
@@ -82,8 +82,7 @@ The keymap uses a sophisticated multi-layer system with consistent home row mods
 Key timing parameters are defined at the top of `corne.keymap`:
 
 - `HOLD_TAP_TAPPING_TERM_MS`: 250ms for hold-tap recognition
-- `COMBO_*_TIMEOUT_MS`: Fast (25ms) and slow (75ms) combo timeouts
-- `SOFT_OFF_HOLD_TIME_MS`: 3 seconds to activate soft-off mode
+- `COMBO_TIMEOUT_MS`: 25ms combo timeout
 
 ## Development Workflow
 
@@ -128,13 +127,12 @@ The keymap uses 0-based indexing for key positions in a 3x5+3 layout:
 
 - Idle timeout: 5 minutes before entering idle state
 - Sleep timeout: 10 minutes before deep sleep
-- Soft-off requires 3-second hold and affects both halves simultaneously
 - Keyboard wakes on any key press from deep sleep
 
 ### Combo System Design
 
 - Combos use `require-prior-idle-ms` to prevent interference with normal typing
-- Different timeout values for different combo types (fast vs slow)
+- Short combo timeout to reduce typing interference
 - Combos are active on both BASE and EXT layers for consistency
 
 This configuration represents a highly optimised setup for productive typing with
