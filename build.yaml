@@ -6,7 +6,7 @@
 # `artifact-name` to assign a name to distinguish build outputs from each other.
 #
 board:
-- nice_nano_v2
+- nice_nano
 shield:
 - corne_left
 - corne_right
