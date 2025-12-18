@@ -114,10 +114,10 @@
 
         base {
             bindings = <
-  &kp Q        &kp W        &mt LALT E  &kp R          &kp T             &kp Y          &kp U           &mt RALT I  &kp O        &kp P
-  &mt LSHFT A  &mt LCTRL S  &lt NAV D   &mt LCMD F     &kp G             &kp H          &mt RCMD J      &lt NAV K   &mt RCTRL L  &mt RSHFT SEMI
-  &lt PREC Z   &kp X        &kp C       &lt EXT V      &lt SYS B         &lt SYS N      &lt EXT M       &kp COMMA   &kp PERIOD   &lt PREC SLASH
-                            &none       &mt LCMD LBKT  &mt LSHFT RBKT    &lt EXT MINUS  &mt RALT EQUAL  &none
+  &kp Q        &kp W        &mt LALT E  &kp R          &kp T             &kp Y            &kp U          &mt RALT I  &kp O        &kp P
+  &mt LSHFT A  &mt LCTRL S  &lt NAV D   &mt LCMD F     &kp G             &kp H            &mt RCMD J     &lt NAV K   &mt RCTRL L  &mt RSHFT SEMI
+  &lt PREC Z   &kp X        &kp C       &lt EXT V      &lt SYS B         &lt SYS N        &lt EXT M      &kp COMMA   &kp PERIOD   &lt PREC SLASH
+                            &none       &mt LALT LBKT  &mt LCMD RBKT     &mt RSHFT MINUS  &lt EXT EQUAL  &none
             >;
         };
 
@@ -134,7 +134,7 @@
             bindings = <
   &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP  &kp HOME   &kp UP    &kp END    &trans
   &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN  &kp LEFT   &kp DOWN  &kp RIGHT  &trans
-  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK  &mkp LCLK  &trans    &trans     &trans
+  &lt PREC GRAVE  &kp TILDE       &kp BACKSLASH  &mkp LCLK        &mkp RCLK         &mkp RCLK  &mkp LCLK  &kp PIPE  &kp SQT    &lt PREC DQT
                            &none           &trans           &trans            &trans     &trans     &none
             >;
         };
