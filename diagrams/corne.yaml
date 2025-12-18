@@ -32,10 +32,10 @@ layers:
   - .
   - {t: /, h: precision}
   - ''
-  - {t: '[', h: LCMD}
-  - {t: ']', h: LSHFT}
-  - {t: '-', h: extended}
-  - {t: '=', h: RALT}
+  - {t: '[', h: LALT}
+  - {t: ']', h: LCMD}
+  - {t: '-', h: RSHFT}
+  - {t: '=', h: extended}
   - ''
   extended:
   - F1
@@ -95,16 +95,16 @@ layers:
   - DOWN
   - RIGHT
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '`', h: precision}
+  - '~'
+  - \
   - '&mkp LCLK'
   - '&mkp RCLK'
   - '&mkp RCLK'
   - '&mkp LCLK'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '|'
+  - ''''
+  - {t: '"', h: precision}
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
