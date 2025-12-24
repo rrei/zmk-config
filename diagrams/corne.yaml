@@ -3,12 +3,12 @@ layers:
   base:
   - Q
   - W
-  - {t: E, h: navigation}
-  - {t: R, h: extended}
+  - E
+  - R
   - T
   - Y
-  - {t: U, h: extended}
-  - {t: I, h: navigation}
+  - U
+  - I
   - O
   - P
   - {t: A, h: LSHFT}
@@ -23,12 +23,12 @@ layers:
   - {t: ;, h: RSHFT}
   - Z
   - X
-  - C
-  - V
+  - {t: C, h: navigation}
+  - {t: V, h: extended}
   - B
   - N
-  - M
-  - ','
+  - {t: M, h: extended}
+  - {t: ',', h: navigation}
   - .
   - /
   - ''
@@ -40,12 +40,12 @@ layers:
   extended:
   - F1
   - F2
-  - {t: F3, h: navigation}
-  - {t: F4, h: extended, type: held}
+  - F3
+  - F4
   - F5
   - F6
-  - {t: F7, h: extended}
-  - {t: F8, h: navigation}
+  - F7
+  - F8
   - F9
   - F10
   - {t: '1', h: LSHFT}
@@ -61,7 +61,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -77,7 +77,7 @@ layers:
   navigation:
   - {t: ▽, type: trans}
   - '&msc SCRL_RIGHT'
-  - {t: '&mmv MOVE_UP', type: held}
+  - '&mmv MOVE_UP'
   - '&msc SCRL_LEFT'
   - '&msc SCRL_DOWN'
   - PG UP
@@ -97,7 +97,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - '&mkp LCLK'
   - '&mkp RCLK'
   - '&mkp RCLK'
@@ -114,8 +114,8 @@ layers:
   system:
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
-  - {t: BT, h: '2', type: held}
-  - {t: BT, h: '3', type: held}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
   - {t: BT, h: '4'}
   - ''
   - ''
@@ -134,8 +134,8 @@ layers:
   - RSHFT
   - ''
   - ''
-  - BRI DN
-  - VOL DN
+  - {t: BRI DN, type: held}
+  - {t: VOL DN, type: held}
   - ''
   - ''
   - ''
