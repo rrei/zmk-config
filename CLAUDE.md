@@ -123,6 +123,28 @@ Key timing parameters defined in `corne.keymap`:
 - Test combos and layer switching thoroughly after firmware updates
 - Verify Bluetooth connectivity and profile switching functionality
 
+### Debugging Devicetree Errors
+
+Use `cpp -E` to preview how C preprocessor macros expand before devicetree compilation:
+
+```bash
+# Show full preprocessed output
+cpp -E config/corne.keymap
+
+# Filter to specific section (e.g., combos)
+cpp -E config/corne.keymap 2>/dev/null | sed -n '/combos {/,/^    };$/p'
+
+# Check specific macro expansion
+cpp -E config/corne.keymap 2>/dev/null | grep "kp_tab_fast"
+```
+
+This is useful for debugging devicetree parse errors, as ZMK's error column numbers refer
+to the **post-expansion** output, not the original source file.
+
+**Note**: Local `cpp` won't have ZMK's include paths, so ZMK-specific headers (like
+`dt-bindings/zmk/keys.h`) won't expand. But it's still useful for checking custom macro
+definitions like COMBO, HRM, etc.
+
 ### Key Position Reference
 
 The keymap uses 0-based indexing for key positions in a 3x5+3 layout. Note that keys 30
