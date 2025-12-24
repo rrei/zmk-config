@@ -101,9 +101,9 @@
         SLOW_COMBO(kp_bspc_slow, &kp BSPC,  12 31);
         SLOW_COMBO(kp_del_slow,  &kp DEL,   13 31);
 
-        SLOW_COMBO(kp_ret_slow,  &kp RET,    7 35);
-        SLOW_COMBO(kp_esc_slow,  &kp ESC,   16 35);
-        SLOW_COMBO(kp_spc_slow,  &kp SPACE, 17 35);
+        SLOW_COMBO(kp_ret_slow,  &kp RET,    7 34);
+        SLOW_COMBO(kp_esc_slow,  &kp ESC,   16 34);
+        SLOW_COMBO(kp_spc_slow,  &kp SPACE, 17 34);
 
         // EXT and NAV layer activation.
         SLOW_COMBO(mo_nav_l,     &mo NAV,   32 12);
