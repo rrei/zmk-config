@@ -101,17 +101,17 @@
 
         base {
             bindings = <
-  &kp Q        &kp W        &kp E       &kp R           &kp T           &kp Y            &kp U          &kp I          &kp O        &kp P
-  &hl LSHFT A  &hl LCTRL S  &hl LALT D  &hl LCMD F      &kp G           &kp H            &hr RCMD J     &hr RALT K     &hr RCTRL L  &hr RSHFT SEMI
-  &kp Z        &kp X        &lt NAV C   &lt EXT V       &kp B           &kp N            &lt EXT M      &lt NAV COMMA  &kp PERIOD   &kp SLASH
+  &kp Q        &kp W        &hl LALT E  &kp R           &kp T           &kp Y            &kp U          &hr RALT I     &kp O        &kp P
+  &hl LSHFT A  &hl LCTRL S  &lt NAV D   &hl LCMD F      &kp G           &kp H            &hr RCMD J     &lt NAV K      &hr RCTRL L  &hr RSHFT SEMI
+  &kp Z        &kp X        &lt EXT C   &kp V           &kp B           &kp N            &kp M          &lt EXT COMMA  &kp PERIOD   &kp SLASH
                             &none       &mt LALT GRAVE  &mt LCMD SQT    &mt RSHFT MINUS  &lt EXT EQUAL  &none
             >;
         };
 
         extended {
             bindings = <
-  &kp F1        &kp F2        &kp F3       &kp F4         &kp F5           &kp F6          &kp F7        &kp F8       &kp F9        &kp F10
-  &hl LSHFT N1  &hl LCTRL N2  &hl LALT N3  &hl LCMD N4    &kp N5           &kp N6          &hr RCMD N7   &hr RALT N8  &hr RCTRL N9  &hr RSHFT N0
+  &kp F1        &kp F2        &hl LALT F3  &kp F4         &kp F5           &kp F6          &kp F7        &hr RALT F8  &kp F9        &kp F10
+  &hl LSHFT N1  &hl LCTRL N2  &lt NAV N3   &hl LCMD N4    &kp N5           &kp N6          &hr RCMD N7   &lt NAV N8   &hr RCTRL N9  &hr RSHFT N0
   &trans        &trans        &trans       &trans         &trans           &trans          &trans        &trans       &trans        &kp BACKSLASH
                               &none        &mt LALT LPAR  &mt LCMD RPAR    &mt RSHFT LBKT  &lt EXT RBKT  &none
             >;
