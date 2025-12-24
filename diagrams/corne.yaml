@@ -3,118 +3,81 @@ layers:
   base:
   - Q
   - W
-  - {t: E, h: LALT}
-  - R
+  - {t: E, h: navigation}
+  - {t: R, h: extended}
   - T
   - Y
-  - U
-  - {t: I, h: RALT}
+  - {t: U, h: extended}
+  - {t: I, h: navigation}
   - O
   - P
   - {t: A, h: LSHFT}
   - {t: S, h: LCTRL}
-  - {t: D, h: navigation}
+  - {t: D, h: LALT}
   - {t: F, h: LCMD}
   - G
   - H
   - {t: J, h: RCMD}
-  - {t: K, h: navigation}
+  - {t: K, h: RALT}
   - {t: L, h: RCTRL}
   - {t: ;, h: RSHFT}
-  - {t: Z, h: precision}
+  - Z
   - X
   - C
-  - {t: V, h: extended}
-  - {t: B, h: system}
-  - {t: N, h: system}
-  - {t: M, h: extended}
+  - V
+  - B
+  - N
+  - M
   - ','
   - .
-  - {t: /, h: precision}
+  - /
   - ''
-  - {t: '[', h: LALT}
-  - {t: ']', h: LCMD}
+  - {t: '`', h: LALT}
+  - {t: '''', h: LCMD}
   - {t: '-', h: RSHFT}
   - {t: '=', h: extended}
   - ''
   extended:
   - F1
   - F2
-  - {t: F3, h: LALT}
-  - F4
+  - {t: F3, h: navigation}
+  - {t: F4, h: extended, type: held}
   - F5
   - F6
-  - F7
-  - {t: F8, h: RALT}
+  - {t: F7, h: extended}
+  - {t: F8, h: navigation}
   - F9
   - F10
   - {t: '1', h: LSHFT}
   - {t: '2', h: LCTRL}
-  - {t: '3', h: navigation}
+  - {t: '3', h: LALT}
   - {t: '4', h: LCMD}
   - '5'
   - '6'
   - {t: '7', h: RCMD}
-  - {t: '8', h: navigation}
+  - {t: '8', h: RALT}
   - {t: '9', h: RCTRL}
   - {t: '0', h: RSHFT}
-  - {t: '`', h: precision}
-  - '~'
-  - \
-  - {t: '|', type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BSLASH
   - ''
-  - {t: '''', h: system}
-  - {t: '"', h: extended}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: (, h: LALT}
+  - {t: ), h: LCMD}
+  - {t: '[', h: RSHFT}
+  - {t: ']', h: extended}
   - ''
   navigation:
   - {t: ▽, type: trans}
   - '&msc SCRL_RIGHT'
-  - '&mmv MOVE_UP'
-  - '&msc SCRL_LEFT'
-  - '&msc SCRL_DOWN'
-  - PG UP
-  - HOME
-  - UP
-  - END
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&mmv MOVE_LEFT'
-  - {t: '&mmv MOVE_DOWN', type: held}
-  - '&mmv MOVE_RIGHT'
-  - '&msc SCRL_UP'
-  - PG DN
-  - LEFT
-  - DOWN
-  - RIGHT
-  - {t: ▽, type: trans}
-  - {t: '`', h: precision}
-  - '~'
-  - \
-  - '&mkp LCLK'
-  - '&mkp RCLK'
-  - '&mkp RCLK'
-  - '&mkp LCLK'
-  - '|'
-  - ''''
-  - {t: '"', h: precision}
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  precision:
-  - {t: ▽, type: trans}
-  - '&msc SCRL_RIGHT'
-  - '&mmv MOVE_UP'
+  - {t: '&mmv MOVE_UP', type: held}
   - '&msc SCRL_LEFT'
   - '&msc SCRL_DOWN'
   - PG UP
@@ -132,7 +95,7 @@ layers:
   - DOWN
   - RIGHT
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mkp LCLK'
@@ -141,41 +104,38 @@ layers:
   - '&mkp LCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BSLASH
   - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: (, h: LALT}
+  - {t: ), h: LCMD}
+  - {t: '[', h: RSHFT}
+  - {t: ']', h: extended}
   - ''
   system:
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
+  - {t: BT, h: '2', type: held}
+  - {t: BT, h: '3', type: held}
   - {t: BT, h: '4'}
   - ''
-  - VOL UP
+  - ''
+  - ''
+  - ''
+  - {h: BT CLR}
+  - LSHFT
+  - ''
   - BRI UP
+  - VOL UP
   - ''
   - ''
-  - '&bt_clr'
   - PREV
   - PP
   - NEXT
+  - RSHFT
   - ''
   - ''
-  - VOL DN
   - BRI DN
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {type: held}
-  - ''
-  - MUTE
+  - VOL DN
   - ''
   - ''
   - ''
@@ -183,6 +143,9 @@ layers:
   - ''
   - ''
   - ''
+  - ''
+  - ''
+  - RSHFT
   - ''
   - ''
 combos:
@@ -195,18 +158,42 @@ combos:
 - p: [13, 14]
   k: DEL
   l: [base, extended]
+- p: [6, 7]
+  k: RET
+  l: [base, extended]
 - p: [15, 16]
   k: ESC
   l: [base, extended]
 - p: [16, 17]
   k: SPACE
   l: [base, extended]
-- p: [6, 7]
+- p: [2, 31]
+  k: TAB
+  l: [base, extended]
+- p: [12, 31]
+  k: BSPC
+  l: [base, extended]
+- p: [13, 31]
+  k: DEL
+  l: [base, extended]
+- p: [7, 35]
   k: RET
   l: [base, extended]
-- p: [22, 23]
-  k: (
+- p: [16, 35]
+  k: ESC
   l: [base, extended]
-- p: [26, 27]
-  k: )
+- p: [17, 35]
+  k: SPACE
+  l: [base, extended]
+- p: [32, 12]
+  k: navigation
+  l: [base, extended]
+- p: [33, 17]
+  k: navigation
+  l: [base, extended]
+- p: [32, 13]
+  k: extended
+  l: [base, extended]
+- p: [33, 16]
+  k: extended
   l: [base, extended]
