@@ -3,32 +3,32 @@ layers:
   base:
   - Q
   - W
-  - E
+  - {t: E, h: LALT}
   - R
   - T
   - Y
   - U
-  - I
+  - {t: I, h: RALT}
   - O
   - P
   - {t: A, h: LSHFT}
   - {t: S, h: LCTRL}
-  - {t: D, h: LALT}
+  - {t: D, h: navigation}
   - {t: F, h: LCMD}
   - G
   - H
   - {t: J, h: RCMD}
-  - {t: K, h: RALT}
+  - {t: K, h: navigation}
   - {t: L, h: RCTRL}
   - {t: ;, h: RSHFT}
   - Z
   - X
-  - {t: C, h: navigation}
-  - {t: V, h: extended}
+  - {t: C, h: extended}
+  - V
   - B
   - N
-  - {t: M, h: extended}
-  - {t: ',', h: navigation}
+  - M
+  - {t: ',', h: extended}
   - .
   - /
   - ''
@@ -40,28 +40,28 @@ layers:
   extended:
   - F1
   - F2
-  - F3
+  - {t: F3, h: LALT}
   - F4
   - F5
   - F6
   - F7
-  - F8
+  - {t: F8, h: RALT}
   - F9
   - F10
   - {t: '1', h: LSHFT}
   - {t: '2', h: LCTRL}
-  - {t: '3', h: LALT}
+  - {t: '3', h: navigation}
   - {t: '4', h: LCMD}
   - '5'
   - '6'
   - {t: '7', h: RCMD}
-  - {t: '8', h: RALT}
+  - {t: '8', h: navigation}
   - {t: '9', h: RCTRL}
   - {t: '0', h: RSHFT}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -87,7 +87,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&mmv MOVE_LEFT'
-  - '&mmv MOVE_DOWN'
+  - {t: '&mmv MOVE_DOWN', type: held}
   - '&mmv MOVE_RIGHT'
   - '&msc SCRL_UP'
   - PG DN
@@ -97,7 +97,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - '&mkp LCLK'
   - '&mkp RCLK'
   - '&mkp RCLK'
@@ -124,7 +124,7 @@ layers:
   - {h: BT CLR}
   - LSHFT
   - ''
-  - BRI UP
+  - {t: BRI UP, type: held}
   - VOL UP
   - ''
   - ''
@@ -135,7 +135,7 @@ layers:
   - ''
   - ''
   - {t: BRI DN, type: held}
-  - {t: VOL DN, type: held}
+  - VOL DN
   - ''
   - ''
   - ''
