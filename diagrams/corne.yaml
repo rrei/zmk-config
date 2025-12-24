@@ -176,13 +176,13 @@ combos:
 - p: [13, 31]
   k: DEL
   l: [base, extended]
-- p: [7, 35]
+- p: [7, 34]
   k: RET
   l: [base, extended]
-- p: [16, 35]
+- p: [16, 34]
   k: ESC
   l: [base, extended]
-- p: [17, 35]
+- p: [17, 34]
   k: SPACE
   l: [base, extended]
 - p: [32, 12]

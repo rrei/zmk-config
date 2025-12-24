@@ -333,22 +333,22 @@ path.combo {
 <text x="213" y="152" class="combo tap">DEL</text>
 </g>
 <g class="combo combopos-9">
-<path d="M574,116 l11,-70" class="combo"/>
-<path d="M574,116 l-11,70" class="combo"/>
-<rect rx="6" ry="6" x="560" y="103" width="28" height="26" class="combo"/>
-<text x="574" y="116" class="combo tap">RET</text>
+<path d="M543,121 l37,-76" class="combo"/>
+<path d="M543,121 l-37,76" class="combo"/>
+<rect rx="6" ry="6" x="529" y="108" width="28" height="26" class="combo"/>
+<text x="543" y="121" class="combo tap">RET</text>
 </g>
 <g class="combo combopos-10">
-<path d="M546,148 l-10,-39" class="combo"/>
-<path d="M546,148 l10,39" class="combo"/>
-<rect rx="6" ry="6" x="532" y="135" width="28" height="26" class="combo"/>
-<text x="546" y="148" class="combo tap">ESC</text>
+<path d="M515,152 l12,-43" class="combo"/>
+<path d="M515,152 l-12,43" class="combo"/>
+<rect rx="6" ry="6" x="501" y="139" width="28" height="26" class="combo"/>
+<text x="515" y="152" class="combo tap">ESC</text>
 </g>
 <g class="combo combopos-11">
-<path d="M574,144 l10,-42" class="combo"/>
-<path d="M574,144 l-10,42" class="combo"/>
-<rect rx="6" ry="6" x="560" y="131" width="28" height="26" class="combo"/>
-<text x="574" y="144" class="combo tap">SPACE</text>
+<path d="M543,149 l34,-49" class="combo"/>
+<path d="M543,149 l-34,49" class="combo"/>
+<rect rx="6" ry="6" x="529" y="136" width="28" height="26" class="combo"/>
+<text x="543" y="149" class="combo tap">SPACE</text>
 </g>
 <g class="combo combopos-12">
 <path d="M218,154 l64,58" class="combo"/>
@@ -589,22 +589,22 @@ path.combo {
 <text x="213" y="152" class="combo tap">DEL</text>
 </g>
 <g class="combo combopos-9">
-<path d="M574,116 l11,-70" class="combo"/>
-<path d="M574,116 l-11,70" class="combo"/>
-<rect rx="6" ry="6" x="560" y="103" width="28" height="26" class="combo"/>
-<text x="574" y="116" class="combo tap">RET</text>
+<path d="M543,121 l37,-76" class="combo"/>
+<path d="M543,121 l-37,76" class="combo"/>
+<rect rx="6" ry="6" x="529" y="108" width="28" height="26" class="combo"/>
+<text x="543" y="121" class="combo tap">RET</text>
 </g>
 <g class="combo combopos-10">
-<path d="M546,148 l-10,-39" class="combo"/>
-<path d="M546,148 l10,39" class="combo"/>
-<rect rx="6" ry="6" x="532" y="135" width="28" height="26" class="combo"/>
-<text x="546" y="148" class="combo tap">ESC</text>
+<path d="M515,152 l12,-43" class="combo"/>
+<path d="M515,152 l-12,43" class="combo"/>
+<rect rx="6" ry="6" x="501" y="139" width="28" height="26" class="combo"/>
+<text x="515" y="152" class="combo tap">ESC</text>
 </g>
 <g class="combo combopos-11">
-<path d="M574,144 l10,-42" class="combo"/>
-<path d="M574,144 l-10,42" class="combo"/>
-<rect rx="6" ry="6" x="560" y="131" width="28" height="26" class="combo"/>
-<text x="574" y="144" class="combo tap">SPACE</text>
+<path d="M543,149 l34,-49" class="combo"/>
+<path d="M543,149 l-34,49" class="combo"/>
+<rect rx="6" ry="6" x="529" y="136" width="28" height="26" class="combo"/>
+<text x="543" y="149" class="combo tap">SPACE</text>
 </g>
 <g class="combo combopos-12">
 <path d="M218,154 l64,58" class="combo"/>
