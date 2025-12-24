@@ -82,34 +82,32 @@
     // └────┴────┴────┼────┼────┼────┐       ┌────┼────┼────┼────┴────┴────┘
     //                │ 30 │ 31 │ 32 │       │ 33 │ 34 │ 35 │
     //                └────┴────┴────┘       └────┴────┴────┘
-
-
     combos {
         compatible = "zmk,combos";
 
         // Fast combos for very common keys: tab, backspace, delete, enter, escape, space.
-        FAST_COMBO(kp_tab_fast, &kp TAB, 2 3);
-        FAST_COMBO(kp_bspc_fast, &kp BSPC, 12 13);
-        FAST_COMBO(kp_del_fast, &kp DEL, 13 14);
+        FAST_COMBO(kp_tab_fast,  &kp TAB,    2  3);
+        FAST_COMBO(kp_bspc_fast, &kp BSPC,  12 13);
+        FAST_COMBO(kp_del_fast,  &kp DEL,   13 14);
 
-        FAST_COMBO(kp_ret_fast, &kp RET, 6 7);
-        FAST_COMBO(kp_esc_fast, &kp ESC, 15 16);
-        FAST_COMBO(kp_spc_fast, &kp SPACE, 16 17);
+        FAST_COMBO(kp_ret_fast,  &kp RET,    6  7);
+        FAST_COMBO(kp_esc_fast,  &kp ESC,   15 16);
+        FAST_COMBO(kp_spc_fast,  &kp SPACE, 16 17);
 
         // Slow alternatives to the fast combos above.
-        SLOW_COMBO(kp_tab_slow, &kp TAB, 2 31);
-        SLOW_COMBO(kp_bspc_slow, &kp BSPC, 12 31);
-        SLOW_COMBO(kp_del_slow, &kp DEL, 13 31);
+        SLOW_COMBO(kp_tab_slow,  &kp TAB,    2 31);
+        SLOW_COMBO(kp_bspc_slow, &kp BSPC,  12 31);
+        SLOW_COMBO(kp_del_slow,  &kp DEL,   13 31);
 
-        SLOW_COMBO(kp_ret_slow, &kp RET, 7 34);
-        SLOW_COMBO(kp_esc_slow, &kp ESC, 16 34);
-        SLOW_COMBO(kp_spc_slow, &kp SPACE, 17 34);
+        SLOW_COMBO(kp_ret_slow,  &kp RET,    7 34);
+        SLOW_COMBO(kp_esc_slow,  &kp ESC,   16 34);
+        SLOW_COMBO(kp_spc_slow,  &kp SPACE, 17 34);
 
         // EXT and NAV layer activation.
-        SLOW_COMBO(mo_nav_l, &mo NAV, 32 12);
-        SLOW_COMBO(mo_nav_r, &mo NAV, 33 17);
-        SLOW_COMBO(mo_ext_l, &mo EXT, 32 13);
-        SLOW_COMBO(mo_ext_r, &mo EXT, 33 16);
+        SLOW_COMBO(mo_nav_l,     &mo NAV,   12 32);
+        SLOW_COMBO(mo_ext_l,     &mo EXT,   13 32);
+        SLOW_COMBO(mo_ext_r,     &mo EXT,   16 33);
+        SLOW_COMBO(mo_nav_r,     &mo NAV,   17 33);
     };
 
     keymap {
@@ -159,7 +157,6 @@
             then-layer = <SYS>;
         };
     };
-
 
     behaviors {
         HRM(hl, RIGHT_HALF_KEYS);
