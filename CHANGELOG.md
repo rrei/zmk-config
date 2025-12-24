@@ -11,12 +11,22 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Keymap: reorganise layer-taps to middle finger column - NAV on D/K (home row), EXT on
   C/, (bottom row), Alt HRM on E/I (top row)
-- Keymap: simplify EXT layer by removing layer-taps from F3/F4/F7/F8
 - Keymap: simplify combo system - replace `FAST_COMBO`/`SLOW_COMBO` with unified `COMBO`
   macro (35ms timeout); remove slow thumb-key alternatives and layer activation combos
 - Keymap: add NUBS combos (positions 22-23, 26-27) and F11/F12 combos on EXT layer
 - Keymap: reduce HRM tapping-term from 400ms to 200ms for faster modifier access
 - Keymap: add volume mute to SYS layer left inner thumb
+
+## [3.0.1] - 2025-12-24
+
+### Changed
+
+- Keymap: move layer-taps from top row (E/R, U/I) to bottom row (C/V, M/,) to reduce
+  interference with common typing patterns
+
+### Fixed
+
+- Build: fix double semicolons in macro definitions causing devicetree parse errors
 
 ## [3.0.0] - 2025-12-24
 
