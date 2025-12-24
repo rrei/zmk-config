@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Next]
+## [3.0.0] - 2025-12-24
 
 ### Changed
 
@@ -30,6 +30,7 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Build: restore `zmk,physical-layout` chosen property for Corne shield builds
 - CI: extend build workflow paths filter to include `build.yaml`
+- Keymap: correct right-hand slow combo key positions (use key 34 instead of 35)
 
 ### Documentation
 
