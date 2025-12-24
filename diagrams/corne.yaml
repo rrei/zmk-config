@@ -67,7 +67,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BSLASH
+  - \
   - ''
   - {t: (, h: LALT}
   - {t: ), h: LCMD}
@@ -104,7 +104,7 @@ layers:
   - '&mkp LCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BSLASH
+  - \
   - ''
   - {t: (, h: LALT}
   - {t: ), h: LCMD}
