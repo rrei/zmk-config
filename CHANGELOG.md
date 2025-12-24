@@ -9,8 +9,8 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- Keymap: move layer-taps from top row (E/R, U/I) to bottom row (C/V, M/,) to reduce
-  interference with common typing patterns while keeping layer access on home row fingers
+- Keymap: reorganise layer-taps to middle finger column - NAV on D/K (home row), EXT on
+  C/, (bottom row), Alt HRM on E/I (top row)
 - Keymap: simplify EXT layer by removing layer-taps from F3/F4/F7/F8
 - Keymap: simplify combo system - replace `FAST_COMBO`/`SLOW_COMBO` with unified `COMBO`
   macro (35ms timeout); remove slow thumb-key alternatives and layer activation combos

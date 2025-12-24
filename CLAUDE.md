@@ -89,8 +89,8 @@ The keymap uses a tri-layer system with positional home row mods:
   Escape, plus NUBS and F11/F12
 - **Hold-Tap + Mod-Morph**: Bluetooth clear uses a 3-second hold-tap combined with
   mod-morph (shift for clear-all)
-- **Layer Taps**: Keys that act as normal keys on tap, layer switches on hold (C/, for
-  NAV, V/M for EXT)
+- **Layer Taps**: Keys that act as normal keys on tap, layer switches on hold (D/K for
+  NAV, C/, for EXT)
 - **Conditional Layer**: Tri-layer system where activating both EXT and NAV enables SYS
 
 ### DRY Macros
