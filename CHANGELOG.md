@@ -9,15 +9,34 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- Keymap: update Corne layers and combo configuration
+- Keymap: major refactoring of layers, home row mods, and combos
+  - Remove PREC (precision) layer; now 4 layers total (BASE, EXT, NAV, SYS)
+  - Implement positional "timeless" home row mods (`&hl`, `&hr`) with opposite-hand
+    activation via `hold-trigger-key-positions`
+  - Add tri-layer system: EXT + NAV activates SYS via conditional layer
+  - Replace tap-dance Bluetooth clear with hold-tap + mod-morph (3s hold to clear,
+    hold with Shift to clear all)
+  - Add DRY macros for combos (`FAST_COMBO`, `SLOW_COMBO`) and behaviours (`HRM`,
+    `HOLD_TAP_OVERRIDES`)
+  - Add slow thumb-key combo alternatives (70ms) alongside fast adjacent-key combos
+    (35ms)
+  - Add layer activation combos (`mo_nav_l/r`, `mo_ext_l/r`) for thumb-based access
+  - Move parentheses and brackets to thumb keys on EXT/NAV layers
+  - Home row mods timing: 400ms tapping term (up from 250ms) for reduced misfires
+- Build: update board identifier from `nice_nano_v2` to `nice_nano` for ZMK Zephyr 4.1
+  compatibility
 
 ### Fixed
 
 - Build: restore `zmk,physical-layout` chosen property for Corne shield builds
+- CI: extend build workflow paths filter to include `build.yaml`
 
 ### Documentation
 
-- Align `README.md` and `CLAUDE.md` with current layers, timings, and CI workflows
+- Update `README.md` with current layer structure, positional HRM, tri-layer system,
+  and combo types
+- Update `CLAUDE.md` with current architecture, DRY macros, timing parameters, and
+  key position reference diagram
 
 ## [2.0.0] - 2025-12-06
 
