@@ -185,15 +185,15 @@ combos:
 - p: [17, 34]
   k: SPACE
   l: [base, extended]
-- p: [32, 12]
+- p: [12, 32]
   k: navigation
   l: [base, extended]
-- p: [33, 17]
+- p: [13, 32]
+  k: extended
+  l: [base, extended]
+- p: [16, 33]
+  k: extended
+  l: [base, extended]
+- p: [17, 33]
   k: navigation
-  l: [base, extended]
-- p: [32, 13]
-  k: extended
-  l: [base, extended]
-- p: [33, 16]
-  k: extended
   l: [base, extended]
