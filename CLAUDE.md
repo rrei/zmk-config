@@ -40,7 +40,24 @@ west tool (though not commonly needed for keymap changes).
 
 - Version tracked in `CHANGELOG.md` and via git tags only
 - No separate version file (no `pyproject.toml`, `package.json`, or similar)
-- Release workflow extracts version from git tags and parses changelog for release notes
+- Uses semantic versioning (e.g., `3.0.1`)
+
+### Release Process
+
+To create a release:
+
+1. Ensure `CHANGELOG.md` has an entry for the version (e.g., `## [3.0.1] - 2025-12-24`)
+2. Create and push a git tag matching the version:
+   ```bash
+   git tag 3.0.1
+   git push origin 3.0.1
+   ```
+3. The release workflow (`.github/workflows/release.yml`) automatically:
+   - Builds firmware using ZMK's upstream workflow
+   - Extracts release notes from `CHANGELOG.md` for the tagged version
+   - Creates a GitHub release with firmware `.uf2` files attached
+
+The workflow can also be triggered manually via `workflow_dispatch` if needed.
 
 ## Architecture
 
