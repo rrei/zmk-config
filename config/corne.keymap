@@ -21,19 +21,16 @@
 #define LEFT_HALF_KEYS   0 1 2 3 4  10 11 12 13 14  20 21 22 23 24  30 31 32
 #define RIGHT_HALF_KEYS  5 6 7 8 9  15 16 17 18 19  25 26 27 28 29  33 34 35
 
-// Parametrised macros for DRY combo definitions:
-// - fast combos have tighter timeout to avoid interfering with typing
-// - slow combos involve thumb keys and are therefore given a longer timeout
-#define COMBO(NAME, BINDINGS, POSITIONS, TIMEOUT) NAME { \
-    layers = <BASE EXT>; \
-    bindings = <BINDINGS>; \
+// Parametrised macros for DRY combo definitions.
+#define NAMED_COMBO(NAME, KEY, LAYERS, POSITIONS) NAME { \
+    bindings = <&kp KEY>; \
+    layers = <LAYERS>; \
     key-positions = <POSITIONS>; \
-    timeout-ms = <TIMEOUT>; \
     require-prior-idle-ms = <100>; \
+    timeout-ms = <35>; \
     slow-release; \
 }
-#define FAST_COMBO(N, B, P) COMBO(N, B, P, 35)
-#define SLOW_COMBO(N, B, P) COMBO(N, B, P, 70)
+#define COMBO(KEY, LAYERS, POSITIONS) NAMED_COMBO(combo_##KEY, KEY, LAYERS, POSITIONS)
 
 // Flavour and timing overrides for builtin hold-tap behaviours (&mt and &lt).
 #define HOLD_TAP_OVERRIDES(NODE) NODE { \
@@ -50,7 +47,7 @@
     bindings = <&kp>, <&kp>; \
     flavor = "balanced"; \
     require-prior-idle-ms = <100>; \
-    tapping-term-ms = <400>; \
+    tapping-term-ms = <200>; \
     quick-tap-ms = <300>; \
     hold-trigger-key-positions = <HOLD_TRIGGER_KEYS>; \
     hold-trigger-on-release; \
@@ -85,29 +82,18 @@
     combos {
         compatible = "zmk,combos";
 
-        // Fast combos for very common keys: tab, backspace, delete, enter, escape, space.
-        FAST_COMBO(kp_tab_fast,  &kp TAB,    2  3);
-        FAST_COMBO(kp_bspc_fast, &kp BSPC,  12 13);
-        FAST_COMBO(kp_del_fast,  &kp DEL,   13 14);
-
-        FAST_COMBO(kp_ret_fast,  &kp RET,    6  7);
-        FAST_COMBO(kp_esc_fast,  &kp ESC,   15 16);
-        FAST_COMBO(kp_spc_fast,  &kp SPACE, 16 17);
-
-        // Slow alternatives to the fast combos above.
-        SLOW_COMBO(kp_tab_slow,  &kp TAB,    2 31);
-        SLOW_COMBO(kp_bspc_slow, &kp BSPC,  12 31);
-        SLOW_COMBO(kp_del_slow,  &kp DEL,   13 31);
-
-        SLOW_COMBO(kp_ret_slow,  &kp RET,    7 34);
-        SLOW_COMBO(kp_esc_slow,  &kp ESC,   16 34);
-        SLOW_COMBO(kp_spc_slow,  &kp SPACE, 17 34);
-
-        // EXT and NAV layer activation.
-        SLOW_COMBO(mo_nav_l,     &mo NAV,   12 32);
-        SLOW_COMBO(mo_ext_l,     &mo EXT,   13 32);
-        SLOW_COMBO(mo_ext_r,     &mo EXT,   16 33);
-        SLOW_COMBO(mo_nav_r,     &mo NAV,   17 33);
+        // Easy to pull combos for very common keys: tab, backspace, delete, enter,
+        // escape, space, and iterm2's hotkey. There are also combos for F11 and F12.
+        COMBO(TAB, BASE EXT, 2 3);
+        COMBO(BSPC, BASE EXT, 12 13);
+        COMBO(DEL, BASE EXT, 13 14);
+        COMBO(RET, BASE EXT, 6 7);
+        COMBO(ESC, BASE EXT, 15 16);
+        COMBO(SPC, BASE EXT, 16 17);
+        NAMED_COMBO(combo_NUBS_L, NUBS, BASE EXT, 22 23);
+        NAMED_COMBO(combo_NUBS_R, NUBS, BASE EXT, 26 27);
+        COMBO(F11, EXT, 7 8);
+        COMBO(F12, EXT, 8 9);
     };
 
     keymap {
@@ -142,10 +128,10 @@
 
         system {
             bindings = <
-  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none      &none       &none     &none      &bt_clr 0 0
-  &kp LSHFT     &none         &kp C_BRI_UP  &kp C_VOL_UP  &none           &none      &kp C_PREV  &kp C_PP  &kp C_NEXT &kp RSHFT
-  &none         &none         &kp C_BRI_DN  &kp C_VOL_DN  &none           &none      &none       &none     &none      &none
-                              &none         &none         &none           &kp RSHFT  &none       &none
+  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4    &none      &none       &none     &none      &bt_clr 0 0
+  &kp LSHFT     &none         &kp C_BRI_UP  &kp C_VOL_UP    &none           &none      &kp C_PREV  &kp C_PP  &kp C_NEXT &kp RSHFT
+  &none         &none         &kp C_BRI_DN  &kp C_VOL_DN    &none           &none      &none       &none     &none      &none
+                              &none         &kp C_VOL_MUTE  &none           &kp RSHFT  &none       &none
             >;
         };
     };
