@@ -31,7 +31,7 @@
     timeout-ms = <TIMEOUT>; \
     require-prior-idle-ms = <100>; \
     slow-release; \
-};
+}
 #define FAST_COMBO(N, B, P) COMBO(N, B, P, 35)
 #define SLOW_COMBO(N, B, P) COMBO(N, B, P, 70)
 
@@ -41,7 +41,7 @@
     require-prior-idle-ms = <100>; \
     tapping-term-ms = <200>; \
     quick-tap-ms = <300>; \
-};
+}
 
 // "Timeless" homerow mods with positional hold-trigger keys (&hr and &hl).
 #define HRM(NAME, HOLD_TRIGGER_KEYS) NAME: NAME { \
@@ -54,7 +54,7 @@
     quick-tap-ms = <300>; \
     hold-trigger-key-positions = <HOLD_TRIGGER_KEYS>; \
     hold-trigger-on-release; \
-};
+}
 
 
 / {
@@ -110,7 +110,7 @@
         SLOW_COMBO(mo_nav_r,     &mo NAV,   33 17);
         SLOW_COMBO(mo_ext_l,     &mo EXT,   32 13);
         SLOW_COMBO(mo_ext_r,     &mo EXT,   33 16);
-};
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -128,7 +128,7 @@
             bindings = <
   &kp F1        &kp F2        &lt NAV F3   &lt EXT F4     &kp F5           &kp F6          &lt EXT F7    &lt NAV F8   &kp F9        &kp F10
   &hl LSHFT N1  &hl LCTRL N2  &hl LALT N3  &hl LCMD N4    &kp N5           &kp N6          &hr RCMD N7   &hr RALT N8  &hr RCTRL N9  &hr RSHFT N0
-  &trans        &trans        &trans       &trans         &trans           &trans          &trans        &trans       &trans        &kp BSLASH
+  &trans        &trans        &trans       &trans         &trans           &trans          &trans        &trans       &trans        &kp BACKSLASH
                               &none        &mt LALT LPAR  &mt LCMD RPAR    &mt RSHFT LBKT  &lt EXT RBKT  &none
             >;
         };
@@ -137,7 +137,7 @@
             bindings = <
   &trans  &msc SCRL_RIGHT  &mmv MOVE_UP    &msc SCRL_LEFT   &msc SCRL_DOWN    &kp PG_UP       &kp HOME         &kp UP    &kp END    &trans
   &trans  &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_UP      &kp PG_DN       &kp LEFT         &kp DOWN  &kp RIGHT  &trans
-  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK       &mkp LCLK        &trans    &trans     &kp BSLASH
+  &trans  &trans           &trans          &mkp LCLK        &mkp RCLK         &mkp RCLK       &mkp LCLK        &trans    &trans     &kp BACKSLASH
                            &none           &mt LALT LPAR    &mt LCMD RPAR     &mt RSHFT LBKT  &lt EXT RBKT     &none
             >;
         };
