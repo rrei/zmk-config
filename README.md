@@ -64,7 +64,7 @@ This approach virtually eliminates accidental modifier activation during normal 
 - **Timeout**: 35ms for responsive activation
 - **Keys**: TAB, BSPC, DEL, RET, ESC, SPACE, NUBS, F11, F12
 - **Active on**: BASE and EXT layers (F11/F12 on EXT only)
-- **Prior idle**: 100ms requirement to prevent typing interference
+- **Prior idle**: 70ms default (35ms for SPACE to allow normal typing speed)
 
 ### Bluetooth Clear
 

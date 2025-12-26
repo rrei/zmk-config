@@ -85,8 +85,9 @@ The keymap uses a tri-layer system with positional home row mods:
 - **Positional Home Row Mods (`&hl`, `&hr`)**: "Timeless" hold-tap behaviours with
   `hold-trigger-key-positions` set to opposite-hand keys only. This prevents accidental
   modifier activation when typing quickly.
-- **Combos**: Combo system (35ms timeout) for common keys like Tab, Backspace, Enter,
-  Escape, plus NUBS and F11/F12
+- **Combos**: Combo system with configurable timing (35ms timeout, 70ms prior-idle by
+  default; 35ms prior-idle for SPACE) for common keys like Tab, Backspace, Enter,
+  Escape, Space, plus NUBS and F11/F12
 - **Hold-Tap + Mod-Morph**: Bluetooth clear uses a 3-second hold-tap combined with
   mod-morph (shift for clear-all)
 - **Layer Taps**: Keys that act as normal keys on tap, layer switches on hold (D/K for
@@ -97,8 +98,10 @@ The keymap uses a tri-layer system with positional home row mods:
 
 The keymap uses preprocessor macros to reduce repetition:
 
-- `COMBO(KEY, LAYERS, POSITIONS)`: Auto-named combo definition (`combo_##KEY`)
-- `NAMED_COMBO(NAME, KEY, LAYERS, POSITIONS)`: Combo with custom name
+- `COMBO(NAME, KEY, LAYERS, POSITIONS, REQUIRE_PRIOR_IDLE, TIMEOUT)`: Fully parametrised
+  combo definition
+- `COMBO_TIMING_DEFAULT`: Standard timing (70ms prior-idle, 35ms timeout)
+- `COMBO_TIMING_SPACE`: Fast timing for SPACE combo (35ms prior-idle, 35ms timeout)
 - `HRM(NAME, HOLD_TRIGGER_KEYS)`: Positional home row mod behaviour definition
 - `HOLD_TAP_OVERRIDES(NODE)`: Consistent timing overrides for `&mt` and `&lt`
 
@@ -116,7 +119,7 @@ Key timing parameters defined in `corne.keymap`:
 
 - Home row mods (`&hl`, `&hr`): 200ms tapping term, 100ms prior idle, 300ms quick-tap
 - Standard hold-taps (`&mt`, `&lt`): 200ms tapping term, 100ms prior idle, 300ms quick-tap
-- Combos: 35ms timeout, 100ms prior idle
+- Combos: 35ms timeout, 70ms prior idle (35ms for SPACE)
 - Mouse movement: `ZMK_POINTING_DEFAULT_MOVE_VAL = 1800`
 - Scroll speed: `ZMK_POINTING_DEFAULT_SCRL_VAL = 22`
 
@@ -199,10 +202,11 @@ Key position groups for positional hold-tap:
 ### Combo System Design
 
 - All combos use 35ms timeout for responsive activation
-- `require-prior-idle-ms = 100` prevents interference with normal typing
+- Default `require-prior-idle-ms = 70` prevents interference with normal typing
+- SPACE combo uses `require-prior-idle-ms = 35` for faster word separation during typing
 - Combos active on BASE and EXT layers (some EXT-only for F11/F12)
 - `slow-release` enabled for better modifier interaction
-- NUBS combos on both hands for non-US backslash access
+- NUBS combos on both hands for non-US backslash (iterm2 hotkey)
 
 ### Tri-Layer System
 
