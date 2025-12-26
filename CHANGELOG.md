@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.1] - 2025-12-26
+
+### Changed
+
+- Keymap: redesign combo macro with configurable timing parameters - replace
+  `COMBO`/`NAMED_COMBO` with single parametrised `COMBO(NAME, KEY, LAYERS, POSITIONS,
+  REQUIRE_PRIOR_IDLE, TIMEOUT)` macro
+- Keymap: add timing constants `COMBO_TIMING_DEFAULT` (70ms prior-idle, 35ms timeout)
+  and `COMBO_TIMING_SPACE` (35ms prior-idle for faster word separation during typing)
+- Keymap: reduce default `require-prior-idle` from 100ms to 70ms
+
 ## [3.1.0] - 2025-12-24
 
 ### Changed
