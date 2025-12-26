@@ -23,8 +23,8 @@ _Diagram automatically updates when keymap changes_
 | Layer | Index | Access | Purpose |
 |-------|-------|--------|---------|
 | BASE | 0 | Default | QWERTY typing with home row mods |
-| EXT | 1 | Hold C/, or combos | Numbers, function keys, symbols |
-| NAV | 2 | Hold D/K or combos | Arrow keys, mouse, page navigation |
+| EXT | 1 | Hold C or , | Numbers, function keys, symbols |
+| NAV | 2 | Hold D or K | Arrow keys, mouse, page navigation |
 | SYS | 3 | Tri-layer (EXT+NAV) | Bluetooth, media, brightness |
 
 ### Positional Home Row Mods

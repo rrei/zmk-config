@@ -153,7 +153,7 @@ cpp -E config/corne.keymap
 cpp -E config/corne.keymap 2>/dev/null | sed -n '/combos {/,/^    };$/p'
 
 # Check specific macro expansion
-cpp -E config/corne.keymap 2>/dev/null | grep "kp_tab_fast"
+cpp -E config/corne.keymap 2>/dev/null | grep "kp_tab"
 ```
 
 This is useful for debugging devicetree parse errors, as ZMK's error column numbers refer
@@ -217,8 +217,8 @@ if-layers = <EXT NAV>;
 then-layer = <SYS>;
 ```
 
-This means pressing both layer keys (e.g., R+E or holding both thumb combos) activates
-the system layer automatically.
+This means pressing both layer keys (e.g., D+C or K+,) activates the system layer
+automatically.
 
 This configuration represents a highly optimised setup for productive typing with
 minimal finger movement and maximum functionality in a compact 36-key layout.
