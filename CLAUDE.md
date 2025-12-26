@@ -98,10 +98,11 @@ The keymap uses a tri-layer system with positional home row mods:
 
 The keymap uses preprocessor macros to reduce repetition:
 
-- `COMBO(NAME, KEY, LAYERS, POSITIONS, REQUIRE_PRIOR_IDLE, TIMEOUT)`: Fully parametrised
-  combo definition
-- `COMBO_TIMING_DEFAULT`: Standard timing (70ms prior-idle, 35ms timeout)
-- `COMBO_TIMING_SPACE`: Fast timing for SPACE combo (35ms prior-idle, 35ms timeout)
+- `COMBO(NAME, KEY, LAYERS, POSITIONS, REQUIRE_PRIOR_IDLE, TIMEOUT)`: Base combo macro
+- `COMBO_DEFAULT(NAME, KEY, LAYERS, POSITIONS)`: Standard timing (70ms prior-idle, 35ms
+  timeout)
+- `COMBO_FAST(NAME, KEY, LAYERS, POSITIONS)`: Fast timing for SPACE (35ms prior-idle,
+  35ms timeout)
 - `HRM(NAME, HOLD_TRIGGER_KEYS)`: Positional home row mod behaviour definition
 - `HOLD_TAP_OVERRIDES(NODE)`: Consistent timing overrides for `&mt` and `&lt`
 
