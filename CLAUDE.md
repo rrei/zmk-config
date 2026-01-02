@@ -7,8 +7,8 @@ this repository.
 
 This is a ZMK (Zephyr Mechanical Keyboard) firmware configuration for a Corne (crkbd)
 5-column split keyboard with nice!nano v2 controllers. The configuration implements
-advanced features like mouse emulation, positional "timeless" home row mods, a tri-layer
-system, and power management.
+advanced features like mouse emulation, positional "timeless" home row mods, combo-based
+system layer access, and power management.
 
 ## Build System
 
@@ -71,14 +71,14 @@ The workflow can also be triggered manually via `workflow_dispatch` if needed.
 
 ### Layer Structure (4 layers)
 
-The keymap uses a tri-layer system with positional home row mods:
+The keymap uses positional home row mods with combo-based system layer access:
 
 1. **BASE (0)**: Main typing layer with QWERTY layout and positional home row modifiers
 2. **EXT (1)**: Extended layer with numbers (home row), function keys (top row), and
    symbols
 3. **NAV (2)**: Navigation layer with arrow keys, page navigation, and mouse movement
 4. **SYS (3)**: System layer for Bluetooth management, media controls, and brightness
-   (accessed via tri-layer: EXT + NAV)
+   (accessed via thumb combo: middle thumbs together)
 
 ### Key Behaviours
 
@@ -87,12 +87,11 @@ The keymap uses a tri-layer system with positional home row mods:
   modifier activation when typing quickly.
 - **Combos**: Combo system with configurable timing (35ms timeout, 70ms prior-idle by
   default; 35ms prior-idle for SPACE) for common keys like Tab, Backspace, Enter,
-  Escape, Space, plus NUBS and F11/F12
+  Escape, Space, brackets/parentheses, F11/F12, and SYS layer access
 - **Hold-Tap + Mod-Morph**: Bluetooth clear uses a 3-second hold-tap combined with
   mod-morph (shift for clear-all)
 - **Layer Taps**: Keys that act as normal keys on tap, layer switches on hold (D/K for
-  NAV, C/, for EXT)
-- **Conditional Layer**: Tri-layer system where activating both EXT and NAV enables SYS
+  NAV, V/M and GRAVE for EXT)
 
 ### DRY Macros
 
@@ -207,19 +206,27 @@ Key position groups for positional hold-tap:
 - SPACE combo uses `require-prior-idle-ms = 35` for faster word separation during typing
 - Combos active on BASE and EXT layers (some EXT-only for F11/F12)
 - `slow-release` enabled for better modifier interaction
-- NUBS combos on both hands for non-US backslash (iterm2 hotkey)
+- Bracket/parenthesis combos on bottom row for programming:
+  - `(` on X+C (22-23), `)` on M+, (26-27)
+  - `[` on C+V (23-24), `]` on N+M (25-26)
+- SYS layer combo on middle thumbs (31-34) with 100ms timing
 
-### Tri-Layer System
+### SYS Layer Access
 
-The SYS layer is accessed via conditional layer:
+The SYS layer is accessed via a dedicated combo on the middle thumb keys (positions 31
+and 34):
 
 ```
-if-layers = <EXT NAV>;
-then-layer = <SYS>;
+mo_sys {
+    key-positions = <31 34>;
+    layers = <BASE>;
+    timeout-ms = <100>;
+    require-prior-idle-ms = <100>;
+};
 ```
 
-This means pressing both layer keys (e.g., D+C or K+,) activates the system layer
-automatically.
+This provides direct access to the system layer without requiring simultaneous layer key
+holds, simplifying the mental model for layer navigation.
 
 This configuration represents a highly optimised setup for productive typing with
 minimal finger movement and maximum functionality in a compact 36-key layout.

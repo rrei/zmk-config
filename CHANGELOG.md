@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.2.0] - 2026-01-02
+
+### Changed
+
+- Keymap: replace NUBS combos with bracket/parenthesis combos for programming
+  - `(` on X+C (22-23), `)` on M+, (26-27)
+  - `[` on C+V (23-24), `]` on N+M (25-26)
+- Keymap: move EXT layer-taps from C/, to V/M keys; add EXT access via left thumb GRAVE
+- Keymap: redesign thumb row modifiers (SHIFT/CMD/ALT repositioned)
+- Keymap: replace tri-layer system with dedicated SYS combo on middle thumbs (31-34)
+- Keymap: simplify EXT/NAV thumb rows to transparent (brackets now on BASE combos)
+
 ## [3.1.1] - 2025-12-26
 
 ### Changed
