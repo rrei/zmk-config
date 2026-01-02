@@ -23,19 +23,19 @@ layers:
   - {t: ;, h: RSHFT}
   - Z
   - X
-  - {t: C, h: extended}
-  - V
+  - C
+  - {t: V, h: extended}
   - B
   - N
-  - M
-  - {t: ',', h: extended}
+  - {t: M, h: extended}
+  - ','
   - .
   - /
   - ''
-  - {t: '`', h: LALT}
-  - {t: '''', h: LCMD}
-  - {t: '-', h: RSHFT}
-  - {t: '=', h: extended}
+  - {t: '`', h: extended}
+  - {t: '''', h: LSHFT}
+  - {t: '-', h: RCMD}
+  - {t: '=', h: RALT}
   - ''
   extended:
   - F1
@@ -60,8 +60,8 @@ layers:
   - {t: '0', h: RSHFT}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -69,10 +69,10 @@ layers:
   - {t: ▽, type: trans}
   - \
   - ''
-  - {t: (, h: LALT}
-  - {t: ), h: LCMD}
-  - {t: '[', h: RSHFT}
-  - {t: ']', h: extended}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - ''
   navigation:
   - {t: ▽, type: trans}
@@ -106,10 +106,10 @@ layers:
   - {t: ▽, type: trans}
   - \
   - ''
-  - {t: (, h: LALT}
-  - {t: ), h: LCMD}
-  - {t: '[', h: RSHFT}
-  - {t: ']', h: extended}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - ''
   system:
   - {t: BT, h: '0'}
@@ -124,7 +124,7 @@ layers:
   - {h: BT CLR}
   - LSHFT
   - ''
-  - {t: BRI UP, type: held}
+  - BRI UP
   - VOL UP
   - ''
   - ''
@@ -134,7 +134,7 @@ layers:
   - RSHFT
   - ''
   - ''
-  - {t: BRI DN, type: held}
+  - BRI DN
   - VOL DN
   - ''
   - ''
@@ -143,10 +143,10 @@ layers:
   - ''
   - ''
   - ''
-  - MUTE
-  - ''
+  - {t: MUTE, type: held}
+  - LSHFT
   - RSHFT
-  - ''
+  - {type: held}
   - ''
 combos:
 - p: [2, 3]
@@ -168,10 +168,16 @@ combos:
   k: SPC
   l: [base, extended]
 - p: [22, 23]
-  k: NUBS
+  k: (
   l: [base, extended]
 - p: [26, 27]
-  k: NUBS
+  k: )
+  l: [base, extended]
+- p: [23, 24]
+  k: '['
+  l: [base, extended]
+- p: [25, 26]
+  k: ']'
   l: [base, extended]
 - p: [7, 8]
   k: F11
@@ -179,3 +185,6 @@ combos:
 - p: [8, 9]
   k: F12
   l: [extended]
+- p: [31, 34]
+  k: system
+  l: [base]
