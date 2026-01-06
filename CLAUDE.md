@@ -118,7 +118,8 @@ The keymap uses preprocessor macros to reduce repetition:
 Key timing parameters defined in `corne.keymap`:
 
 - Home row mods (`&hl`, `&hr`): 200ms tapping term, 100ms prior idle, 300ms quick-tap
-- Standard hold-taps (`&mt`, `&lt`): 200ms tapping term, 100ms prior idle, 300ms quick-tap
+- Standard hold-taps (`&mt`, `&lt`): 200ms tapping term, 100ms prior idle, 300ms
+  quick-tap
 - Combos: 35ms timeout, 70ms prior idle (35ms for SPACE)
 - Mouse movement: `ZMK_POINTING_DEFAULT_MOVE_VAL = 1800`
 - Scroll speed: `ZMK_POINTING_DEFAULT_SCRL_VAL = 22`
@@ -133,7 +134,8 @@ Key timing parameters defined in `corne.keymap`:
 4. Commit and push changes to trigger automatic build and diagram generation
 5. Download firmware from GitHub Actions artifacts
 6. Flash `.uf2` files to respective keyboard halves
-7. Updated `diagrams/corne.svg` diagram will be automatically committed if keymap changed
+7. Updated `diagrams/corne.svg` diagram will be automatically committed if keymap
+   changed
 
 ### Testing Changes
 
@@ -156,8 +158,8 @@ cpp -E config/corne.keymap 2>/dev/null | sed -n '/combos {/,/^    };$/p'
 cpp -E config/corne.keymap 2>/dev/null | grep "kp_tab"
 ```
 
-This is useful for debugging devicetree parse errors, as ZMK's error column numbers refer
-to the **post-expansion** output, not the original source file.
+This is useful for debugging devicetree parse errors, as ZMK's error column numbers
+refer to the **post-expansion** output, not the original source file.
 
 **Note**: Local `cpp` won't have ZMK's include paths, so ZMK-specific headers (like
 `dt-bindings/zmk/keys.h`) won't expand. But it's still useful for checking custom macro

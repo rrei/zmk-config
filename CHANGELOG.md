@@ -22,8 +22,8 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Changed
 
 - Keymap: redesign combo macro with configurable timing parameters - replace
-  `COMBO`/`NAMED_COMBO` with single parametrised `COMBO(NAME, KEY, LAYERS, POSITIONS,
-  REQUIRE_PRIOR_IDLE, TIMEOUT)` macro
+  `COMBO`/`NAMED_COMBO` with single parametrised
+  `COMBO(NAME, KEY, LAYERS, POSITIONS, REQUIRE_PRIOR_IDLE, TIMEOUT)` macro
 - Keymap: add timing constants `COMBO_TIMING_DEFAULT` (70ms prior-idle, 35ms timeout)
   and `COMBO_TIMING_SPACE` (35ms prior-idle for faster word separation during typing)
 - Keymap: reduce default `require-prior-idle` from 100ms to 70ms
@@ -60,8 +60,8 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   - Implement positional "timeless" home row mods (`&hl`, `&hr`) with opposite-hand
     activation via `hold-trigger-key-positions`
   - Add tri-layer system: EXT + NAV activates SYS via conditional layer
-  - Replace tap-dance Bluetooth clear with hold-tap + mod-morph (3s hold to clear,
-    hold with Shift to clear all)
+  - Replace tap-dance Bluetooth clear with hold-tap + mod-morph (3s hold to clear, hold
+    with Shift to clear all)
   - Add DRY macros for combos (`FAST_COMBO`, `SLOW_COMBO`) and behaviours (`HRM`,
     `HOLD_TAP_OVERRIDES`)
   - Add slow thumb-key combo alternatives (70ms) alongside fast adjacent-key combos
@@ -80,10 +80,10 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Documentation
 
-- Update `README.md` with current layer structure, positional HRM, tri-layer system,
-  and combo types
-- Update `CLAUDE.md` with current architecture, DRY macros, timing parameters, and
-  key position reference diagram
+- Update `README.md` with current layer structure, positional HRM, tri-layer system, and
+  combo types
+- Update `CLAUDE.md` with current architecture, DRY macros, timing parameters, and key
+  position reference diagram
 
 ## [2.0.0] - 2025-12-06
 
