@@ -269,23 +269,23 @@ path.combo {
 <g transform="translate(230, 213) rotate(15.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">`</text>
-<a href="#extended">
-<text x="0" y="24" class="key hold layer-activator"><tspan style="font-size: 88%">extended</tspan></text>
-</a></g>
+<text x="0" y="24" class="key hold">LALT</text>
+</g>
 <g transform="translate(295, 224) rotate(30.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
 <text x="0" y="0" class="key tap">&#x27;</text>
-<text x="0" y="38" class="key hold">LSHFT</text>
+<text x="0" y="38" class="key hold">LCMD</text>
 </g>
 <g transform="translate(433, 224) rotate(-30.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
 <text x="0" y="0" class="key tap">-</text>
-<text x="0" y="38" class="key hold">RCMD</text>
-</g>
+<a href="#extended">
+<text x="0" y="38" class="key hold layer-activator"><tspan style="font-size: 88%">extended</tspan></text>
+</a></g>
 <g transform="translate(498, 213) rotate(-15.0)" class="key keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">=</text>
-<text x="0" y="24" class="key hold">RALT</text>
+<text x="0" y="24" class="key hold">RSHFT</text>
 </g>
 <g transform="translate(560, 205)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
