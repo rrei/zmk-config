@@ -125,10 +125,10 @@
 
         base {
             bindings = <
-  &kp Q        &kp W        &hl LALT E  &kp R          &kp T            &kp Y           &kp U           &hr RALT I     &kp O        &kp P
-  &hl LSHFT A  &hl LCTRL S  &lt NAV D   &hl LCMD F     &kp G            &kp H           &hr RCMD J      &lt NAV K      &hr RCTRL L  &hr RSHFT SEMI
-  &kp Z        &kp X        &kp C       &lt EXT V      &kp B            &kp N           &lt EXT M       &kp COMMA      &kp PERIOD   &kp SLASH
-                            &none       &lt EXT GRAVE  &mt LSHFT SQT    &mt RCMD MINUS  &mt RALT EQUAL  &none
+  &kp Q        &kp W        &hl LALT E  &kp R           &kp T           &kp Y          &kp U            &hr RALT I     &kp O        &kp P
+  &hl LSHFT A  &hl LCTRL S  &lt NAV D   &hl LCMD F      &kp G           &kp H          &hr RCMD J       &lt NAV K      &hr RCTRL L  &hr RSHFT SEMI
+  &kp Z        &kp X        &kp C       &lt EXT V       &kp B           &kp N          &lt EXT M        &kp COMMA      &kp PERIOD   &kp SLASH
+                            &none       &mt LALT GRAVE  &mt LCMD SQT    &lt EXT MINUS  &mt RSHFT EQUAL  &none
             >;
         };
 

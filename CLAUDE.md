@@ -91,7 +91,7 @@ The keymap uses positional home row mods with combo-based system layer access:
 - **Hold-Tap + Mod-Morph**: Bluetooth clear uses a 3-second hold-tap combined with
   mod-morph (shift for clear-all)
 - **Layer Taps**: Keys that act as normal keys on tap, layer switches on hold (D/K for
-  NAV, V/M and GRAVE for EXT)
+  NAV, V/M and MINUS for EXT)
 
 ### DRY Macros
 

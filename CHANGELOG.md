@@ -12,8 +12,8 @@ this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Keymap: replace NUBS combos with bracket/parenthesis combos for programming
   - `(` on X+C (22-23), `)` on M+, (26-27)
   - `[` on C+V (23-24), `]` on N+M (25-26)
-- Keymap: move EXT layer-taps from C/, to V/M keys; add EXT access via left thumb GRAVE
-- Keymap: redesign thumb row modifiers (SHIFT/CMD/ALT repositioned)
+- Keymap: move EXT layer-taps from C/, to V/M keys; add EXT access via right thumb MINUS
+- Keymap: redesign thumb row modifiers (left: ALT/CMD, right: EXT/SHIFT)
 - Keymap: replace tri-layer system with dedicated SYS combo on middle thumbs (31-34)
 - Keymap: simplify EXT/NAV thumb rows to transparent (brackets now on BASE combos)
 
