@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.3.1] - 2026-01-12
+
+### Changed
+
+- Keymap: adjust hold-tap timing for better balance between responsiveness and misfire
+  protection
+  - `tapping-term-ms`: 150 → 200 (ZMK default)
+  - `require-prior-idle-ms`: 50 → 125 (formula: 10500/WPM for ~85 WPM)
+  - `quick-tap-ms`: 250 → 175 (urob's recommended value)
+
+### Added
+
+- Docs: add `docs/timing-parameters.md` with comprehensive ZMK timing research
+
 ## [3.3.0] - 2026-01-12
 
 ### Changed
