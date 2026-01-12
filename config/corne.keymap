@@ -31,11 +31,12 @@
 #define COMBO_FAST(N, B, L, P) _COMBO(N, B, L, P, 35, 35)
 
 // Flavour and timing overrides for builtin hold-tap behaviours (&mt and &lt).
+// See docs/timing-parameters.md for detailed explanation of these values.
 #define HOLD_TAP_OVERRIDES(NODE) NODE { \
     flavor = "balanced"; \
-    require-prior-idle-ms = <50>; \
-    tapping-term-ms = <150>; \
-    quick-tap-ms = <250>; \
+    require-prior-idle-ms = <125>; \
+    tapping-term-ms = <200>; \
+    quick-tap-ms = <175>; \
 }
 
 
