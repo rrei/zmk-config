@@ -17,41 +17,25 @@
 #define NAV 2
 #define SYS 3
 
-// These are useful for defining positional hold-tap behaviours (see HRM macro below).
-#define LEFT_HALF_KEYS   0 1 2 3 4  10 11 12 13 14  20 21 22 23 24  30 31 32
-#define RIGHT_HALF_KEYS  5 6 7 8 9  15 16 17 18 19  25 26 27 28 29  33 34 35
-
 // (heavily) Parametrised macros for DRY combo definitions.
-#define COMBO(NAME, KEY, LAYERS, POSITIONS, REQUIRE_PRIOR_IDLE, TIMEOUT) NAME { \
-    bindings = <&kp KEY>; \
+#define _COMBO(NAME, BINDING, LAYERS, POSITIONS, REQUIRE_PRIOR_IDLE, TIMEOUT) NAME { \
+    bindings = <BINDING>; \
     layers = <LAYERS>; \
     key-positions = <POSITIONS>; \
     require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>; \
     timeout-ms = <TIMEOUT>; \
     slow-release; \
 }
-#define COMBO_DEFAULT(N, K, L, P) COMBO(N, K, L, P, 70, 35)
-#define COMBO_FAST(N, K, L, P) COMBO(N, K, L, P, 35, 35)
+#define COMBO(N, B, L, P) _COMBO(N, B, L, P, 70, 35)
+#define COMBO_SLOW(N, B, L, P) _COMBO(N, B, L, P, 70, 70)
+#define COMBO_FAST(N, B, L, P) _COMBO(N, B, L, P, 35, 35)
 
 // Flavour and timing overrides for builtin hold-tap behaviours (&mt and &lt).
 #define HOLD_TAP_OVERRIDES(NODE) NODE { \
     flavor = "balanced"; \
-    require-prior-idle-ms = <100>; \
-    tapping-term-ms = <200>; \
-    quick-tap-ms = <300>; \
-}
-
-// "Timeless" homerow mods with positional hold-trigger keys (&hr and &hl).
-#define HRM(NAME, HOLD_TRIGGER_KEYS) NAME: NAME { \
-    compatible = "zmk,behavior-hold-tap"; \
-    #binding-cells = <2>; \
-    bindings = <&kp>, <&kp>; \
-    flavor = "balanced"; \
-    require-prior-idle-ms = <100>; \
-    tapping-term-ms = <200>; \
-    quick-tap-ms = <300>; \
-    hold-trigger-key-positions = <HOLD_TRIGGER_KEYS>; \
-    hold-trigger-on-release; \
+    require-prior-idle-ms = <50>; \
+    tapping-term-ms = <150>; \
+    quick-tap-ms = <250>; \
 }
 
 
@@ -91,33 +75,26 @@
         // to be able to use it while typing at normal speed. Otherwise I'd have a
         // noticeable wait after every word to be able to type a space and continue
         // typing.
-        COMBO_DEFAULT(kp_tab, TAB, BASE EXT, 2 3);
-        COMBO_DEFAULT(kp_bspc, BSPC, BASE EXT, 12 13);
-        COMBO_DEFAULT(kp_del, DEL, BASE EXT, 13 14);
-        COMBO_DEFAULT(kp_ret, RET, BASE EXT, 6 7);
-        COMBO_DEFAULT(kp_esc, ESC, BASE EXT, 15 16);
-        COMBO_FAST(kp_spc, SPC, BASE EXT, 16 17);
+        COMBO(kp_tab, &kp TAB, BASE EXT, 2 3);
+        COMBO(kp_bspc, &kp BSPC, BASE EXT, 12 13);
+        COMBO(kp_del, &kp DEL, BASE EXT, 13 14);
+        COMBO(kp_ret, &kp RET, BASE EXT, 6 7);
+        COMBO(kp_esc, &kp ESC, BASE EXT, 15 16);
+        COMBO_FAST(kp_spc, &kp SPC, BASE EXT, 16 17);
 
         // As a software engineer, it's extremely useful to have easy access to
         // parenthesis and brackets/braces :)
-        COMBO_DEFAULT(kp_lpar, LPAR, BASE EXT, 22 23);
-        COMBO_DEFAULT(kp_rpar, RPAR, BASE EXT, 26 27);
-        COMBO_DEFAULT(kp_lbkt, LBKT, BASE EXT, 23 24);
-        COMBO_DEFAULT(kp_rbkt, RBKT, BASE EXT, 25 26);
+        COMBO(kp_lpar, &kp LPAR, BASE EXT, 22 23);
+        COMBO(kp_rpar, &kp RPAR, BASE EXT, 26 27);
+        COMBO(kp_lbkt, &kp LBKT, BASE EXT, 23 24);
+        COMBO(kp_rbkt, &kp RBKT, BASE EXT, 25 26);
 
         // F11 and F12 keys couldn't fit the keyboard (only 5 columns on each side).
-        COMBO_DEFAULT(kp_f11, F11, EXT, 7 8);
-        COMBO_DEFAULT(kp_f12, F12, EXT, 8 9);
+        COMBO_SLOW(kp_f11, &kp F11, EXT, 7 8);
+        COMBO_SLOW(kp_f12, &kp F12, EXT, 8 9);
 
         // Slow combo for SYS layer using the outer thumb keys.
-        mo_sys {
-            bindings = <&mo SYS>;
-            layers = <BASE>;
-            key-positions = <31 34>;
-            require-prior-idle-ms = <100>;
-            timeout-ms = <100>;
-            slow-release;
-        };
+        COMBO_SLOW(mo_sys, &mo SYS, BASE, 31 34);
     };
 
     keymap {
@@ -125,8 +102,8 @@
 
         base {
             bindings = <
-  &kp Q        &kp W        &hl LALT E  &kp R           &kp T           &kp Y          &kp U            &hr RALT I     &kp O        &kp P
-  &hl LSHFT A  &hl LCTRL S  &lt NAV D   &hl LCMD F      &kp G           &kp H          &hr RCMD J       &lt NAV K      &hr RCTRL L  &hr RSHFT SEMI
+  &kp Q        &kp W        &mt LALT E  &kp R           &kp T           &kp Y          &kp U            &mt RALT I     &kp O        &kp P
+  &mt LSHFT A  &mt LCTRL S  &lt NAV D   &mt LCMD F      &kp G           &kp H          &mt RCMD J       &lt NAV K      &mt RCTRL L  &mt RSHFT SEMI
   &kp Z        &kp X        &kp C       &lt EXT V       &kp B           &kp N          &lt EXT M        &kp COMMA      &kp PERIOD   &kp SLASH
                             &none       &mt LALT GRAVE  &mt LCMD SQT    &lt EXT MINUS  &mt RSHFT EQUAL  &none
             >;
@@ -134,8 +111,8 @@
 
         extended {
             bindings = <
-  &kp F1        &kp F2        &hl LALT F3  &kp F4       &kp F5    &kp F6  &kp F7       &hr RALT F8  &kp F9        &kp F10
-  &hl LSHFT N1  &hl LCTRL N2  &lt NAV N3   &hl LCMD N4  &kp N5    &kp N6  &hr RCMD N7  &lt NAV N8   &hr RCTRL N9  &hr RSHFT N0
+  &kp F1        &kp F2        &mt LALT F3  &kp F4       &kp F5    &kp F6  &kp F7       &mt RALT F8  &kp F9        &kp F10
+  &mt LSHFT N1  &mt LCTRL N2  &lt NAV N3   &mt LCMD N4  &kp N5    &kp N6  &mt RCMD N7  &lt NAV N8   &mt RCTRL N9  &mt RSHFT N0
   &trans        &trans        &trans       &trans       &trans    &trans  &trans       &trans       &trans        &kp BACKSLASH
                               &none        &trans       &trans    &trans  &trans       &none
             >;
@@ -161,9 +138,6 @@
     };
 
     behaviors {
-        HRM(hl, RIGHT_HALF_KEYS);
-        HRM(hr, LEFT_HALF_KEYS);
-
         bt_clr: bt_clr {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
