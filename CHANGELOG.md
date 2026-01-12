@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.3.0] - 2026-01-12
+
+### Changed
+
+- Keymap: replace positional home row mods (`&hl`/`&hr`) with standard `&mt` for
+  simplified modifier behaviour
+- Keymap: reduce hold-tap timing for faster response
+  - `tapping-term-ms`: 200 → 150
+  - `require-prior-idle-ms`: 100 → 50
+  - `quick-tap-ms`: 300 → 250
+- Keymap: refactor combo macros - `COMBO_DEFAULT()` renamed to `COMBO()` with explicit
+  binding syntax (e.g., `&kp TAB` instead of `TAB`)
+- Keymap: add `COMBO_SLOW()` variant with 70ms timeout for less time-critical combos
+- Keymap: F11/F12 and SYS layer combos now use `COMBO_SLOW()` timing
+
+### Removed
+
+- Keymap: remove `HRM()` macro and `LEFT_HALF_KEYS`/`RIGHT_HALF_KEYS` position groups
+  (no longer needed without positional filtering)
+
 ## [3.2.0] - 2026-01-02
 
 ### Changed
