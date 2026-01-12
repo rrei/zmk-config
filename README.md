@@ -3,12 +3,11 @@
 ## Overview
 
 This ZMK configuration is designed to maximise the use of home row keys for efficient
-typing and navigation. It employs positional "timeless" home row mods with a tri-layer
-system for accessing extended functionality.
+typing and navigation. It employs home row mods with a combo-based system for accessing
+extended functionality.
 
 - **Hardware:** Corne (5 columns, 36 keys) with nice!nano v2 controllers
-- **Features:** Mouse emulation, positional home row mods, extensive combos, tri-layer
-  system, power management
+- **Features:** Mouse emulation, home row mods, extensive combos, power management
 
 ## Layout
 
@@ -20,23 +19,20 @@ _Diagram automatically updates when keymap changes_
 
 ### Layer Structure
 
-| Layer | Index | Access              | Purpose                            |
-| ----- | ----- | ------------------- | ---------------------------------- |
-| BASE  | 0     | Default             | QWERTY typing with home row mods   |
-| EXT   | 1     | Hold C or ,         | Numbers, function keys, symbols    |
-| NAV   | 2     | Hold D or K         | Arrow keys, mouse, page navigation |
-| SYS   | 3     | Tri-layer (EXT+NAV) | Bluetooth, media, brightness       |
+| Layer | Index | Access                | Purpose                            |
+| ----- | ----- | --------------------- | ---------------------------------- |
+| BASE  | 0     | Default               | QWERTY typing with home row mods   |
+| EXT   | 1     | Hold C or ,           | Numbers, function keys, symbols    |
+| NAV   | 2     | Hold D or K           | Arrow keys, mouse, page navigation |
+| SYS   | 3     | Combo (middle thumbs) | Bluetooth, media, brightness       |
 
-### Positional Home Row Mods
+### Home Row Mods
 
-Uses "timeless" home row mods with opposite-hand activation:
+Standard hold-tap modifiers on the home row:
 
-- **Left hand (`&hl`)**: A=Shift, S=Ctrl, E=Alt, F=Cmd
-- **Right hand (`&hr`)**: J=Cmd, I=Alt, L=Ctrl, ;=Shift
-- **Positional filtering**: Hold only triggers when opposite-hand keys are pressed
-- **Timing**: 200ms tapping term, 100ms prior idle requirement, hold-trigger-on-release
-
-This approach virtually eliminates accidental modifier activation during normal typing.
+- **Left hand**: A=Shift, S=Ctrl, E=Alt, F=Cmd
+- **Right hand**: J=Cmd, I=Alt, L=Ctrl, ;=Shift
+- **Timing**: 150ms tapping term, 50ms prior idle requirement
 
 ### Navigation Layer
 
@@ -52,9 +48,9 @@ This approach virtually eliminates accidental modifier activation during normal 
 - **Home row**: Numbers 1-0 with home row mods
 - **Thumb keys**: Parentheses `()` and brackets `[]`
 
-### System Layer (Tri-Layer)
+### System Layer
 
-- **Access**: Activate both EXT and NAV simultaneously
+- **Access**: Middle thumb combo (positions 31-34)
 - **Bluetooth**: Profile selection (0-4), clear current, clear all (with Shift)
 - **Media**: Previous/play-pause/next, volume up/down
 - **Brightness**: Screen brightness controls
