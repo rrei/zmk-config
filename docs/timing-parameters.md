@@ -1,7 +1,33 @@
 # ZMK Timing Parameters Reference
 
 This document covers timing parameters for **hold-tap behaviours** (including `&mt`,
-`&lt`, and custom "timeless" HRM) and **combo behaviours** in ZMK firmware.
+`&lt`, and custom "timerless" HRM) and **combo behaviours** in ZMK firmware.
+
+## Introduction: Two Schools of Thought
+
+The "Home Row Modifier" (HRM) layout places modifier keys (Shift, Ctrl, Alt, GUI) on the
+home row (A, S, D, F, J, K, L, ;), activating them when held and sending characters when
+tapped. While ergonomically superior, this creates ambiguity for the firmware: is a
+quick "roll" of two keys a typing burst or a modifier chord?
+
+To solve this, ZMK users have developed two distinct architectural strategies:
+
+1. **Positional Logic (Spatial):** Strictly enforces that a modifier on the left hand
+   can _only_ modify a key on the right hand. This is the safest method, virtually
+   eliminating errors, but prevents one-handed shortcuts.
+2. **Non-Positional Logic (Temporal):** Relies on typing rhythm (idle time) to
+   distinguish between fast typing (taps) and deliberate actions (mods). This is more
+   flexible, allowing one-handed usage (e.g., mouse + keyboard shortcuts), but requires
+   tuning to your specific typing speed.
+
+**Choose Positional** if you are a disciplined touch typist and want a "bulletproof"
+setup that rarely misfires.
+
+**Choose Non-Positional** if you need one-handed freedom, use the mouse with keyboard
+modifiers frequently, or do not strictly alternate hands.
+
+Both strategies rely heavily on `require-prior-idle-ms` to distinguish "typing mode"
+from "command mode," making it the most important modern setting for ergonomic firmware.
 
 ## Hold-Tap Parameters
 
@@ -176,6 +202,35 @@ shouldn't trigger during typing (like layer access).
 
 **Use case:** Better for modifier combos where you want to hold the result.
 
+## Thumb Key Parameters (Layer Taps)
+
+Thumbs operate differently from fingers; they don't "roll" as much as they "chord."
+Layer taps (`&lt`) on thumb keys benefit from different tuning than home row mods.
+
+### Recommended Settings
+
+- **flavour**: `hold-preferred` — You generally want layers to activate _immediately_
+  when pressed, even if you tap the next key very quickly.
+- **tapping-term-ms**: 200ms — Standard timing works well for thumbs.
+- **quick-tap-ms**: 200ms — Allows for "tap-hold" to repeat the key (e.g., repeating
+  Backspace or Space).
+
+### Code Example (Thumb Layer Tap)
+
+```dts
+/ {
+    behaviors {
+        lt_thumb: layer_tap_thumb {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            bindings = <&mo>, <&kp>;
+        };
+    };
+};
+```
+
 ## Configuration Profiles
 
 ### Profile 1: Standard `&mt`/`&lt`
@@ -258,6 +313,70 @@ slow-release;
 timeout-ms = <35>;
 require-prior-idle-ms = <35>;
 slow-release;
+```
+
+### Summary: Positional vs Non-Positional HRM
+
+| Parameter                      | Positional HRM (Safe) | Non-Positional HRM (Flexible) | Effect                                              |
+| :----------------------------- | :-------------------- | :---------------------------- | :-------------------------------------------------- |
+| **flavour**                    | balanced              | balanced                      | Allows nested key presses to trigger mods instantly |
+| **tapping-term-ms**            | 280–300ms             | 200–250ms                     | How long before a hold is forced                    |
+| **require-prior-idle-ms**      | 150ms                 | 125–150ms                     | Forces "tap" during fast typing bursts              |
+| **quick-tap-ms**               | 175ms                 | 175ms                         | Allows double-tap-hold to repeat key                |
+| **hold-trigger-on-release**    | true                  | true                          | Waits for key release; essential for rolling        |
+| **hold-trigger-key-positions** | **Opposite hand**     | **None**                      | The core difference — positional filters by hand    |
+
+### Template: Positional HRM
+
+```dts
+/* Define Left and Right hand key indices for your board */
+#define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24
+#define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
+#define THUMBS 30 31 32 33
+
+/ {
+    behaviors {
+        hm_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <PRIOR_IDLE>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <PRIOR_IDLE>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+};
+```
+
+### Template: Non-Positional HRM
+
+```dts
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <PRIOR_IDLE>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+};
 ```
 
 ## Parameter Interactions
