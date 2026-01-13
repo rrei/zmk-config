@@ -22,7 +22,7 @@ _Diagram automatically updates when keymap changes_
 | Layer | Index | Access                | Purpose                            |
 | ----- | ----- | --------------------- | ---------------------------------- |
 | BASE  | 0     | Default               | QWERTY typing with home row mods   |
-| EXT   | 1     | Hold C or ,           | Numbers, function keys, symbols    |
+| EXT   | 1     | Hold V, M, or -       | Numbers, function keys, symbols    |
 | NAV   | 2     | Hold D or K           | Arrow keys, mouse, page navigation |
 | SYS   | 3     | Combo (middle thumbs) | Bluetooth, media, brightness       |
 
@@ -32,7 +32,7 @@ Standard hold-tap modifiers on the home row:
 
 - **Left hand**: A=Shift, S=Ctrl, E=Alt, F=Cmd
 - **Right hand**: J=Cmd, I=Alt, L=Ctrl, ;=Shift
-- **Timing**: 150ms tapping term, 50ms prior idle requirement
+- **Timing**: 200ms tapping term, 125ms prior idle, 175ms quick-tap
 
 ### Navigation Layer
 
@@ -43,7 +43,7 @@ Standard hold-tap modifiers on the home row:
 
 ### Extended Layer
 
-- **Access**: Hold `C` or `,` keys
+- **Access**: Hold `V`, `M`, or `-` keys
 - **Top row**: Function keys F1-F10
 - **Home row**: Numbers 1-0 with home row mods
 - **Thumb keys**: Parentheses `()` and brackets `[]`
@@ -58,7 +58,7 @@ Standard hold-tap modifiers on the home row:
 ### Combo System
 
 - **Timeout**: 35ms for responsive activation
-- **Keys**: TAB, BSPC, DEL, RET, ESC, SPACE, NUBS, F11, F12
+- **Keys**: TAB, BSPC, DEL, RET, ESC, SPACE, `()`, `[]`, F11, F12
 - **Active on**: BASE and EXT layers (F11/F12 on EXT only)
 - **Prior idle**: 70ms default (35ms for SPACE to allow normal typing speed)
 

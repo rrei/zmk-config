@@ -103,6 +103,8 @@ The keymap uses preprocessor macros to reduce repetition:
   timeout)
 - `COMBO_SLOW(NAME, BINDING, LAYERS, POSITIONS)`: Slow timing (70ms prior-idle, 70ms
   timeout)
+- `COMBO_FAST(NAME, BINDING, LAYERS, POSITIONS)`: Fast timing (35ms prior-idle, 35ms
+  timeout) - used for SPACE combo
 - `HOLD_TAP_OVERRIDES(NODE)`: Consistent timing overrides for `&mt` and `&lt`
 
 ### Advanced Features
@@ -117,7 +119,7 @@ The keymap uses preprocessor macros to reduce repetition:
 
 Key timing parameters defined in `corne.keymap`:
 
-- Standard hold-taps (`&mt`, `&lt`): 150ms tapping term, 50ms prior idle, 250ms
+- Standard hold-taps (`&mt`, `&lt`): 200ms tapping term, 125ms prior idle, 175ms
   quick-tap
 - Combos: 35ms timeout, 70ms prior idle (COMBO_SLOW uses 70ms timeout)
 - Mouse movement: `ZMK_POINTING_DEFAULT_MOVE_VAL = 1800`
