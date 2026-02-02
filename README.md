@@ -19,12 +19,12 @@ _Diagram automatically updates when keymap changes_
 
 ### Layer Structure
 
-| Layer | Index | Access                | Purpose                            |
-| ----- | ----- | --------------------- | ---------------------------------- |
-| BASE  | 0     | Default               | QWERTY typing with home row mods   |
-| EXT   | 1     | Hold V, M, or -       | Numbers, function keys, symbols    |
-| NAV   | 2     | Hold D or K           | Arrow keys, mouse, page navigation |
-| SYS   | 3     | Combo (middle thumbs) | Bluetooth, media, brightness       |
+| Layer | Index | Access                         | Purpose                            |
+| ----- | ----- | ------------------------------ | ---------------------------------- |
+| BASE  | 0     | Default                        | QWERTY typing with home row mods   |
+| EXT   | 1     | Hold V, M, or ` / thumb combos | Numbers, function keys, symbols    |
+| NAV   | 2     | Hold D or K / thumb combos     | Arrow keys, mouse, page navigation |
+| SYS   | 3     | Combo (middle thumbs)          | Bluetooth, media, brightness       |
 
 ### Home Row Mods
 
@@ -36,14 +36,14 @@ Standard hold-tap modifiers on the home row:
 
 ### Navigation Layer
 
-- **Access**: Hold `D` or `K` keys
+- **Access**: Hold `D` or `K` keys / thumb combos (S+thumb, K+thumb)
 - **Right hand**: Arrow keys, page up/down, home/end
 - **Left hand**: Mouse movement and scroll control
 - **Mouse buttons**: Left/right click on bottom row
 
 ### Extended Layer
 
-- **Access**: Hold `V`, `M`, or `-` keys
+- **Access**: Hold `V`, `M`, or `` ` `` keys / thumb combos (D+thumb, J+thumb)
 - **Top row**: Function keys F1-F10
 - **Home row**: Numbers 1-0 with home row mods
 - **Thumb keys**: Parentheses `()` and brackets `[]`
@@ -57,10 +57,13 @@ Standard hold-tap modifiers on the home row:
 
 ### Combo System
 
-- **Timeout**: 35ms for responsive activation
-- **Keys**: TAB, BSPC, DEL, RET, ESC, SPACE, `()`, `[]`, F11, F12
+- **Timeout**: 35ms for responsive activation (70ms for layer combos via `COMBO_SLOW`)
+- **Common keys**: TAB, BSPC, DEL, RET, ESC, SPACE — use `COMBO_FAST` (35ms prior-idle)
+- **Brackets**: `()`, `[]` — use `COMBO` (70ms prior-idle)
+- **Layer access**: EXT (D/J+thumb), NAV (S/K+thumb), SYS (middle thumbs) — use
+  `COMBO_SLOW` (70ms timeout, 70ms prior-idle)
+- **F11/F12**: On EXT layer only — use `COMBO_SLOW`
 - **Active on**: BASE and EXT layers (F11/F12 on EXT only)
-- **Prior idle**: 70ms default (35ms for SPACE to allow normal typing speed)
 
 ### Bluetooth Clear
 

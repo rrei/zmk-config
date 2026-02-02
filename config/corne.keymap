@@ -72,15 +72,15 @@
         // escape, space. These use the two strongest fingers (index and middle) on each
         // side of the keyboard, either in their home position or one key away.
         //
-        // The combo for SPACE uses a reduced "require-prior-idle" value because I need
-        // to be able to use it while typing at normal speed. Otherwise I'd have a
-        // noticeable wait after every word to be able to type a space and continue
-        // typing.
-        COMBO(kp_tab, &kp TAB, BASE EXT, 2 3);
-        COMBO(kp_bspc, &kp BSPC, BASE EXT, 12 13);
-        COMBO(kp_del, &kp DEL, BASE EXT, 13 14);
-        COMBO(kp_ret, &kp RET, BASE EXT, 6 7);
-        COMBO(kp_esc, &kp ESC, BASE EXT, 15 16);
+        // Here I use COMBO_FAST because I need to be able to use them while typing at
+        // normal speed without interference/false positives. Using slower timing
+        // parameters would introduce a noticeable wait e.g. after every word to be able
+        // to type a space and continue typing.
+        COMBO_FAST(kp_tab, &kp TAB, BASE EXT, 2 3);
+        COMBO_FAST(kp_bspc, &kp BSPC, BASE EXT, 12 13);
+        COMBO_FAST(kp_del, &kp DEL, BASE EXT, 13 14);
+        COMBO_FAST(kp_ret, &kp RET, BASE EXT, 6 7);
+        COMBO_FAST(kp_esc, &kp ESC, BASE EXT, 15 16);
         COMBO_FAST(kp_spc, &kp SPC, BASE EXT, 16 17);
 
         // As a software engineer, it's extremely useful to have easy access to
@@ -94,8 +94,12 @@
         COMBO_SLOW(kp_f11, &kp F11, EXT, 7 8);
         COMBO_SLOW(kp_f12, &kp F12, EXT, 8 9);
 
-        // Slow combo for SYS layer using the outer thumb keys.
+        // Slow combos for SYS, EXT and NAV layers using thumb keys.
         COMBO_SLOW(mo_sys, &mo SYS, BASE, 31 34);
+        COMBO_SLOW(mo_ext_l, &mo EXT, BASE NAV, 13 32);
+        COMBO_SLOW(mo_nav_l, &mo NAV, BASE EXT, 12 32);
+        COMBO_SLOW(mo_ext_r, &mo EXT, BASE NAV, 16 33);
+        COMBO_SLOW(mo_nav_r, &mo NAV, BASE EXT, 17 33);
     };
 
     keymap {
@@ -103,10 +107,10 @@
 
         base {
             bindings = <
-  &kp Q        &kp W        &mt LALT E  &kp R           &kp T           &kp Y          &kp U            &mt RALT I     &kp O        &kp P
-  &mt LSHFT A  &mt LCTRL S  &lt NAV D   &mt LCMD F      &kp G           &kp H          &mt RCMD J       &lt NAV K      &mt RCTRL L  &mt RSHFT SEMI
-  &kp Z        &kp X        &kp C       &lt EXT V       &kp B           &kp N          &lt EXT M        &kp COMMA      &kp PERIOD   &kp SLASH
-                            &none       &mt LALT GRAVE  &mt LCMD SQT    &lt EXT MINUS  &mt RSHFT EQUAL  &none
+  &kp Q        &kp W        &mt LALT E  &kp R          &kp T            &kp Y           &kp U            &mt RALT I     &kp O        &kp P
+  &mt LSHFT A  &mt LCTRL S  &lt NAV D   &mt LCMD F     &kp G            &kp H           &mt RCMD J       &lt NAV K      &mt RCTRL L  &mt RSHFT SEMI
+  &kp Z        &kp X        &kp C       &lt EXT V      &kp B            &kp N           &lt EXT M        &kp COMMA      &kp PERIOD   &kp SLASH
+                            &none       &lt EXT GRAVE  &mt LSHFT SQT    &mt RCMD MINUS  &mt RALT EQUAL  &none
             >;
         };
 

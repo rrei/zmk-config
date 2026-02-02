@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.4.0] - 2026-02-02
+
+### Added
+
+- Keymap: add combo-based EXT/NAV layer access via thumb + home row keys
+  - EXT combos: D+left-thumb (13+32), J+right-thumb (16+33)
+  - NAV combos: S+left-thumb (12+32), K+right-thumb (17+33)
+  - All use `COMBO_SLOW` timing (70ms timeout, 70ms prior-idle)
+
+### Changed
+
+- Keymap: switch common key combos (TAB, BSPC, DEL, RET, ESC) from `COMBO` to
+  `COMBO_FAST` for reduced prior-idle (70ms → 35ms) matching SPACE
+- Keymap: reorganise thumb row modifiers
+  - Position 31: Alt hold-tap → EXT layer-tap (GRAVE)
+  - Position 32: Cmd → Shift
+  - Position 33: EXT layer-tap → Cmd mod-tap (MINUS)
+  - Position 34: Shift → Alt
+
 ## [3.3.1] - 2026-01-12
 
 ### Changed

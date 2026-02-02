@@ -7,8 +7,8 @@ this repository.
 
 This is a ZMK (Zephyr Mechanical Keyboard) firmware configuration for a Corne (crkbd)
 5-column split keyboard with nice!nano v2 controllers. The configuration implements
-advanced features like mouse emulation, home row mods, combo-based system layer access,
-and power management.
+advanced features like mouse emulation, home row mods, combo-based layer access, and
+power management.
 
 ## Build System
 
@@ -71,7 +71,7 @@ The workflow can also be triggered manually via `workflow_dispatch` if needed.
 
 ### Layer Structure (4 layers)
 
-The keymap uses home row mods with combo-based system layer access:
+The keymap uses home row mods with combo-based layer access:
 
 1. **BASE (0)**: Main typing layer with QWERTY layout and home row modifiers
 2. **EXT (1)**: Extended layer with numbers (home row), function keys (top row), and
@@ -86,12 +86,12 @@ The keymap uses home row mods with combo-based system layer access:
   (A/;=Shift, S/L=Ctrl, E/I=Alt, F/J=Cmd). Uses global timing from `HOLD_TAP_OVERRIDES`
   macro.
 - **Combos**: Combo system with configurable timing (35ms timeout, 70ms prior-idle by
-  default; 35ms prior-idle for SPACE) for common keys like Tab, Backspace, Enter,
-  Escape, Space, brackets/parentheses, F11/F12, and SYS layer access
+  default; 35ms prior-idle for common keys via `COMBO_FAST`) for Tab, Backspace, Delete,
+  Enter, Escape, Space, brackets/parentheses, F11/F12, and EXT/NAV/SYS layer access
 - **Hold-Tap + Mod-Morph**: Bluetooth clear uses a 3-second hold-tap combined with
   mod-morph (shift for clear-all)
 - **Layer Taps**: Keys that act as normal keys on tap, layer switches on hold (D/K for
-  NAV, V/M and MINUS for EXT)
+  NAV, V/M and GRAVE for EXT)
 
 ### DRY Macros
 
@@ -104,7 +104,7 @@ The keymap uses preprocessor macros to reduce repetition:
 - `COMBO_SLOW(NAME, BINDING, LAYERS, POSITIONS)`: Slow timing (70ms prior-idle, 70ms
   timeout)
 - `COMBO_FAST(NAME, BINDING, LAYERS, POSITIONS)`: Fast timing (35ms prior-idle, 35ms
-  timeout) - used for SPACE combo
+  timeout) - used for common key combos (TAB, BSPC, DEL, RET, ESC, SPACE)
 - `HOLD_TAP_OVERRIDES(NODE)`: Consistent timing overrides for `&mt` and `&lt`
 
 ### Advanced Features
@@ -199,21 +199,26 @@ and 35 (outer thumb keys) are physically covered and mapped to `&none`:
 
 ### Combo System Design
 
-- Standard combos (`COMBO`) use 35ms timeout for responsive activation
-- Slow combos (`COMBO_SLOW`) use 70ms timeout for less time-critical actions
-- Default `require-prior-idle-ms = 70` prevents interference with normal typing
+- Common key combos (`COMBO_FAST`) use 35ms timeout and 35ms prior-idle for responsive
+  activation during normal typing (TAB, BSPC, DEL, RET, ESC, SPACE)
+- Standard combos (`COMBO`) use 35ms timeout and 70ms prior-idle
+- Slow combos (`COMBO_SLOW`) use 70ms timeout and 70ms prior-idle for less time-critical
+  actions
 - Combos active on BASE and EXT layers (F11/F12 on EXT only)
 - `slow-release` enabled for better modifier interaction
 - Bracket/parenthesis combos on bottom row for programming:
   - `(` on X+C (22-23), `)` on M+, (26-27)
   - `[` on C+V (23-24), `]` on N+M (25-26)
-- SYS layer and F11/F12 combos use `COMBO_SLOW` timing
+- EXT/NAV layer access, SYS layer, and F11/F12 combos use `COMBO_SLOW` timing
 
-### SYS Layer Access
+### Layer Access Combos
 
-The SYS layer is accessed via a `COMBO_SLOW` on the middle thumb keys (positions 31 and
-34). This provides direct access to the system layer without requiring simultaneous
-layer key holds, simplifying the mental model for layer navigation.
+Layers are accessible via `COMBO_SLOW` combos on thumb keys, providing direct access
+without requiring simultaneous layer key holds:
+
+- **SYS**: Middle thumb keys (positions 31+34), active on BASE
+- **EXT**: D+left-thumb (13+32) or J+right-thumb (16+33), active on BASE and NAV
+- **NAV**: S+left-thumb (12+32) or K+right-thumb (17+33), active on BASE and EXT
 
 This configuration represents a highly optimised setup for productive typing with
 minimal finger movement and maximum functionality in a compact 36-key layout.
