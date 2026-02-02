@@ -83,8 +83,8 @@ The keymap uses home row mods with combo-based layer access:
 ### Key Behaviours
 
 - **Home Row Mods (`&mt`)**: Standard hold-tap behaviours for home row modifiers
-  (A/;=Shift, S/L=Ctrl, E/I=Alt, F/J=Cmd). Uses global timing from `HOLD_TAP_OVERRIDES`
-  macro.
+  (A/;=Shift, S/L=Ctrl, F/J=Cmd, with Alt on E/I on the top row). Uses global timing
+  from `HOLD_TAP_OVERRIDES` macro.
 - **Combos**: Combo system with configurable timing (35ms timeout, 70ms prior-idle by
   default; 35ms prior-idle for common keys via `COMBO_FAST`) for Tab, Backspace, Delete,
   Enter, Escape, Space, brackets/parentheses, F11/F12, and EXT/NAV/SYS layer access
@@ -204,7 +204,7 @@ and 35 (outer thumb keys) are physically covered and mapped to `&none`:
 - Standard combos (`COMBO`) use 35ms timeout and 70ms prior-idle
 - Slow combos (`COMBO_SLOW`) use 70ms timeout and 70ms prior-idle for less time-critical
   actions
-- Combos active on BASE and EXT layers (F11/F12 on EXT only)
+- Common key and bracket combos active on BASE and EXT layers (F11/F12 on EXT only)
 - `slow-release` enabled for better modifier interaction
 - Bracket/parenthesis combos on bottom row for programming:
   - `(` on X+C (22-23), `)` on M+, (26-27)

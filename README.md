@@ -30,8 +30,8 @@ _Diagram automatically updates when keymap changes_
 
 Standard hold-tap modifiers on the home row:
 
-- **Left hand**: A=Shift, S=Ctrl, E=Alt, F=Cmd
-- **Right hand**: J=Cmd, I=Alt, L=Ctrl, ;=Shift
+- **Left hand**: A=Shift, S=Ctrl, F=Cmd (Alt on E, top row)
+- **Right hand**: J=Cmd, L=Ctrl, ;=Shift (Alt on I, top row)
 - **Timing**: 200ms tapping term, 125ms prior idle, 175ms quick-tap
 
 ### Navigation Layer
@@ -46,7 +46,6 @@ Standard hold-tap modifiers on the home row:
 - **Access**: Hold `V`, `M`, or `` ` `` keys / thumb combos (D+thumb, J+thumb)
 - **Top row**: Function keys F1-F10
 - **Home row**: Numbers 1-0 with home row mods
-- **Thumb keys**: Parentheses `()` and brackets `[]`
 
 ### System Layer
 
@@ -63,7 +62,8 @@ Standard hold-tap modifiers on the home row:
 - **Layer access**: EXT (D/J+thumb), NAV (S/K+thumb), SYS (middle thumbs) — use
   `COMBO_SLOW` (70ms timeout, 70ms prior-idle)
 - **F11/F12**: On EXT layer only — use `COMBO_SLOW`
-- **Active on**: BASE and EXT layers (F11/F12 on EXT only)
+- **Active on**: Common key and bracket combos on BASE and EXT layers (F11/F12 on EXT
+  only)
 
 ### Bluetooth Clear
 
