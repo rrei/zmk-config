@@ -32,10 +32,10 @@ layers:
   - .
   - /
   - ''
-  - {t: '`', h: LALT}
-  - {t: '''', h: LCMD}
-  - {t: '-', h: extended}
-  - {t: '=', h: RSHFT}
+  - {t: '`', h: extended}
+  - {t: '''', h: LSHFT}
+  - {t: '-', h: RCMD}
+  - {t: '=', h: RALT}
   - ''
   extended:
   - F1
@@ -188,3 +188,15 @@ combos:
 - p: [31, 34]
   k: system
   l: [base]
+- p: [13, 32]
+  k: extended
+  l: [base, navigation]
+- p: [12, 32]
+  k: navigation
+  l: [base, extended]
+- p: [16, 33]
+  k: extended
+  l: [base, navigation]
+- p: [17, 33]
+  k: navigation
+  l: [base, extended]
