@@ -32,10 +32,10 @@ layers:
   - .
   - /
   - ''
-  - {t: '`', h: extended}
-  - {t: '''', h: LSHFT}
-  - {t: '-', h: RCMD}
-  - {t: '=', h: RALT}
+  - {t: '`', h: LALT}
+  - {t: '''', h: LCMD}
+  - {t: '-', h: RSHFT}
+  - {t: '=', h: extended}
   - ''
   extended:
   - F1
