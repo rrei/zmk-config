@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.4.1] - 2026-02-04
+
+### Changed
+
+- Keymap: reorganise thumb row modifiers for better ergonomics
+  - Left thumb: Alt on GRAVE, Cmd on SQT (was Shift, Alt)
+  - Right thumb: Shift on MINUS, EXT layer on EQUAL (was Cmd, Alt)
+
 ## [3.4.0] - 2026-02-02
 
 ### Added
