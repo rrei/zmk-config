@@ -83,23 +83,28 @@
         COMBO_FAST(kp_esc, &kp ESC, BASE EXT, 15 16);
         COMBO_FAST(kp_spc, &kp SPC, BASE EXT, 16 17);
 
-        // As a software engineer, it's extremely useful to have easy access to
-        // parenthesis and brackets/braces :)
+        // As a SWE, easy access to parenthesis, brackets, and braces is essential.
         COMBO(kp_lpar, &kp LPAR, BASE EXT, 22 23);
         COMBO(kp_rpar, &kp RPAR, BASE EXT, 26 27);
         COMBO(kp_lbkt, &kp LBKT, BASE EXT, 23 24);
         COMBO(kp_rbkt, &kp RBKT, BASE EXT, 25 26);
 
+        // Alternative combos for parentheses, brackets and braces. This is only to test
+        // a different setup and I'll remove one set of them later. I'm hoping this one
+        // works better.
+        COMBO_FAST(kp_lpar2, &kp LPAR, BASE EXT, 13 32);
+        COMBO_FAST(kp_lbkt2, &kp LBKT, BASE EXT, 12 32);
+        COMBO_FAST(kp_lbrc2, &kp LBRC, BASE EXT, 11 32);
+        COMBO_FAST(kp_rpar2, &kp RPAR, BASE EXT, 16 33);
+        COMBO_FAST(kp_rbkt2, &kp RBKT, BASE EXT, 17 33);
+        COMBO_FAST(kp_rbrc2, &kp RBRC, BASE EXT, 18 33);
+
         // F11 and F12 keys couldn't fit the keyboard (only 5 columns on each side).
         COMBO_SLOW(kp_f11, &kp F11, EXT, 7 8);
         COMBO_SLOW(kp_f12, &kp F12, EXT, 8 9);
 
-        // Slow combos for SYS, EXT and NAV layers using thumb keys.
+        // The SYS layer is accessed through a combo using both outer thumb keys.
         COMBO_SLOW(mo_sys, &mo SYS, BASE, 31 34);
-        COMBO_SLOW(mo_ext_l, &mo EXT, BASE NAV, 13 32);
-        COMBO_SLOW(mo_nav_l, &mo NAV, BASE EXT, 12 32);
-        COMBO_SLOW(mo_ext_r, &mo EXT, BASE NAV, 16 33);
-        COMBO_SLOW(mo_nav_r, &mo NAV, BASE EXT, 17 33);
     };
 
     keymap {
