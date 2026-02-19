@@ -179,6 +179,24 @@ combos:
 - p: [25, 26]
   k: ']'
   l: [base, extended]
+- p: [13, 32]
+  k: (
+  l: [base, extended]
+- p: [12, 32]
+  k: '['
+  l: [base, extended]
+- p: [11, 32]
+  k: '{'
+  l: [base, extended]
+- p: [16, 33]
+  k: )
+  l: [base, extended]
+- p: [17, 33]
+  k: ']'
+  l: [base, extended]
+- p: [18, 33]
+  k: '}'
+  l: [base, extended]
 - p: [7, 8]
   k: F11
   l: [extended]
@@ -188,15 +206,3 @@ combos:
 - p: [31, 34]
   k: system
   l: [base]
-- p: [13, 32]
-  k: extended
-  l: [base, navigation]
-- p: [12, 32]
-  k: navigation
-  l: [base, extended]
-- p: [16, 33]
-  k: extended
-  l: [base, navigation]
-- p: [17, 33]
-  k: navigation
-  l: [base, extended]
