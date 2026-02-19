@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.5.0] - 2026-02-19
+
+### Added
+
+- Keymap: add experimental thumb+home row bracket/brace combos (`COMBO_FAST`)
+  - `{` on S+thumb (11+32), `}` on L+thumb (18+33)
+  - `[` on D+thumb (12+32), `]` on K+thumb (17+33)
+  - `(` on F+thumb (13+32), `)` on J+thumb (16+33)
+
+### Changed
+
+- Keymap: increase hold-tap timing parameters for improved accuracy
+  - `require-prior-idle-ms`: 125 → 150
+  - `quick-tap-ms`: 175 → 200
+
+### Removed
+
+- Keymap: remove combo-based EXT/NAV layer access (positions freed for bracket combos)
+  - EXT/NAV layers remain accessible via `&lt` hold-taps on D, K, V, M, and EQUAL
+
 ## [3.4.1] - 2026-02-04
 
 ### Changed

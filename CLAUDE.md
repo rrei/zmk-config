@@ -119,7 +119,7 @@ The keymap uses preprocessor macros to reduce repetition:
 
 Key timing parameters defined in `corne.keymap`:
 
-- Standard hold-taps (`&mt`, `&lt`): 200ms tapping term, 125ms prior idle, 175ms
+- Standard hold-taps (`&mt`, `&lt`): 200ms tapping term, 150ms prior idle, 200ms
   quick-tap
 - Combos: 35ms timeout, 70ms prior idle (COMBO_SLOW uses 70ms timeout)
 - Mouse movement: `ZMK_POINTING_DEFAULT_MOVE_VAL = 1800`
@@ -209,16 +209,17 @@ and 35 (outer thumb keys) are physically covered and mapped to `&none`:
 - Bracket/parenthesis combos on bottom row for programming:
   - `(` on X+C (22-23), `)` on M+, (26-27)
   - `[` on C+V (23-24), `]` on N+M (25-26)
-- EXT/NAV layer access, SYS layer, and F11/F12 combos use `COMBO_SLOW` timing
+- Experimental thumb+home row bracket/brace combos (`COMBO_FAST`):
+  - `{` on S+thumb (11+32), `}` on L+thumb (18+33)
+  - `[` on D+thumb (12+32), `]` on K+thumb (17+33)
+  - `(` on F+thumb (13+32), `)` on J+thumb (16+33)
+- SYS layer and F11/F12 combos use `COMBO_SLOW` timing
 
 ### Layer Access Combos
 
-Layers are accessible via `COMBO_SLOW` combos on thumb keys, providing direct access
-without requiring simultaneous layer key holds:
-
-- **SYS**: Middle thumb keys (positions 31+34), active on BASE
-- **EXT**: D+left-thumb (13+32) or J+right-thumb (16+33), active on BASE and NAV
-- **NAV**: S+left-thumb (12+32) or K+right-thumb (17+33), active on BASE and EXT
+- **SYS**: `COMBO_SLOW` on middle thumb keys (positions 31+34), active on BASE
+- **EXT**: Accessible via `&lt` on V (23), M (26), and EQUAL (34)
+- **NAV**: Accessible via `&lt` on D (12) and K (17)
 
 This configuration represents a highly optimised setup for productive typing with
 minimal finger movement and maximum functionality in a compact 36-key layout.
